@@ -14,10 +14,12 @@ function SwiperAdd(fetchedData) {
     let rowClass = document.createElement('div');
     rowClass.classList.add('row');
     rowClass.classList.add('mx-3');
+    rowClass.classList.add('h-100');
 
     let colClass = document.createElement('div');
     colClass.classList.add('col');
     colClass.classList.add('w-50');
+    colClass.classList.add('h-100');
 
     let img = document.createElement('img');
     img.src = "https://image.tmdb.org/t/p/original" + fetchedData[0];

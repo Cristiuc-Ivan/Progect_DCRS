@@ -1,1 +1,5 @@
-
+1. Make a slider for the genres bar, so that if it overflows it will be able to be SCROLLED (In case of mobile devices).
+2. If on small screen, then place a container made of (ROW->2 COLUMNS) : (Picture on the top, description on the bottom).
+3. Add registration svg.
+4. Add logo.
+5. Add genres. 
