@@ -3,3 +3,4 @@
 3. Add registration svg.
 4. Add logo.
 5. Add genres. 
+6. Checking git.
