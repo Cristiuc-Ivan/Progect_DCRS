@@ -10,9 +10,10 @@ body {
     font-size: calc(15px + 0.4vw);
 }
 
-.mainbody {
-    overflow: auto;
-}
+/* .mainbody {
+    /* height: 100%; */
+    /* overflow: auto; */
+/* } */
 
 .swiper {
     height: auto !important;
@@ -43,7 +44,6 @@ body {
     left: 97%;
     top: 0.5%;
     height: 20%;
-
 }
 
 .text_logo_login {
