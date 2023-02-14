@@ -10,8 +10,12 @@ body {
     font-size: calc(15px + 0.4vw);
 }
 
+.mainbody {
+    overflow: auto;
+}
+
 .swiper {
-    height: 400px !important;
+    height: auto !important;
 }
 
 .swiper-slide {
@@ -41,6 +45,7 @@ body {
     height: 100vh;
 }
 
-swiper-autoheight, .swiper-autoheight .swiper-slide {
+swiper-autoheight,
+.swiper-autoheight .swiper-slide {
     height: 100% !important;
 }

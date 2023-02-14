@@ -11,8 +11,7 @@ function SwiperAdd(fetchedData) {
     rowClass.setAttribute("class", "row mx-3 h-100");
 
     let colClass = document.createElement('div');
-    colClass.classList.add('col');
-    colClass.classList.add('w-50');
+    colClass.setAttribute("class", "col w-50");
 
     let img = document.createElement('img');
     img.src = `https://image.tmdb.org/t/p/original${fetchedData[0]}`;
@@ -20,8 +19,7 @@ function SwiperAdd(fetchedData) {
 
     // second column
     let secondColClass = document.createElement('div');
-    secondColClass.classList.add('col');
-    secondColClass.classList.add('w-50');
+    secondColClass.setAttribute("class", "col w-50");
 
     // adding rows
     let titleRow = document.createElement('div');
