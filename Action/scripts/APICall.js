@@ -1,5 +1,5 @@
 const API_Key='b6528c54-448a-4456-a16d-09577067b4ed';
-const API_URL_ACTION='https://kinopoiskapiunofficial.tech/api/v2.2/films?genres=3&order=RATING&type=FILM&ratingFrom=0&ratingTo=10&yearFrom=1000&yearTo=3000&page=1';
+const API_URL_ACTION='https://kinopoiskapiunofficial.tech/api/v2.2/films?genres=11&order=RATING&type=FILM&ratingFrom=0&ratingTo=10&yearFrom=1000&yearTo=3000&page=1';
 const API_USE="https://kinopoiskapiunofficial.tech/api/v2.1/films/search-by-keyword?keyword="
 
 getMovies(API_URL_ACTION);
