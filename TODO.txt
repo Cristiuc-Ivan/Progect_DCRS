@@ -5,3 +5,7 @@
 5. Add genres. 
 6. Add xs,md bootstrap.
 7. add padding to the pagination.
+8. FOOTER: description of the website
+a) About us/ Contact us
+b) Policy of confidency
+c) Social media accounts
