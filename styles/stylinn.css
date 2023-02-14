@@ -34,40 +34,35 @@ body {
     padding-right: 1%;
 }
 
-footer {
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    right: 0;
-}
-
 body {
     height: 100vh;
 }
-    
-.logo{
+
+.logo {
     position: absolute;
-    left:97%;
-    top:0.5%;
+    left: 97%;
+    top: 0.5%;
     height: 20%;
-    
+
 }
-.text_logo_login{
-    color:#ffffff;
+
+.text_logo_login {
+    color: #ffffff;
     word-spacing: 5px;
-    position:absolute;
-    left:89%;
-    height:20%;
-    top:1.4%;
+    position: absolute;
+    left: 89%;
+    height: 20%;
+    top: 1.4%;
     text-decoration: none;
 }
-.text_logo_registration{
-    color:#ffffff;
+
+.text_logo_registration {
+    color: #ffffff;
     word-spacing: 5px;
-    position:absolute;
-    left:92%;
-    height:20%;
-    top:1.4%;
+    position: absolute;
+    left: 92%;
+    height: 20%;
+    top: 1.4%;
     text-decoration: none;
-    
+
 }
