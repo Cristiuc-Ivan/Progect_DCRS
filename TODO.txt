@@ -3,4 +3,5 @@
 3. Add registration svg.
 4. Add logo.
 5. Add genres. 
-6. Checking git.
+6. Add xs,md bootstrap.
+7. add padding to the pagination.

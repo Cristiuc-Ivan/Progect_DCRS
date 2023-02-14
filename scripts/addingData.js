@@ -5,28 +5,21 @@ function SwiperAdd(fetchedData) {
 
     let containerClass = document.createElement('div');
     containerClass.classList.add('container');
-    containerClass.classList.add('m-0');
-    containerClass.classList.add('w-100');
-    containerClass.classList.add('mw-100');
-    containerClass.classList.add('mx-3');
-    containerClass.classList.add('h-100');
+    containerClass.setAttribute("class", "m-0 w-100 mw-100 mx-3 h-100");
 
     let rowClass = document.createElement('div');
-    rowClass.classList.add('row');
-    rowClass.classList.add('mx-3');
+    rowClass.setAttribute("class", "row mx-3 h-100");
 
     let colClass = document.createElement('div');
-    colClass.classList.add('col');
-    colClass.classList.add('w-50');
+    colClass.setAttribute("class", "col w-50");
 
     let img = document.createElement('img');
-    img.src = "https://image.tmdb.org/t/p/original" + fetchedData[0];
+    img.src = `https://image.tmdb.org/t/p/original${fetchedData[0]}`;
     img.classList.add('slider_img');
 
     // second column
     let secondColClass = document.createElement('div');
-    secondColClass.classList.add('col');
-    secondColClass.classList.add('w-50');
+    secondColClass.setAttribute("class", "col w-50");
 
     // adding rows
     let titleRow = document.createElement('div');
@@ -46,8 +39,8 @@ function SwiperAdd(fetchedData) {
 
     let overViewRow = document.createElement('div');
     overViewRow.classList.add('row');
-    let overViewNode = document.createTextNode(fetchedData[4]);
-    overViewRow.appendChild(overViewNode);
+    overViewRow.classList.add('overflow-auto');
+    overViewRow.innerText = fetchedData[4];
 
     // inserting to the secondCOL
     secondColClass.appendChild(titleRow);
@@ -64,5 +57,6 @@ function SwiperAdd(fetchedData) {
 
 
     let contaienrDiv = document.querySelector('.swiper-wrapper');
+    contaienrDiv.classList.add('h-100');
     contaienrDiv.appendChild(swiperSlide);
 }
