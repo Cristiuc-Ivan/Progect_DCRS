@@ -55,7 +55,6 @@ function SwiperAdd(fetchedData) {
     containerClass.appendChild(rowClass);
     swiperSlide.appendChild(containerClass);
 
-
     let contaienrDiv = document.querySelector('.swiper-wrapper');
     contaienrDiv.classList.add('h-100');
     contaienrDiv.appendChild(swiperSlide);
