@@ -10,11 +10,6 @@ body {
     font-size: calc(15px + 0.4vw);
 }
 
-/* .mainbody {
-    /* height: 100%; */
-    /* overflow: auto; */
-/* } */
-
 .swiper {
     height: auto !important;
 }
@@ -25,6 +20,8 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
+    background-position: center;
+    background-size: cover;
 }
 
 .slider_img {
@@ -43,7 +40,8 @@ body {
     position: absolute;
     left: 97%;
     top: 0.5%;
-    height: 20%;
+    height: 50px;
+    right: 4;
 }
 
 .text_logo_login {
@@ -51,7 +49,7 @@ body {
     word-spacing: 5px;
     position: absolute;
     left: 89%;
-    height: 20%;
+    height: 50px;
     top: 1.4%;
     text-decoration: none;
 }
@@ -61,8 +59,7 @@ body {
     word-spacing: 5px;
     position: absolute;
     left: 92%;
-    height: 20%;
+    height: 50px;
     top: 1.4%;
     text-decoration: none;
-
 }

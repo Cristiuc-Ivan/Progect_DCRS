@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-<!--alt ctrl up/down-->
 
 <head>
     <title>Кинофорум</title>
@@ -9,8 +8,6 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css" />
 </head>
-
-<!-- <body class="vh-100"> -->
 
 <body class="d-flex flex-column min-vh-100">
     <header class="px-5 mb-1">
@@ -27,51 +24,50 @@
             </form>
         </div>
     </header>
-    <a class="text_logo_registration" href="Registration_Login/reg.html">Registration</a>
-    <a class="text_logo_login" href="Registration_Login/login.html">Log in</a>
+    <a class="text_logo_registration" href="pages/Login/reg.html">Registration</a>
+    <a class="text_logo_login" href="pages/Login/login.html">Log in</a>
     <a class="logo" href="Registration_Login/PROFILE___SITE.html">
-        <!--Я пока еще не придума функционал, предпологаю что должно кидать на логин!-->
-        <img class="logo" src="Registration_Login/img/logo2.png" alt="img/logo1.png" />
+        <img class="logo" src="pages/Login/img/logo2.png" alt="img/logo1.png" />
     </a>
 
     <nav class="">
         <div class="container d-flex flex-wrap justify-content-evenly">
             <ul class="nav">
-                <li class="nav-item fonto1"> <a href="Action/Action.html"
+                <li class="nav-item fonto1"> <a href="pages/genres/Action.html"
                         class="nav-link link-danger px-2 text-light">Action</a></li>
-                <li class="nav-item fonto1"> <a href="#" class="nav-link link-danger px-2 text-light">Crime</a></li>
-                <li class="nav-item fonto1"> <a href="#" class="nav-link link-danger px-2 text-light">Family</a></li>
-                <li class="nav-item fonto1"> <a href="#" class="nav-link link-danger px-2 text-light">Thriller</a></li>
-                <li class="nav-item fonto1"> <a href="#" class="nav-link link-danger px-2 text-light">Adventure</a></li>
-                <li class="nav-item fonto1"> <a href="#" class="nav-link link-danger px-2 text-light">Documentary</a>
-                </li>
-                <li class="nav-item fonto1"> <a href="#" class="nav-link link-danger px-2 text-light">Fantasy</a></li>
-                <li class="nav-item fonto1"> <a href="#" class="nav-link link-danger px-2 text-light">Horror</a></li>
-                <li class="nav-item fonto1"> <a href="#" class="nav-link link-danger px-2 text-light">Animation</a></li>
-                <li class="nav-item fonto1"> <a href="#" class="nav-link link-danger px-2 text-light">Comedy</a></li>
+                <li class="nav-item fonto1"> <a href="pages/genres/Crime.html"
+                        class="nav-link link-danger px-2 text-light">Crime</a></li>
+                <li class="nav-item fonto1"> <a href="pages/genres/Family.html"
+                        class="nav-link link-danger px-2 text-light">Family</a></li>
+                <li class="nav-item fonto1"> <a href="pages/genres/Thriller.html"
+                        class="nav-link link-danger px-2 text-light">Thriller</a></li>
+                <li class="nav-item fonto1"> <a href="pages/genres/Adventure.html"
+                        class="nav-link link-danger px-2 text-light">Adventure</a></li>
+                <li class="nav-item fonto1"> <a href="pages/genres/Documentary.html"
+                        class="nav-link link-danger px-2 text-light">Documentary</a></li>
+                <li class="nav-item fonto1"> <a href="pages/genres/Fantasty.html"
+                        class="nav-link link-danger px-2 text-light">Fantasy</a></li>
+                <li class="nav-item fonto1"> <a href="pages/genres/Horror.html"
+                        class="nav-link link-danger px-2 text-light">Horror</a></li>
+                <li class="nav-item fonto1"> <a href="pages/genres/Animation.html"
+                        class="nav-link link-danger px-2 text-light">Animation</a></li>
+                <li class="nav-item fonto1"> <a href="pages/genres/Comedy.html"
+                        class="nav-link link-danger px-2 text-light">Comedy</a></li>
             </ul>
         </div>
     </nav>
 
-    <!-- Slider main container -->
     <div>
         <div class="swiper">
             <div class="swiper-wrapper">
-                <!-- Slides -->
             </div>
-            <!-- If we need pagination -->
             <div class="swiper-pagination"></div>
-
-            <!-- If we need navigation buttons -->
             <div class="swiper-button-prev"></div>
             <div class="swiper-button-next"></div>
-
-            <!-- If we need scrollbar -->
             <div class="swiper-scrollbar"></div>
         </div>
     </div>
 
-    <!-- Footer -->
     <footer class="mt-auto bg-secondary text-white text-center text-md-start">
         <!-- Grid container -->
         <div class="container p-4">
@@ -142,12 +138,13 @@
         </div>
         <!-- Copyright -->
     </footer>
-    <!-- Footer -->
+
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
+    <script src="https://kit.fontawesome.com/c2279cdedb.js" crossorigin="anonymous"></script>
     <script src="scripts/swiper.js"></script>
-    <script src="scripts/addingData.js"></script>
-    <script src="scripts/APICall.js"></script>
+    <script src="scripts/addTrending.js"></script>
+    <script src="scripts/getTrending.js"></script>
 </body>
 
 </html>
