@@ -3,6 +3,10 @@ body {
     padding: 0;
 }
 
+.shadowing {
+    text-shadow: 5px 5px 0px red;
+}
+
 /* <body class="d-flex min-vw-100 p-0 m-0 container flex-column min-vh-100"> */
 /*  */
 .fonto {
