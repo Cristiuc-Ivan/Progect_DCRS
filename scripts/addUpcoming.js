@@ -1,24 +1,29 @@
 function addUpcoming(fetchedDataMovie) {
     let commentDiv = document.createElement('div');
     commentDiv.setAttribute("class", "col py-2");
-    commentDiv.style.maxHeight = "400px";
+    commentDiv.style.minHeight = "400px";
     commentDiv.style.color = "#FFFFFF";
 
     let card = document.createElement('div');
-    card.setAttribute("class", "card");
+    card.setAttribute("class", "card h-100");
 
     let img = document.createElement('img');
     img.src = `https://image.tmdb.org/t/p/original${fetchedDataMovie[0]}`;
-    img.setAttribute("class", "card-img-top h-100");
+    img.setAttribute("class", "card-img-top");
+    img.style.height="inherit";
+    let imgDiv=document.createElement('div');
+    imgDiv.setAttribute("class","h-100");
+    imgDiv.appendChild(img);
 
     let cardBody = document.createElement('div');
+    cardBody.setAttribute("class","h-50");
     let title = document.createElement('p');
     title.style.fontSize = "1.4rem";
     title.setAttribute("class", "text-center justify-content-center text-primary my-2");
     let someNode = document.createTextNode(fetchedDataMovie[1]);
     title.appendChild(someNode);
     cardBody.appendChild(title);
-    card.appendChild(img);
+    card.appendChild(imgDiv);
     card.appendChild(cardBody);
     card.style.position = "relative";
 
