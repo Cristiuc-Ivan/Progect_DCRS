@@ -10,9 +10,11 @@ const swiper = new Swiper('.swiper', {
         delay: 10000
     },
     autoHeight: true,
+
     // If we need pagination
     pagination: {
         el: '.swiper-pagination',
+        type: 'bullets',
     },
 
     // Navigation arrows
@@ -21,8 +23,4 @@ const swiper = new Swiper('.swiper', {
         prevEl: '.swiper-button-prev',
     },
 
-    // And if we need scrollbar
-    scrollbar: {
-        el: '.swiper-scrollbar',
-    },
 });

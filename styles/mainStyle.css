@@ -1,7 +1,10 @@
 body {
     background-color: rgb(41, 45, 63) !important;
+    padding: 0;
 }
 
+/* <body class="d-flex min-vw-100 p-0 m-0 container flex-column min-vh-100"> */
+/*  */
 .fonto {
     font-size: calc(15px + 0.7vw);
 }
@@ -10,6 +13,7 @@ body {
     font-size: calc(15px + 0.4vw);
 }
 
+/* SWIPER */
 .swiper {
     height: auto !important;
 }
@@ -32,38 +36,25 @@ body {
     padding-right: 1%;
 }
 
-body {
-    height: 100vh;
-}
-
 .logo {
-    /* position: absolute; */
-    /* left: 97%; */
-    /* top: 0.5%; */
     height: 50px;
     justify-content: center;
-    /* right: 4; */
 }
 
 .text_logo_login {
     color: #ffffff;
     word-spacing: 5px;
-    /* position: absolute; */
-    /* left: 89%; */
     height: 50px;
-    /* top: 1.4%; */
     text-decoration: none;
 }
 
 .text_logo_registration {
     color: #ffffff;
     word-spacing: 5px;
-    /* position: absolute; */
-    /* left: 92%; */
     height: 50px;
-    /* top: 1.4%; */
     text-decoration: none;
 }
-.padding{
+
+.padding {
     margin-top: 20px;
 }
