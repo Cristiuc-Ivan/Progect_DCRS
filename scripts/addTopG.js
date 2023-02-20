@@ -4,7 +4,6 @@ function AddContent(fetchedDataMovie, fetchedDataReview) {
     commentDiv.style.maxHeight = "400px";
     commentDiv.style.color = "#FFFFFF";
 
-
     let firstCol = document.createElement('div');
     firstCol.setAttribute("class", "card col-5 border-0");
 
@@ -34,41 +33,56 @@ function AddContent(fetchedDataMovie, fetchedDataReview) {
         for (let i = 0; i < fetchedDataReview.length; i++) {
             // let tempNode = document.createTextNode(fetchedDataReview[0] + fetchedDataReview[1] + fetchedDataReview[2]);
             let br = document.createElement('hr');
-            // secondCol.appendChild(tempNode);
 
-            let node_title_author = document.createElement('p');
-            let tempNode_author_actual = document.createTextNode(fetchedDataReview[i][0]);
-            let tempNode_author_real = document.createTextNode('Author: ');
+            // creating main divs
+            // let authorDiv = document.createElement('div');
+            // let contentDiv = document.createElement('div');
+            // let dateDiv = document.createElement('div');
 
-            let node_author = document.createElement('p');
-            node_title_author.appendChild(tempNode_author_real);
-            node_author.appendChild(tempNode_author_real);
-            
-            // let tempNode_author = document.createTextNode('Author: ');
-            node_title_author.appendChild(tempNode_author_actual);
-            node_author.appendChild(tempNode_author_real);
-            secondCol.appendChild(node_author);
-            secondCol.appendChild(node_title_author);
-            
-            node_title_author.style.fontSize = "20px";
-            node_title_author.style.fontFamily = "Roboto,sans-serif";
-            node_title_author.style.color = "#DC143C";
-            node_title_author.style.textDecoration = "underline";
-          
-            
-            let node_text = document.createElement('p');
-            let tempNode_text = document.createTextNode(fetchedDataReview[i][1]);
-            node_text.appendChild(tempNode_text);
-            secondCol.appendChild(node_text);
-            
-            let node_data = document.createElement('p');
-            let tempNode_data = document.createTextNode(fetchedDataReview[i][2]);
-            node_data.appendChild(tempNode_data);
-            secondCol.appendChild(node_data);
-            
-            secondCol.appendChild(br);
-            // console.log(fetchedDataReview[0][2]);
-            
+            // assigning display-flex attribute
+            // authorDiv.setAttribute("class", "d-flex");
+            // contentDiv.setAttribute("class", "d-flex");
+            // dateDiv.setAttribute("class", "d-flex");
+
+            // creating array of strings
+            let arrayTxt = ['Author:', 'Review:', 'Date:'];
+
+            for (let k = 0; k < 3; k++) {
+
+                // creating a certain Div
+                let flexDiv = document.createElement('div');
+
+                // assigning display-flex attribute
+                flexDiv.setAttribute("class", "d-flex");
+
+                // diving div on 2 paragapgrahs
+                let firstPartP = document.createElement('p');
+                let secondPartP = document.createElement('p');
+
+                // a text node which will have 3 possible values
+                let fillerNode = document.createTextNode(arrayTxt[k]);
+                let fetchedNode = document.createTextNode(fetchedDataReview[i][k]);
+
+                // appending nodes to the 1|2 paragraphs
+                firstPartP.appendChild(fillerNode);
+                secondPartP.appendChild(fetchedNode);
+
+                // adding styles to the Title
+                firstPartP.style.fontSize = "20px";
+                firstPartP.style.fontFamily = "Roboto,sans-serif";
+                firstPartP.style.color = "#DC143C";
+                firstPartP.style.textDecoration = "underline";
+
+                secondPartP.style.textAlign = "justify";
+                
+
+                // appending paragraphs to divs
+                flexDiv.appendChild(firstPartP);
+                flexDiv.appendChild(secondPartP);
+
+                secondCol.appendChild(flexDiv);
+                secondCol.appendChild(br);
+            }
         }
     }
 
