@@ -1,3 +1,6 @@
+html{
+    scroll-behavior: smooth;
+}
 body {
     background-color: rgb(41, 45, 63) !important;
     padding: 0;
@@ -72,3 +75,10 @@ body {
 {
     max-height: 40px;
 } */
+.anchor{
+    position: absolute;
+    height: 12%;
+    left:10%;
+    top: auto;
+  
+}

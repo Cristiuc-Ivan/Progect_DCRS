@@ -138,3 +138,10 @@ font-size: 14px;
     height: 5px;
     width: 5%;
 }
+.anchor{
+    position: absolute;
+    height: 12%;
+    left:10%;
+    top: auto;
+  
+}
