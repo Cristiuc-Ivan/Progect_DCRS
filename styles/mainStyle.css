@@ -4,6 +4,7 @@ html{
 body {
     background-color: rgb(41, 45, 63) !important;
     padding: 0;
+    position: relative;
 }
 
 .shadowing {
@@ -66,6 +67,9 @@ body {
     margin-top: 20px;
 }
 
+footer{
+    position: relative;
+}
 .ccc
 {
     font-family: 'Roboto', sans-serif;
@@ -76,9 +80,10 @@ body {
     max-height: 40px;
 } */
 .anchor{
+    /* height: 100px; */
+    /* width: -webkit-fill-available; */
     position: absolute;
-    height: 12%;
-    left:10%;
-    top: auto;
-  
+    /* top: 5%; */
+    /* left: 10px; */
+    font-size: 50px;
 }
