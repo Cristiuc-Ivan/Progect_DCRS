@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.5.33414.496
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MovieForum", "MovieForum.csproj", "{B2D18EF3-47F3-4375-A740-8BAE2C3E01B9}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MovieForum", "MovieForum.csproj", "{A21FA691-DA8C-47D2-A94F-4CBC86007676}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -11,15 +11,15 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{B2D18EF3-47F3-4375-A740-8BAE2C3E01B9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{B2D18EF3-47F3-4375-A740-8BAE2C3E01B9}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{B2D18EF3-47F3-4375-A740-8BAE2C3E01B9}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{B2D18EF3-47F3-4375-A740-8BAE2C3E01B9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A21FA691-DA8C-47D2-A94F-4CBC86007676}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A21FA691-DA8C-47D2-A94F-4CBC86007676}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A21FA691-DA8C-47D2-A94F-4CBC86007676}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A21FA691-DA8C-47D2-A94F-4CBC86007676}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
-		SolutionGuid = {E5415F05-03B3-4D2A-88F1-F3F31E8F2AAA}
+		SolutionGuid = {6BEEFB58-A660-454A-B9E6-7FE76E06A21B}
 	EndGlobalSection
 EndGlobal
