@@ -1,5 +1,5 @@
 body {
-    box-shadow:inset 100px 100px 490px black;
+    box-shadow:inset 200px 200px 490px black;
     background-image:url(../img/cult-cinema.jpeg);
     background-color: rgb(41, 45, 63) !important;
 }
@@ -99,4 +99,10 @@ body {
     color: #F0F1F6;
     top:92%;
     left:25%;
+}
+.LastName{
+    color: pink;
+}
+.form-bl{
+    top:20%;
 }
