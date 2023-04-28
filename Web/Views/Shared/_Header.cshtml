@@ -1,21 +1,46 @@
-﻿<header class="px-5 mb-1">
+﻿@{
+    if (User.Identity.IsAuthenticated)
+    {
+        ViewBag.Title = "OWNERR";
+    }
+    else
+    {
+        ViewBag.Title = "Index";
+
+    }
+}
+
+<h1 style="font-size:100px">@*@ViewBag.Title*@ Welcome @User.Identity.Name</h1>
+
+<header class="px-5 mb-1">
     <div class="d-flex flex-column text-center">
         <div class="d-flex flex-row align-items-center">
             <div class="p-2 text-uppercase text-light fonto vw-100 row">
                 <div class="col-9 shadowing">Кинофорум</div>
             </div>
             <div class="d-flex col-3 justify-content-around align-content-center">
-                <div class="padding row-cols-auto h-auto">
-                    @Html.ActionLink("Sign in", "Registration", "Login", null, new { @class = "align-content-center text_logo_registration" })
-                </div>
-                <div class="padding row-cols-auto ">
-                    @Html.ActionLink("Log in", "Login", "Login", null, new { @class = "align-content-center text_logo_login" })
-                </div>
-                <div class="padding row-cols-auto">
-                    @*<a href="Registration_Login/PROFILE___SITE.html">
-                            <img class="logo" src="~/Content/images/logo2.png"/>
-                        </a>*@
-                </div>
+                @if (User.Identity.IsAuthenticated)
+                {
+                    if (User.IsInRole("Admin"))
+                    {
+                        @Html.ActionLink("Admin", "Index", "Admin", null, new { @class = "align-content-center" })
+                    }
+                    <div class="padding row-cols-auto h-auto">
+                        @Html.ActionLink("Your Account", "Registration", "Login", null, new { @class = "align-content-center" })
+                    </div>
+                    <div class="padding row-cols-auto h-auto">
+                        @Html.ActionLink("Logout", "Logout", "Login", null, new { @class = "align-content-center" })
+                    </div>
+                }
+                else
+                {
+                    <div class="padding row-cols-auto h-auto">
+                        @Html.ActionLink("Sign in", "Registration", "Login", null, new { @class = "align-content-center text_logo_registration" })
+                    </div>
+                    <div class="padding row-cols-auto ">
+                        @Html.ActionLink("Log in", "Login", "Login", null, new { @class = "align-content-center text_logo_login" })
+                    </div>
+                }
             </div>
         </div>
         <form class="mb-3 row g-0">
