@@ -365,6 +365,7 @@ FodyWeavers.xsd
 BusinessLogic/
 *.config
 */*.config
-*/*/*.dll
+*.dll
+
 .vs/
 *.csproj
