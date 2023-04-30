@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="b03fbff20b7c4f54b51f4f10d8e189fd" Name="Diagram1">
+        <EntityTypeShape EntityType="StorageModel.Actor" Width="1.5" PointX="0.75" PointY="7.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="StorageModel.Movie" Width="1.5" PointX="0.75" PointY="1.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="StorageModel.Role" Width="1.5" PointX="0.75" PointY="10.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="StorageModel.User" Width="1.5" PointX="0.75" PointY="4" IsExpanded="true" />
+        <EntityTypeShape EntityType="StorageModel.UserActor" Width="1.5" PointX="3" PointY="4.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="StorageModel.UserMovie" Width="1.5" PointX="3" PointY="1" IsExpanded="true" />
+        <EntityTypeShape EntityType="StorageModel.UserRole" Width="1.5" PointX="3" PointY="7.25" IsExpanded="true" />
+        <AssociationConnector Association="StorageModel.FK_ActorID" ManuallyRouted="false" />
+        <AssociationConnector Association="StorageModel.FK_Movie_ID" ManuallyRouted="false" />
+        <AssociationConnector Association="StorageModel.FK_Role_ID" ManuallyRouted="false" />
+        <AssociationConnector Association="StorageModel.FK_User_ID" ManuallyRouted="false" />
+        <AssociationConnector Association="StorageModel.FK_UserID" ManuallyRouted="false" />
+        <AssociationConnector Association="StorageModel.FK_UserM_ID" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

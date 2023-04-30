@@ -360,3 +360,11 @@ MigrationBackup/
 
 # Fody - auto-generated XML schema
 FodyWeavers.xsd
+
+# CUSTOM IGNORE SECTION
+BusinessLogic/
+*.config
+*/*.config
+*/*/*.dll
+.vs/
+*.csproj

@@ -1,0 +1,38 @@
+﻿@using System.Web.Optimization
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Кинофорум</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    @Styles.Render("~/bundles/bootstrap/css")
+    @Styles.Render("~/bundles/jquery/css")
+    @Styles.Render("~/bundles/genresStyles/css")
+    @Styles.Render("~/bundles/mainStyle/css")
+    @Styles.Render("~/bundles/stylinn/css")
+    @Styles.Render("~/bundles/swiper/css")
+</head>
+<body>
+    @Html.Partial("_Header")
+    @Html.Partial("_NavBar")
+    @Html.Partial("_Swiper")
+    @Html.Partial("_Upcoming")
+    @Html.Partial("_Footer")
+    @RenderBody()
+    @*<a href="#top" class="anchor rounded-circle fixed-bottom">⇯</a>*@
+
+    @Scripts.Render("~/bundles/jquery/js")
+    @Scripts.Render("~/bundles/bootstrap/js")
+    @Scripts.Render("~/bundles/jquery-ui/js")
+    @Scripts.Render("~/bundles/swiper-bundle/js")
+
+    @Scripts.Render("~/bundles/addTopG/js")
+    @Scripts.Render("~/bundles/getTrending/js")
+    @Scripts.Render("~/bundles/addTrending/js")
+    @Scripts.Render("~/bundles/getUpcoming/js")
+    @Scripts.Render("~/bundles/addUpcoming/js")
+    @Scripts.Render("~/bundles/swiper/js")
+    @Scripts.Render("~/bundles/getGenresTop/js")
+    @Scripts.Render("~/bundles/getForm/js")
+    @Scripts.Render("~/bundles/addForm/js")
+</body>
+</html>
