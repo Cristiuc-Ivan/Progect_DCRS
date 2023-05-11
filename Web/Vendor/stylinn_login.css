@@ -1,9 +1,22 @@
 body {
-    box-shadow: inset 100px 100px 490px black;
-    background-image: url(/Content/images/cult-cinema.jpeg);
     background-color: rgb(41, 45, 63) !important;
     height: 100vh;
+    resize: none;
+    width: 100vw;
+    overflow:auto;
     margin: 0;
+}
+
+canvas {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    resize: none;
+    border: 10px solid;
+    overflow: auto;
+    margin: 0;
+    background-color: rgb(41, 45, 63) !important;
 }
 
 .fonto {
@@ -67,3 +80,8 @@ body {
     top: 92%;
     left: 25%;
 }
+
+
+/*background-image: url(/Content/images/cult-cinema.jpeg);*/
+/* box-shadow: inset 100px 100px 490px black;*/
+

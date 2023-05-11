@@ -105,6 +105,19 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Content\Animation Data\1 Thing.jpg" />
+    <Content Include="Content\Animation Data\10 rambo.jpg" />
+    <Content Include="Content\Animation Data\11 the matrix.jpg" />
+    <Content Include="Content\Animation Data\12 back to the future.jpg" />
+    <Content Include="Content\Animation Data\2 Star wars.jpg" />
+    <Content Include="Content\Animation Data\3 The Godfather.jpg" />
+    <Content Include="Content\Animation Data\4 Jaws.jpg" />
+    <Content Include="Content\Animation Data\5 Deadpool.jpg" />
+    <Content Include="Content\Animation Data\6 hollywood.jpg" />
+    <Content Include="Content\Animation Data\7 Indiana Jones.jpg" />
+    <Content Include="Content\Animation Data\8 pulp fiction.jpg" />
+    <Content Include="Content\Animation Data\9 inception.jpg" />
+    <Content Include="Content\Animation Data\cult-cinema.jpeg" />
     <Content Include="Content\bootstrap-grid.css" />
     <Content Include="Content\bootstrap-grid.min.css" />
     <Content Include="Content\bootstrap-grid.rtl.css" />
@@ -164,6 +177,7 @@
     <Content Include="Vendor\Scripts\getGenresTop.js" />
     <Content Include="Vendor\Scripts\getTrending.js" />
     <Content Include="Vendor\Scripts\getUpcoming.js" />
+    <Content Include="Vendor\Scripts\PostersAnimation.js" />
     <Content Include="Vendor\Scripts\swiper.js" />
     <Content Include="Vendor\stylinn.css" />
     <Content Include="Vendor\stylinn_login.css" />

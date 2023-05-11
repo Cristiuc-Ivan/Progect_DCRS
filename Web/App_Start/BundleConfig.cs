@@ -15,6 +15,8 @@ namespace Web.App_Start
             bundles.Add(new StyleBundle("~/bundles/genresStyles/css")
                 .Include("~/Vendor/genresStyles.css", new CssRewriteUrlTransform()));
 
+
+
             bundles.Add(new StyleBundle("~/bundles/login/css")
                 .Include("~/Vendor/stylinn_login.css", new CssRewriteUrlTransform()));
 
@@ -59,6 +61,9 @@ namespace Web.App_Start
 
             bundles.Add(new Bundle("~/bundles/getUpcoming/js")
                 .Include("~/Vendor/Scripts/getUpcoming.js"));
+
+            bundles.Add(new Bundle("~/bundles/PostersAnimation/js")
+                .Include("~/Vendor/Scripts/PostersAnimation.js"));
 
             bundles.Add(new Bundle("~/bundles/swiper/js")
                 .Include("~/Vendor/Scripts/swiper.js"));
