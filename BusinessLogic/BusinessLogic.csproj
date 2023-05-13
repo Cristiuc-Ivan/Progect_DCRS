@@ -53,6 +53,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="packages.config" />
     <Compile Include="DB\Actor.cs">
       <DependentUpon>StorageEntities.tt</DependentUpon>
     </Compile>
@@ -100,7 +101,6 @@
     <None Include="DB\StorageEntities.edmx.diagram">
       <DependentUpon>StorageEntities.edmx</DependentUpon>
     </None>
-    <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />

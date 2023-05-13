@@ -184,7 +184,6 @@
     <Content Include="Vendor\stylinn_registration.css" />
     <Content Include="Vendor\swiper-bundle.min.css" />
     <Content Include="Vendor\swiper-bundle.min.js" />
-    <Content Include="Web.config" />
     <Content Include="Views\Shared\_Header.cshtml" />
     <Content Include="Views\Shared\_NavBar.cshtml" />
     <Content Include="Views\Shared\_Swiper.cshtml" />
@@ -210,6 +209,13 @@
     <Content Include="Views\Admin\Edit.cshtml" />
     <Content Include="Views\Login\Login.cshtml" />
     <Content Include="Views\Users\Index.cshtml" />
+    <Content Include="web.config" />
+    <None Include="web.Debug.config">
+      <DependentUpon>web.config</DependentUpon>
+    </None>
+    <None Include="web.Release.config">
+      <DependentUpon>web.config</DependentUpon>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Start\BundleConfig.cs" />
