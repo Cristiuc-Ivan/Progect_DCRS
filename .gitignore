@@ -78,3 +78,9 @@ Web/bin/
 /BusinessLogic/BusinessLogic.csproj
 /BusinessLogic/BusinessLogic.csproj
 /Web/Web.config
+/.vs/Blank/DesignTimeBuild/.dtbcache.v2
+/.vs/Blank/v17/.futdcache.v2
+/.vs/ProjectEvaluation/blank.metadata.v6.1
+/.vs/ProjectEvaluation/blank.projects.v6.1
+/BusinessLogic/App.config
+/BusinessLogic/packages.config
