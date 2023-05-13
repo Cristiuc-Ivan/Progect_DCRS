@@ -75,3 +75,5 @@ BusinessLogic/
 Web/bin/
 .vs/
 *.csproj
+/BusinessLogic/BusinessLogic.csproj
+/BusinessLogic/BusinessLogic.csproj
