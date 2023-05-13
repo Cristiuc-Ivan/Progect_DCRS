@@ -11,6 +11,7 @@ using System.Web.SessionState;
 using System.Security.Principal;
 using Domain;
 using System.Web.Configuration;
+using System.Data.Entity;
 
 namespace Web
 {
