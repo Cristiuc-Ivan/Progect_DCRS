@@ -92,11 +92,11 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="App.config" />
     <EntityDeploy Include="DB\StorageEntities.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
       <LastGenOutput>StorageEntities.Designer.cs</LastGenOutput>
     </EntityDeploy>
+    <None Include="App.config" />
     <None Include="DB\StorageEntities.edmx.diagram">
       <DependentUpon>StorageEntities.edmx</DependentUpon>
     </None>
