@@ -77,3 +77,4 @@ Web/bin/
 *.csproj
 /BusinessLogic/BusinessLogic.csproj
 /BusinessLogic/BusinessLogic.csproj
+/Web/Web.config
