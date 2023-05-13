@@ -10,7 +10,7 @@ namespace Domain
 {
     public class ForumContext
     {
-        public UserModel uData { get; set; }
-        public List<RoleModel> uRole { get; set; }
+        public DbSet<UserModel> Users { get; set; }
+        public DbSet<RoleModel> Roles { get; set; }
     }
 }
