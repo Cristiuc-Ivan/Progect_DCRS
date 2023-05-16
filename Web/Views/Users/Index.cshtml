@@ -43,12 +43,12 @@
             @Html.Label("Roles:")
         </th>
         <td>
-            @*@foreach (var role in Model.uRole)
+            @foreach (var role in Model.uRole)
             {
                 @Html.DisplayFor(model => role.Role_Name)
                 <p> </p>
-            }*@
-            @Html.DropDownListFor(m=>m.uRole,new SelectList(),"select option")
+            }
+            @*@Html.DropDownListFor(m=>m.uRole,new SelectList(),"select option")*@
         </td>
     </tr>
 </table>
