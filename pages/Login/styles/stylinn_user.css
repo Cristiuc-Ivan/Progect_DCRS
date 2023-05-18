@@ -1,0 +1,119 @@
+label{
+    color: white;
+}
+
+div a{
+    font-size: xx-large;
+    color: black;
+    text-decoration: none;
+}
+body {
+    box-shadow: inset 100px 100px 490px black;
+    background-image: url(../img/cult-cinema.jpeg);
+    background-color: rgb(41, 45, 63) !important;
+}
+.ab_background{
+    position: absolute;
+    left: 7%;
+    top: 9%;
+    width: 87%;
+    height: 120vh;
+    border: none;
+    backdrop-filter: blur(2px);
+    box-shadow: 20px 20px 20px 20px rgba(0, 0, 0, 0.9);
+    background-color:rgba(1, 1, 122, 0.4)
+    
+}
+.user_info{
+    position: absolute;
+    left:85%;
+    top:17%;
+    padding-bottom: 20%;
+    
+
+}
+ul li{
+padding-bottom: 8%;
+list-style: none;
+}
+.user_profile_png{
+    position: relative;
+    top:20%;
+    left:70%;
+
+}
+.Hello{
+    color: white;
+    position: absolute;
+    top:5%;
+    left: 90%;
+    
+}
+.Forums{
+    position: absolute;
+    top:1%;
+    left:10%;
+    padding-left:2.5%;
+    background-color:rgba(255, 255, 255);
+    width: 200px;
+    height: 55.28px;
+    justify-content: space-between;
+}
+.Genres{
+    position: absolute;
+    top:1%;
+    left: 20%;
+    padding-left:2%;
+    background-color:rgba(255, 255, 255);
+    width: 200px;
+    height: 55.28px;
+    justify-content: space-between;
+}
+.Films{
+    position: absolute;
+    top: 1%;
+    left:30%;
+    padding-left:3%;
+    background-color:rgba(255, 255, 255);
+    width: 200px;
+    height: 55.28px;
+    justify-content: space-between;
+}
+.FavActors{
+    display: block;
+    position: relative;
+    top:-4%;
+    margin-bottom: 2%;
+    margin-left: 5%;
+    margin-top: 3%;
+    background-color: white;
+    width: 9.2%;
+    height: 16vh;
+}
+p{
+    font-size: xx-large;
+    color: white;
+}
+
+.TopicsCreated{
+    padding-top: 1.8%;
+    width: 20%;
+    height: 8%;
+    padding-left: 1.5%;
+    display: flex;
+    margin-top: 3%;
+    background-color: white;
+}
+.TopicsParticipated{
+    padding-top: 1.8%;
+    width: 20%;
+    height: 8%;
+    padding-left: 1.5%;
+    display: flex;
+    margin-top: 3%;
+    background-color: white;
+}
+.FavFilms{
+    margin-top:2%;
+    margin-bottom:5%;
+}
