@@ -21,12 +21,12 @@
             </colgroup>
             <tbody>
                 <tr align="center">
-                    <th style="padding:2.5px;" colspan="1">Image</th>
-                    <th style="padding:2.5px;" colspan="1">@DateTime.Now.Day</th>
+                    <th style="background-color: #777" colspan="1">Image</th>
+                    <th style="background-color: #777" colspan="1">@DateTime.Now</th>
                 </tr>
                 <tr>
-                    <th>@Html.DisplayFor(model => model.uData.Login)</th>
-                    <th>Text</th>
+                    <td style="background-color: #aaa">@Html.DisplayFor(model => model.uData.Login)</td>
+                    <td style="background-color: #aaa">Text</td>
                 </tr>
             </tbody>
         </table>
