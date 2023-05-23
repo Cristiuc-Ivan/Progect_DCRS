@@ -1,0 +1,20 @@
+﻿@using System.Web.Optimization
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Кинофорум</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    @Styles.Render("~/bundles/bootstrap/css")
+    @Styles.Render("~/bundles/jquery/css")
+    
+</head>
+<body>
+   
+    @RenderBody()
+    @*<a href="#top" class="anchor rounded-circle fixed-bottom">⇯</a>*@
+
+    @Scripts.Render("~/bundles/jquery/js")
+    @Scripts.Render("~/bundles/bootstrap/js")
+    
+</body>
+</html>
