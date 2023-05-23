@@ -209,13 +209,14 @@
     <Content Include="Views\Admin\Edit.cshtml" />
     <Content Include="Views\Login\Login.cshtml" />
     <Content Include="Views\Users\Index.cshtml" />
-    <Content Include="web.config" />
     <Content Include="Views\Forum\Forum.cshtml" />
-    <None Include="web.Debug.config">
-      <DependentUpon>web.config</DependentUpon>
+    <Content Include="Web.Config" />
+    <Content Include="Views\web.config" />
+    <None Include="Web.Debug.Config">
+      <DependentUpon>Web.Config</DependentUpon>
     </None>
-    <None Include="web.Release.config">
-      <DependentUpon>web.config</DependentUpon>
+    <None Include="Web.Release.Config">
+      <DependentUpon>Web.Config</DependentUpon>
     </None>
   </ItemGroup>
   <ItemGroup>
@@ -232,9 +233,6 @@
     </Compile>
     <Compile Include="Models\Movie.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="Views\web.config" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

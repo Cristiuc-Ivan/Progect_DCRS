@@ -53,7 +53,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="packages.config" />
+    <None Include="App.config" />
     <Compile Include="DB\Actor.cs">
       <DependentUpon>StorageEntities.tt</DependentUpon>
     </Compile>
@@ -91,13 +91,13 @@
       <DependentUpon>StorageEntities.tt</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
     <EntityDeploy Include="DB\StorageEntities.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
       <LastGenOutput>StorageEntities.Designer.cs</LastGenOutput>
     </EntityDeploy>
-    <None Include="App.config" />
     <None Include="DB\StorageEntities.edmx.diagram">
       <DependentUpon>StorageEntities.edmx</DependentUpon>
     </None>
