@@ -3,8 +3,8 @@
 @{
     ViewBag.Title = "Login";
     Layout = "~/Views/Shared/LayoutLog.cshtml";
-    string[] pathObject = Directory.GetFiles("C:\\Users\\djuls\\source\\repos\\Progect_DCRS\\Web\\Content\\Animation Data");
-    ViewBag.paths = pathObject;
+    //string[] pathObject = Directory.GetFiles("C:\\Users\\djuls\\source\\repos\\Progect_DCRS\\Web\\Content\\Animation Data");
+    //ViewBag.paths = pathObject;
 }
 
 <canvas id="animations" height="200" width="100"></canvas>
@@ -12,11 +12,11 @@
 {
     @Html.AntiForgeryToken()
 
-    <p style="display:none" id="amountPics">@pathObject.Length</p>
+    @*<p style="display:none" id="amountPics">@pathObject.Length</p>
     for (var i = 0; i < @pathObject.Length; i++)
     {
         <p style="display:none" id="picture @i">@pathObject[i]</p>
-    }
+    }*@
 
     <div class="Login_block">
         <a href="~/Home/Index">

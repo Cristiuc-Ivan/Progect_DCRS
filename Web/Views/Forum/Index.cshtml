@@ -1,4 +1,10 @@
-﻿
+﻿@using System.Web.Optimization
+@{
+    Layout = "~/Views/Shared/LayoutComments.cshtml";
+}
+
+@model Domain.ForumContext
+
 @{
     ViewBag.Title = "Forum";
 }
@@ -16,25 +22,26 @@
         <table style="width: 90%">
             <colgroup>
                 <col span="1" style="width: 30%">
-                <col span="2" style="width: 5%">
-                <col span="3" style="width: 65%">
+                <col span="2" style="width: 10%">
+                <col span="3" style="width: 15%">
+                <col span="4" style="width: 15%">
             </colgroup>
             <tbody>
                 <tr>
                     <th style="background-color: #777">Topic</th>
                     <th style="background-color: #777">Replice</th>
+                    <th style="background-color: #777">Creation Time</th>
                     <th style="background-color: #777">Author</th>
                 </tr>
+                @for (var i = 0; i < 10; i++) //change 10 to number o topics we have
+                {
                 <tr>
                     <td style="background-color: #aaa">First topic</td>
                     <td style="background-color: #aaa">0</td>
-                    <td style="background-color: #aaa">Vanea</td>
+                    <td style="background-color: #aaa">@DateTime.Now</td>
+                    <td style="background-color: #aaa">@Html.DisplayFor(model => model.uData.Login)</td>
                 </tr>
-                <tr>
-                    <td style="background-color: #aaa">Second topic</td>
-                    <td style="background-color: #aaa">100</td>
-                    <td style="background-color: #aaa">PHP_Hater</td>
-                </tr>
+                }
             </tbody>
         </table>
     </center>
