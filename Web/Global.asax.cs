@@ -1,17 +1,14 @@
 ﻿using Web.App_Start;
 using System;
-using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using System.Web.Optimization;
 using System.Web.Routing;
 using System.Web.Security;
-using System.Web.SessionState;
 using System.Security.Principal;
 using Domain;
 using System.Web.Configuration;
-using System.Data.Entity;
 
 namespace Web
 {
@@ -19,6 +16,11 @@ namespace Web
     {
         void Application_Start(object sender, EventArgs e)
         {
+            //Database.SetInitializer(new CreateDatabaseIfNotExists<StorageEntities>());
+            //using (var dbContext = new StorageEntities())
+            //{
+            //    dbContext.Database.CreateIfNotExists();
+            //}
             // Code that runs on application startup
             AreaRegistration.RegisterAllAreas();
             //FilterConfig.RegisterGlobalFilters(GlobalFilters.Filters);
@@ -37,7 +39,7 @@ namespace Web
                 UsersRoleProvider usersRoleProvider = new UsersRoleProvider();
                 string[] temp = usersRoleProvider.GetRolesForUser(udata[0]);
                 FormsIdentity identity = new FormsIdentity(ticket);
-                GenericPrincipal gIdentity = new GenericPrincipal(identity,temp);
+                GenericPrincipal gIdentity = new GenericPrincipal(identity, temp);
                 HttpContext.Current.User = gIdentity;
             }
         }

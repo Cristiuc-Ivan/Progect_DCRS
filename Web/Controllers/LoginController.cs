@@ -5,12 +5,13 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using System.Web.Security;
-using System.Web.UI.WebControls;
 
 namespace Web.Controllers
 {
+    [IPBanFilterAttribute]
     public class LoginController : Controller
     {
+        public static int wrongAttempts = 0;
         [HttpGet]
         public ViewResult Login()
         {
@@ -19,6 +20,9 @@ namespace Web.Controllers
         [HttpPost]
         public ActionResult Login(LoginModel model)
         {
+            string ipAddress2 = Request.ServerVariables["REMOTE_ADDR"];
+
+
             StorageEntities db = new StorageEntities();
             bool IsValidUser = db.Users.Any(user => user.User_Login.ToLower() ==
              model.UserLogin && user.User_Password == model.Password);
@@ -40,6 +44,10 @@ namespace Web.Controllers
                 Response.Cookies.Add(cookie);
 
                 return RedirectToAction("Index", "Home");
+            }
+            else
+            {
+                wrongAttempts++;
             }
             //ModelState.AddModelError("", "invalid Username or Password");
             return View();
@@ -85,6 +93,5 @@ namespace Web.Controllers
             FormsAuthentication.SignOut();
             return RedirectToAction("Login");
         }
-
     }
 }
