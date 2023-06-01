@@ -1,0 +1,270 @@
+<!Doctype html>
+<html lang="en">
+
+<head>
+    <!-- Обязательные метатеги -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/forum_comments.css">
+    <link rel="stylesheet" href="css/header.css">
+    <link rel="stylesheet" href="css/footer.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+
+    <!-- Font-styles -->
+    <!-- <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Titillium+Web:ital,wght@1,200&display=swap" rel="stylesheet"> -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@1,100&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lobster&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@500&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@500&display=swap" rel="stylesheet">
+
+
+    <!-- Дополнительный JavaScript; выберите один из двух! -->
+    <!-- Вариант 1: Bootstrap в связке с Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+        crossorigin="anonymous"></script>
+
+    <!-- Вариант 2: Bootstrap JS отдельно от Popper
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js" integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous"></script>
+    -->
+    <title>Movie forum - topics</title>
+</head>
+
+<body>
+    <header class="header">
+
+        <div class="header-container">
+            <div class="header-row">
+                <div class="header-navigationcontainer">
+                    <div class="header-1column-logocontainer">
+                        <img src="images/logo.png" class="img-fluid">
+                    </div>
+
+                    <div class="header-2column">
+                        <div class="header-2column-1rowhome">
+                            <div class="header-2column-1rowhome-imgcontainer">
+                                <a href="#">
+                                    <img src="images/image 8.png" alt="" class="img-fluid">
+                                </a>
+                            </div>
+                            <div
+                                class="header-2column-1rowhome-textcontainer header-2column-1rowhome-textcontainerneon">
+                                <a href="#">
+                                    <span></span>
+                                    <span></span>
+                                    <span></span>
+                                    <span></span>
+                                    Go home
+                                </a>
+                            </div>
+                        </div>
+
+                        <div class="header-2column-2rowbuttonscontainers">
+                            <div class="header-2column-buttonfilmscontainer">
+                                <a href="#"><button type="button"
+                                        class="btn btn-primary btn-lg btn-block customButton">Films</button> </a>
+                            </div>
+
+                            <div class="header-2column-buttongenrescontainer">
+                                <button class="btn btn-primary btn-lg dropdown-toggle customButton" type="button"
+                                    id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+                                    Genres
+                                </button>
+                                <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+                                    <li><a class="dropdown-item" href="#">Action</a></li>
+                                    <li><a class="dropdown-item" href="#">Crime</a></li>
+                                    <li><a class="dropdown-item" href="#">Family</a></li>
+                                    <li><a class="dropdown-item" href="#">Thriller</a></li>
+                                    <li><a class="dropdown-item" href="#">Adventure</a></li>
+                                    <li><a class="dropdown-item" href="#">Documentary</a></li>
+                                    <li><a class="dropdown-item" href="#">Action</a></li>
+                                    <li><a class="dropdown-item" href="#">Horror</a></li>
+                                    <li><a class="dropdown-item" href="#">Animation</a></li>
+                                    <li><a class="dropdown-item" href="#">Comedy</a></li>
+                                </ul>
+                            </div>
+
+                            <div class="header-2column-buttonforumcontainer">
+                                <a href="#"><button type="button"
+                                        class="btn btn-primary btn-lg btn-block customButton">Forum</button> </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="header-3column">
+                        <div class="header-3column-findcontainer">
+                            <div class="header-3column-findtext">
+                                Найдите, что вас интересует:
+                            </div>
+                            <div class="header-3column-findform">
+                                <form>
+                                    <input type="text" name="" placeholder="Поиск..">
+                                    <input type="submit" name="" value="Поиск">
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="header-4column">
+                    <div class="header-4column-profilecontainer">
+                        <div class="header-4column-profile-buttonscontainer">
+                            <div class="header-4column-profile-buttons">
+                                <a href="#"><span>Login</span></a>
+                                <a href="#"><span>Sign up</span></a>
+                            </div>
+                        </div>
+
+                        <div class="header-4column-profile-iconcontainer">
+                            <a href="#">
+                                <img src="images/Your-place.png" alt="" class="img-fluid">
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <section>
+        <div class="container2">
+            <div class="forum-layout">
+                <div class="movieforum-namecontainer">
+                    <div class="movieforum-name">
+                        <a href="#">
+                            Movie-Forum
+                        </a>
+                        &nbsp/&nbsp
+                        <a href="#">
+                            "Name of topic"
+                        </a>
+                        &nbsp/&nbsp
+                        <a href="#">
+                            Comments
+                        </a>
+                    </div>
+                </div>
+
+                <div class="comments-layout">
+                    <div class="comments-layout-head">
+                        <div class="comments-layout-head-authors">Author</div>
+                        <div class="comments-layout-head-topic">"Topic: post's title"</div>
+                    </div>
+
+
+                    <div class="comments-layout-body">
+                        <div class="comments-layout-authorscontainer">
+                            <div class="comments-layout-commentcell">
+                                <div class="comments-layout-commentcellcontainer">
+                                    <div class="comments-layout-username"> China boy</div>
+                                    <img src="images/avatar.png" alt="">
+                                    <div class="posts">Posts <u>45</u></div>
+                                </div>
+                            </div>
+
+                            <div class="comments-layout-coments">
+                                <div class="comments-layout-coments-text">It was amazing film, want more and
+                                    moooooreeeee.</div>
+                                <hr>
+                                <div class="comments-layout-coments-regard">Regard "Username"</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- For example 2 commentary -->
+                <div class="comments-layout">
+                    <div class="comments-layout-head">
+                        <div class="comments-layout-head-authors">Author</div>
+                        <div class="comments-layout-head-topic">"Topic: post's title"</div>
+                    </div>
+
+
+                    <div class="comments-layout-body">
+                        <div class="comments-layout-authorscontainer">
+                            <div class="comments-layout-commentcell">
+                                <div class="comments-layout-commentcellcontainer">
+                                    <div class="comments-layout-username"> China boy</div>
+                                    <img src="images/avatar.png" alt="">
+                                    <div class="posts">Posts <u>45</u></div>
+                                </div>
+                            </div>
+
+                            <div class="comments-layout-coments">
+                                <div class="comments-layout-coments-text">It was amazing film, want more and
+                                    moooooreeeee.</div>
+                                <hr>
+                                <div class="comments-layout-coments-regard">Regard "Username"</div>
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <!-- Area of input -->
+                    <div class="comment-area">
+                        <textarea class="comment-area-input" id="comment" placeholder="Write your comment here:"
+                                required></textarea>
+                                <button class="btncomment btn-add ">Comment<img src="images/plus.png"
+                                    width="30" /></button>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+
+    </section>
+
+    <footer>
+        <div class="row footer align-items-center">
+            <div class="col-4 logo pb-3">
+                <div class="text-center">
+                    <img src="images/logo.png" width="300" class="img-fluid">
+                </div>
+            </div>
+
+            <div class="col-4 rights ">
+                <div class="small">
+                    <ul class="list-inline">
+                        <li class="list-inline-item">&copy; 2023 UTM group</li>
+                        <li class="list-inline-item">All rights reserved.</li>
+                        <li class="list-inline-item"><a href="#0">Terms of use and privacy policy</a>.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="col-4 members">
+                <div class="small">
+                    <ul class="list-inline">
+                        <p class="text-center">Membrers:</p>
+                        <p class="text-center">Dima <br> Alex <br> Ivan <br> Leomir</p>
+
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </footer>
+</body>
+
+</html>

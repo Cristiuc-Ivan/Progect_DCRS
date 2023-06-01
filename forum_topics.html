@@ -1,0 +1,382 @@
+<!Doctype html>
+<html lang="en">
+
+<head>
+    <!-- Обязательные метатеги -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/forum_topics.css">
+    <link rel="stylesheet" href="css/header.css">
+    <link rel="stylesheet" href="css/footer.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+
+    <!-- Font-styles -->
+    <!-- <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Titillium+Web:ital,wght@1,200&display=swap" rel="stylesheet"> -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@1,100&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lobster&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@500&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@500&display=swap" rel="stylesheet">
+
+
+    <!-- Дополнительный JavaScript; выберите один из двух! -->
+    <!-- Вариант 1: Bootstrap в связке с Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+        crossorigin="anonymous"></script>
+
+    <!-- Вариант 2: Bootstrap JS отдельно от Popper
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js" integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous"></script>
+    -->
+
+    <title>Movie forum - topics</title>
+</head>
+
+<body>
+    <header class="header">
+
+        <div class="header-container">
+            <div class="header-row">
+
+                <div class="header-navigationcontainer">
+                    <div class="header-1column-logocontainer">
+                        <img src="images/logo.png" class="img-fluid">
+                    </div>
+
+                    <div class="header-2column">
+                        <div class="header-2column-1rowhome">
+                            <div class="header-2column-1rowhome-imgcontainer">
+                                <a href="#">
+                                    <img src="images/image 8.png" alt="" class="img-fluid">
+                                </a>
+                            </div>
+                            <div
+                                class="header-2column-1rowhome-textcontainer header-2column-1rowhome-textcontainerneon">
+                                <a href="#">
+                                    <span></span>
+                                    <span></span>
+                                    <span></span>
+                                    <span></span>
+                                    Go home
+                                </a>
+                            </div>
+                        </div>
+
+                        <div class="header-2column-2rowbuttonscontainers">
+                            <div class="header-2column-buttonfilmscontainer">
+                                <a href="#"><button type="button"
+                                        class="btn btn-primary btn-lg btn-block customButton">Films</button> </a>
+                            </div>
+
+                            <div class="header-2column-buttongenrescontainer">
+                                <button class="btn btn-primary btn-lg dropdown-toggle customButton" type="button"
+                                    id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+                                    Genres
+                                </button>
+                                <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+                                    <li><a class="dropdown-item" href="#">Action</a></li>
+                                    <li><a class="dropdown-item" href="#">Crime</a></li>
+                                    <li><a class="dropdown-item" href="#">Family</a></li>
+                                    <li><a class="dropdown-item" href="#">Thriller</a></li>
+                                    <li><a class="dropdown-item" href="#">Adventure</a></li>
+                                    <li><a class="dropdown-item" href="#">Documentary</a></li>
+                                    <li><a class="dropdown-item" href="#">Action</a></li>
+                                    <li><a class="dropdown-item" href="#">Horror</a></li>
+                                    <li><a class="dropdown-item" href="#">Animation</a></li>
+                                    <li><a class="dropdown-item" href="#">Comedy</a></li>
+                                </ul>
+                            </div>
+
+                            <div class="header-2column-buttonforumcontainer">
+                                <a href="#"><button type="button"
+                                        class="btn btn-primary btn-lg btn-block customButton">Forum</button> </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="header-3column">
+                        <div class="header-3column-findcontainer">
+                            <div class="header-3column-findtext">
+                                Найдите, что вас интересует:
+                            </div>
+                            <div class="header-3column-findform">
+                                <form>
+                                    <input type="text" name="" placeholder="Поиск..">
+                                    <input type="submit" name="" value="Поиск">
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="header-4column">
+                    <div class="header-4column-profilecontainer">
+                        <div class="header-4column-profile-buttonscontainer">
+                            <div class="header-4column-profile-buttons">
+                                <a href="#"><span>Login</span></a>
+                                <a href="#"><span>Sign up</span></a>
+                            </div>
+                        </div>
+
+                        <div class="header-4column-profile-iconcontainer">
+                            <a href="#">
+                                <img src="images/Your-place.png" alt="" class="img-fluid">
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+
+            </div>
+        </div>
+    </header>
+
+    <section>
+        <div class="container2">
+            <div class="row subforum-row">
+                <div class="forum-layout col-12 col-xl-10 mx-auto mt-3">
+
+                    <div class="movieforum-name">
+                        <a href="#">
+                            Movie-Forum
+                        </a>
+                    </div>
+
+
+                    <div class="forum-tbl">
+                        <div class="header-cell header-cell-text">
+                            <div class="header-topics header-cell-column1">
+                                <div class="header-cell-column1-text">
+                                    Topics
+                                </div>
+                            </div>
+
+                            <div class="header-replies header-cell-column2">
+                                <div class="header-cell-column2-text">
+                                    Replies
+                                </div>
+                            </div>
+
+                            <div class="header-author header-cell-column3">
+                                <div class="header-cell-column3-text">
+                                    Author
+                                </div>
+                            </div>
+
+                            <div class="header-author header-cell-column4">
+                                <div class="header-cell-column4-text">
+                                    Time
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="simple-cells-row">
+                            <div class="simple-cells-topics">
+                                <div class="simple-cells-topics-imageofusercontainer">
+                                    <div class="simple-cells-topics-imageofuser-imgcontainer">
+                                        <div class="simple-cells-topics-imageofuser-icon">
+                                            <a href="#">
+                                                <img src="images/avatar.png" alt="" class="img-fluid">
+                                            </a>
+                                        </div>
+                                    </div>
+                                    <div class="simple-cells-topics-imageofuser-namecontainer ">
+                                        <div class="simple-cells-topics-imageofuser-namecontainer-text">
+                                            China boy
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="simple-cells-topics-typecontainer">
+                                    <div class="simple-cells-topics-type-namecontainer simple-cells-topics-type-name">
+                                        <a href="#">"Topics name. Its the topic about chinaaa and the chinaaa and we
+                                            dance dance dance"</a>
+                                    </div>
+
+                                    <div class="simple-cells-topics-type-lastcommentcontainer">
+                                        <div class="simple-cells-topics-type-lastcomment-text"> Last comment:</div>
+
+                                        <div class="simple-cells-topics-type-lastcommentcontainer-oftext">
+                                            <div class="simple-cells-topics-type-lastcomment-oftext-text">
+                                                "Hello f*ckers i am back in game leeeetsss gooooo"
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="simple-cells-topics-repliescontainer">
+                                <div class="simple-cells-topics-repliescontainer-text">
+                                    5
+                                </div>
+                            </div>
+
+                            <div class="simple-cells-authorcontainer">
+                                <div class="simple-cells-authorcontainer-text">
+                                    "Japanese boy"
+                                </div>
+                            </div>
+
+                            <div class="simple-cells-timecontainer">
+                                <div class="simple-cells-timecontainer-namecontainer">
+                                    <div class="simple-cells-timecontainer-namecontainer-text">By&nbsp</div>
+                                    <div class="simple-cells-timecontainer-namecontainer-text-name">Name</div>
+                                </div>
+
+                                <div class="simple-cells-timecontainer-namecontainer-datecontainer">
+                                    <div class="simple-cells-timecontainer-namecontainer-datecontainer-text">
+                                        25 may 2023, 13:30
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="simple-cells-row-final">
+                            <div class="simple-cells-topics simple-cells-topics-final">
+                                <div class="simple-cells-topics-imageofusercontainer">
+                                    <div class="simple-cells-topics-imageofuser-imgcontainer">
+                                        <div class="simple-cells-topics-imageofuser-icon">
+                                            <a href="#">
+                                                <img src="images/avatar2.png" alt="" class="img-fluid">
+                                            </a>
+                                        </div>
+                                    </div>
+                                    <div class="simple-cells-topics-imageofuser-namecontainerfinal">
+                                        <div class="simple-cells-topics-imageofuser-namecontainer-text">
+                                            Asian guy
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="simple-cells-topics-typecontainerfinal">
+                                    <div class="simple-cells-topics-type-namecontainer simple-cells-topics-type-name">
+                                        <a href="#">"Topics name. Lets go guy i want to eat this tasty chiks on my breakfast"</a>
+                                    </div>
+
+                                    <div class="simple-cells-topics-type-lastcommentcontainer">
+                                        <div class="simple-cells-topics-type-lastcomment-text"> Last comment:</div>
+
+                                        <div class="simple-cells-topics-type-lastcommentcontainer-oftext">
+                                            <div class="simple-cells-topics-type-lastcomment-oftext-text">
+                                                "Alex let's go for a walk, i will show you my world"
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="simple-cells-topics-repliescontainerfinal">
+                                <div class="simple-cells-topics-repliescontainer-text">
+                                    30
+                                </div>
+                            </div>
+
+                            <div class="simple-cells-authorcontainerfinal">
+                                <div class="simple-cells-authorcontainer-text">
+                                    "Japanese boy"
+                                </div>
+                            </div>
+
+                            <div class="simple-cells-timecontainerfinal">
+                                <div class="simple-cells-timecontainer-namecontainer">
+                                    <div class="simple-cells-timecontainer-namecontainer-text">By&nbsp</div>
+                                    <div class="simple-cells-timecontainer-namecontainer-text-name">Asian guy</div>
+                                </div>
+
+                                <div class="simple-cells-timecontainer-namecontainer-datecontainer">
+                                    <div class="simple-cells-timecontainer-namecontainer-datecontainer-text">
+                                        25 may 2023, 13:30
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+
+
+                        <div class="mb-3 clearfix pt-5">
+                            <nav aria-label="Navigate post pages" class="float-lg-start">
+                                <ul class="pagination pagination-sm mb-lg-0">
+                                    <li class="page-item"><a href="#0" class="page-link">1 <span
+                                                class="sr-only">(current)</span></a></li>
+                                    <li class="page-item"><a href="#0" class="page-link">2</a></li>
+                                    <li class="page-item"><a href="#0" class="page-link">3</a></li>
+                                    <li class="page-item"><a href="#0" class="page-link">4</a></li>
+                                    <li class="page-item"><a href="#0" class="page-link">5</a></li>
+                                    <li class="page-item"><a href="#0" class="page-link">&hellip; 31</a></li>
+                                    <li class="page-item"><a href="#0" class="page-link">Next</a></li>
+                                </ul>
+                            </nav>
+
+
+                            <div class="row">
+                                <div class="col">
+                                    <div class="text-end">
+                                        <button class="btn btn-add ">Add new topic <img src="images/plus.png"
+                                                width="30" /></button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+
+    <footer>
+        <div class="row footer align-items-center">
+            <div class="col-4 logo pb-3">
+                <div class="text-center">
+                    <img src="images/logo.png" width="300" class="img-fluid">
+                </div>
+            </div>
+
+            <div class="col-4 rights ">
+                <div class="small">
+                    <ul class="list-inline">
+                        <li class="list-inline-item">&copy; 2023 UTM group</li>
+                        <li class="list-inline-item">All rights reserved.</li>
+                        <li class="list-inline-item"><a href="#0">Terms of use and privacy policy</a>.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="col-4 members">
+                <div class="small">
+                    <ul class="list-inline">
+                        <p class="text-center">Membrers:</p>
+                        <p class="text-center">Dima <br> Alex <br> Ivan <br> Leomir</p>
+
+                    </ul>
+                </div>
+
+            </div>
+        </div>
+    </footer>
+
+</body>
+
+</html>
