@@ -20,9 +20,6 @@ namespace Web.Controllers
         [HttpPost]
         public ActionResult Login(LoginModel model)
         {
-            string ipAddress2 = Request.ServerVariables["REMOTE_ADDR"];
-
-
             StorageEntities db = new StorageEntities();
             bool IsValidUser = db.Users.Any(user => user.User_Login.ToLower() ==
              model.UserLogin && user.User_Password == model.Password);
@@ -44,9 +41,6 @@ namespace Web.Controllers
                 Response.Cookies.Add(cookie);
 
                 return RedirectToAction("Index", "Home");
-            }
-            else
-            {
             }
             //ModelState.AddModelError("", "invalid Username or Password");
             return View();
@@ -86,6 +80,7 @@ namespace Web.Controllers
 
                 // saving user
                 db.Users.Add(user);
+                db.SaveChanges();
 
                 // assigning default role to the user
                 UserRole role = new UserRole();
@@ -93,8 +88,8 @@ namespace Web.Controllers
                 role.Role_ID = 2;
                 db.UserRoles.Add(role);
 
-                // save it
                 db.SaveChanges();
+                // save it
                 return RedirectToAction("Login", "Login", ulog);
             }
             return View("login", ulog);

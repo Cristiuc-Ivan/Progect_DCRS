@@ -55,7 +55,7 @@ namespace Web.App_Start
                 .Include("~/Scripts/bootstrap.min.js"));
 
             bundles.Add(new Bundle("~/bundles/jquery/js")
-                .Include("~/Scripts/jquery-3.6.3.min.js"));
+                .Include("~/Scripts/jquery-3.6.4.min.js"));
 
             bundles.Add(new Bundle("~/bundles/addTopG/js")
                 .Include("~/Vendor/Scripts/addtopG.js"));
@@ -66,11 +66,8 @@ namespace Web.App_Start
             bundles.Add(new Bundle("~/bundles/addUpcoming/js")
                 .Include("~/Vendor/Scripts/addUpcoming.js"));
 
-            bundles.Add(new Bundle("~/bundles/addForm/js")
-                .Include("~/Vendor/Scripts/addForm.js"));
-
-            bundles.Add(new Bundle("~/bundles/getForm/js")
-                .Include("~/Vendor/Scripts/getForm.js"));
+            bundles.Add(new Bundle("~/bundles/processForm/js")
+                .Include("~/Vendor/Scripts/processForm.js"));
 
             bundles.Add(new Bundle("~/bundles/getGenresTop/js")
                 .Include("~/Vendor/Scripts/getGenresTop.js"));

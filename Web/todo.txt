@@ -1,0 +1,14 @@
+﻿4 pics of trending actors and movies on the new html
+add js
+add css
+add the html to the asp.net
+generate 4 of teach most trending entries
+send them to the view (controller must be Films)
+
+
+genres move to the genres DD list
+remove BY forum
+http://localhost:44389/Forum/Topics add movie-forum/TOPICS
+DELETE FILMS
+add authorization filters to forum
+add password hide with *

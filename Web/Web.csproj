@@ -180,6 +180,7 @@
     <Content Include="Scripts\jquery.validate.min.js" />
     <Content Include="Scripts\jquery.validate.unobtrusive.js" />
     <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
+    <Content Include="todo.txt" />
     <Content Include="Vendor\footer.css" />
     <Content Include="Vendor\forum_comments.css" />
     <Content Include="Vendor\forum_input_topicsform.css" />
@@ -187,11 +188,10 @@
     <Content Include="Vendor\genresStyles.css" />
     <Content Include="Vendor\header.css" />
     <Content Include="Vendor\mainStyle.css" />
-    <Content Include="Vendor\Scripts\addForm.js" />
     <Content Include="Vendor\Scripts\addTopG.js" />
     <Content Include="Vendor\Scripts\addTrending.js" />
     <Content Include="Vendor\Scripts\addUpcoming.js" />
-    <Content Include="Vendor\Scripts\getForm.js" />
+    <Content Include="Vendor\Scripts\processForm.js" />
     <Content Include="Vendor\Scripts\getGenresTop.js" />
     <Content Include="Vendor\Scripts\getTrending.js" />
     <Content Include="Vendor\Scripts\getUpcoming.js" />

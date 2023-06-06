@@ -20,7 +20,12 @@ namespace Domain
             // then its banned 
             StorageEntities db = new StorageEntities();
             // Get the IP address
+
             string ipAddress = HttpContext.Current.Request.UserHostAddress;
+            if (db.IPs.Where(model => model.Ip_Address == ipAddress).FirstOrDefault() != null)
+            {
+
+            }
         }
 
         public override void OnActionExecuted(ActionExecutedContext filterContext)

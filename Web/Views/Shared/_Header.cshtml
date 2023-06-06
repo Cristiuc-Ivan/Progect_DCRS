@@ -1,4 +1,4 @@
-﻿@using Domain
+﻿@using Domain;
 <header class="header">
     <div class="header-container">
         <div class="header-row">
@@ -54,7 +54,7 @@
                             </ul>
                         </div>
 
-                        <div class="header-2column-buttonforumcontainer">
+                        <div class="header-2column-buttonforumcontaixner">
                             @Html.ActionLink("Forum", "Topics", "Forum", null, new { @class = "btn btn-primary btn-lg btn-block customButton" })
                         </div>
                     </div>
@@ -67,13 +67,14 @@
                         </div>
                         <div class="header-3column-findform">
                             <form>
-                                <input type="text" name="" placeholder="Поиск..">
-                                <input type="submit" name="" value="Поиск">
+                                <input type="text" name="" placeholder="Поиск.." id="formData">
                             </form>
+                            <button style="width:50px;height:20px" name="" value="Поиск" onclick="processButton()" />
                         </div>
                     </div>
                 </div>
             </div>
+
 
             <div class="header-4column">
                 <div class="header-4column-profilecontainer">
@@ -95,21 +96,22 @@
                                 @Html.ActionLink("Login", "Login", "Login")
                                 @Html.ActionLink("Sign up", "Registration", "Login")
                             </div>
-
-                            <div class="header-4column-profile-iconcontainer">
-                                <a href="#">
-                                    <img src="~/Content/images/Your-place.png" alt="" class="img-fluid">
-                                </a>
-                            </div>
                         }
                     </div>
 
+                    <div class="header-4column-profile-iconcontainer">
+                        <a href="#">
+                            <img src="~/Content/images/logo2.png" alt="" class="img-fluid">
+                        </a>
+                    </div>
                 </div>
             </div>
+
         </div>
     </div>
 
-    <p style="color:antiquewhite;font-size:40px">@User.Identity.Name</p>
+
+    @*<p style="color:antiquewhite;font-size:40px">@User.Identity.Name</p>*@
 
 </header>
 

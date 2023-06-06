@@ -1,0 +1,12 @@
+C:\Users\djuls\source\repos\Progect_DCRS\BusinessLogic\bin\Debug\BusinessLogic.dll.config
+C:\Users\djuls\source\repos\Progect_DCRS\BusinessLogic\bin\Debug\BusinessLogic.dll
+C:\Users\djuls\source\repos\Progect_DCRS\BusinessLogic\bin\Debug\BusinessLogic.pdb
+C:\Users\djuls\source\repos\Progect_DCRS\BusinessLogic\bin\Debug\EntityFramework.dll
+C:\Users\djuls\source\repos\Progect_DCRS\BusinessLogic\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\djuls\source\repos\Progect_DCRS\BusinessLogic\bin\Debug\EntityFramework.xml
+C:\Users\djuls\source\repos\Progect_DCRS\BusinessLogic\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\djuls\source\repos\Progect_DCRS\BusinessLogic\obj\Debug\BusinessLogic.csproj.AssemblyReference.cache
+C:\Users\djuls\source\repos\Progect_DCRS\BusinessLogic\obj\Debug\BusinessLogic.csproj.CoreCompileInputs.cache
+C:\Users\djuls\source\repos\Progect_DCRS\BusinessLogic\obj\Debug\BusinessLogic.csproj.CopyComplete
+C:\Users\djuls\source\repos\Progect_DCRS\BusinessLogic\obj\Debug\BusinessLogic.dll
+C:\Users\djuls\source\repos\Progect_DCRS\BusinessLogic\obj\Debug\BusinessLogic.pdb

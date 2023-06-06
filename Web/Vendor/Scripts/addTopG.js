@@ -74,7 +74,7 @@ function AddContent(fetchedDataMovie, fetchedDataReview) {
                 firstPartP.style.textDecoration = "underline";
 
                 secondPartP.style.textAlign = "justify";
-                
+
 
                 // appending paragraphs to divs
                 flexDiv.appendChild(firstPartP);
@@ -90,5 +90,7 @@ function AddContent(fetchedDataMovie, fetchedDataReview) {
     commentDiv.appendChild(secondCol);
 
     let contaienrDiv = document.querySelector('.comments');
-    contaienrDiv.appendChild(commentDiv);
+    if (commentDiv != null) {
+        contaienrDiv.appendChild(commentDiv);
+    }
 }

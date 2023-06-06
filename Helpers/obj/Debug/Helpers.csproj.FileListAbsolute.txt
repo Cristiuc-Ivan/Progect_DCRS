@@ -1,0 +1,6 @@
+C:\Users\djuls\source\repos\Progect_DCRS\Helpers\bin\Debug\Helpers.dll
+C:\Users\djuls\source\repos\Progect_DCRS\Helpers\bin\Debug\Helpers.pdb
+C:\Users\djuls\source\repos\Progect_DCRS\Helpers\obj\Debug\Helpers.csproj.AssemblyReference.cache
+C:\Users\djuls\source\repos\Progect_DCRS\Helpers\obj\Debug\Helpers.csproj.CoreCompileInputs.cache
+C:\Users\djuls\source\repos\Progect_DCRS\Helpers\obj\Debug\Helpers.dll
+C:\Users\djuls\source\repos\Progect_DCRS\Helpers\obj\Debug\Helpers.pdb
