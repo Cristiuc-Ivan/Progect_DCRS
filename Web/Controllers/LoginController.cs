@@ -24,12 +24,12 @@ namespace Web.Controllers
 
 
             StorageEntities db = new StorageEntities();
-            bool IsValidUser = db.Users.Any(user => user.User_Login.ToLower() ==
+            bool IsValidUser = db.User.Any(user => user.User_Login.ToLower() ==
              model.UserLogin && user.User_Password == model.Password);
             if (IsValidUser)
             {
                 // get the users email
-                User user = db.Users.Where(tempik => tempik.User_Login == model.UserLogin).FirstOrDefault();
+                User user = db.User.Where(tempik => tempik.User_Login == model.UserLogin).FirstOrDefault();
                 // concatenate the user Data
                 string userData = string.Format("{0}|{1}|{2}|{3}", model.UserLogin, model.Password, user.User_Email, user.User_Picture);
                 // create a ticket that expires after N period of time
@@ -62,7 +62,7 @@ namespace Web.Controllers
         public ActionResult Registration(UserModel ulog)
         {
             StorageEntities db = new StorageEntities();
-            User tempUser = db.Users.Where(model => model.User_Login == ulog.Login || model.User_Login == ulog.Email).FirstOrDefault();
+            User tempUser = db.User.Where(model => model.User_Login == ulog.Login || model.User_Login == ulog.Email).FirstOrDefault();
             if (tempUser == null)
             {
                 // creating user 
@@ -85,13 +85,13 @@ namespace Web.Controllers
                 }
 
                 // saving user
-                db.Users.Add(user);
+                db.User.Add(user);
 
                 // assigning default role to the user
                 UserRole role = new UserRole();
                 role.User_ID = user.User_ID;
                 role.Role_ID = 2;
-                db.UserRoles.Add(role);
+                db.UserRole.Add(role);
 
                 // save it
                 db.SaveChanges();

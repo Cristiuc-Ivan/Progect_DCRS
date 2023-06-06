@@ -20,7 +20,7 @@ namespace Web.Controllers
             ForumContext context = new ForumContext();
 
             // find the user in DB by his name
-            var User = db.Users.Where(s => s.User_Login == HttpContext.User.Identity.Name).FirstOrDefault();
+            var User = db.User.Where(s => s.User_Login == HttpContext.User.Identity.Name).FirstOrDefault();
 
             // assemble the userModel
             var userModel = new UserModel();
@@ -30,7 +30,7 @@ namespace Web.Controllers
             userModel.Password = User.User_Password;
 
             // we get the roles by user's ID
-            var uroles = db.UserRoles.Where(s => s.User_ID == User.User_ID).ToList();
+            var uroles = db.UserRole.Where(s => s.User_ID == User.User_ID).ToList();
 
             // collect all roles from the user
             List<RoleModel> roles = new List<RoleModel>();

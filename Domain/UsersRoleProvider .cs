@@ -41,10 +41,10 @@ namespace Domain
         {
             using (StorageEntities context = new StorageEntities())
             {
-                var userRoles = (from user in context.Users
-                                 join roleMapping in context.UserRoles
+                var userRoles = (from user in context.User
+                                 join roleMapping in context.UserRole  
                                  on user.User_ID equals roleMapping.User_ID
-                                 join role in context.Roles
+                                 join role in context.Role
                                  on roleMapping.Role_ID equals role.Role_ID
                                  where user.User_Login == username
                                  select role.Role_Name).ToArray();

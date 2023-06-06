@@ -14,7 +14,7 @@ namespace Web.Controllers
         public ViewResult Index()
         {
             StorageEntities db = new StorageEntities();
-            return View(db.Users);
+            return View(db.User);
         }
 
         public ViewResult Create()
@@ -28,7 +28,7 @@ namespace Web.Controllers
             if (ModelState.IsValid)
             {
                 StorageEntities db = new StorageEntities();
-                db.Users.Add(us);
+                db.User.Add(us);
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
@@ -42,15 +42,15 @@ namespace Web.Controllers
         public ActionResult Delete(int id)
         {
             StorageEntities db = new StorageEntities();
-            User model = db.Users.Find(id);
+            User model = db.User.Find(id);
             if (model != null)
             {
-                List<UserRole> role = db.UserRoles.Where(s => s.User_ID == id).ToList();
+                List<UserRole> role = db.UserRole.Where(s => s.User_ID == id).ToList();
                 foreach (var item in role)
                 {
-                    db.UserRoles.Remove(item);
+                    db.UserRole.Remove(item);
                 }
-                db.Users.Remove(model);
+                db.User.Remove(model);
                 db.SaveChanges();
             }
             return RedirectToAction("Index");
@@ -59,7 +59,7 @@ namespace Web.Controllers
         public ActionResult Edit(int id)
         {
             StorageEntities db = new StorageEntities();
-            User us = db.Users.Find(id);
+            User us = db.User.Find(id);
             ViewBag.isEdit = true;
             return View("Create", us);
         }

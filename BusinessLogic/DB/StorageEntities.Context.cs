@@ -25,18 +25,18 @@ namespace BusinessLogic.DB
             throw new UnintentionalCodeFirstException();
         }
     
-        public virtual DbSet<Actor> Actors { get; set; }
-        public virtual DbSet<IP> IPs { get; set; }
-        public virtual DbSet<Movie> Movies { get; set; }
-        public virtual DbSet<Reply> Replies { get; set; }
-        public virtual DbSet<Role> Roles { get; set; }
-        public virtual DbSet<Topic> Topics { get; set; }
-        public virtual DbSet<TopicReply> TopicReplies { get; set; }
-        public virtual DbSet<User> Users { get; set; }
-        public virtual DbSet<UserActor> UserActors { get; set; }
-        public virtual DbSet<UserMovie> UserMovies { get; set; }
-        public virtual DbSet<UserReply> UserReplies { get; set; }
-        public virtual DbSet<UserRole> UserRoles { get; set; }
-        public virtual DbSet<UserTopic> UserTopics { get; set; }
+        public virtual DbSet<Actor> Actor { get; set; }
+        public virtual DbSet<IPs> IPs { get; set; }
+        public virtual DbSet<Movie> Movie { get; set; }
+        public virtual DbSet<Reply> Reply { get; set; }
+        public virtual DbSet<Role> Role { get; set; }
+        public virtual DbSet<Topic> Topic { get; set; }
+        public virtual DbSet<TopicReply> TopicReply { get; set; }
+        public virtual DbSet<User> User { get; set; }
+        public virtual DbSet<UserActor> UserActor { get; set; }
+        public virtual DbSet<UserMovie> UserMovie { get; set; }
+        public virtual DbSet<UserReply> UserReply { get; set; }
+        public virtual DbSet<UserRole> UserRole { get; set; }
+        public virtual DbSet<UserTopic> UserTopic { get; set; }
     }
 }

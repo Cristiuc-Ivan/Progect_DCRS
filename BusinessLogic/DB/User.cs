@@ -17,11 +17,11 @@ namespace BusinessLogic.DB
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public User()
         {
-            this.UserRoles = new HashSet<UserRole>();
-            this.UserActors = new HashSet<UserActor>();
-            this.UserMovies = new HashSet<UserMovie>();
-            this.UserReplies = new HashSet<UserReply>();
-            this.UserTopics = new HashSet<UserTopic>();
+            this.UserRole = new HashSet<UserRole>();
+            this.UserActor = new HashSet<UserActor>();
+            this.UserMovie = new HashSet<UserMovie>();
+            this.UserReply = new HashSet<UserReply>();
+            this.UserTopic = new HashSet<UserTopic>();
         }
     
         public int User_ID { get; set; }
@@ -31,14 +31,14 @@ namespace BusinessLogic.DB
         public string User_Picture { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<UserRole> UserRoles { get; set; }
+        public virtual ICollection<UserRole> UserRole { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<UserActor> UserActors { get; set; }
+        public virtual ICollection<UserActor> UserActor { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<UserMovie> UserMovies { get; set; }
+        public virtual ICollection<UserMovie> UserMovie { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<UserReply> UserReplies { get; set; }
+        public virtual ICollection<UserReply> UserReply { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<UserTopic> UserTopics { get; set; }
+        public virtual ICollection<UserTopic> UserTopic { get; set; }
     }
 }

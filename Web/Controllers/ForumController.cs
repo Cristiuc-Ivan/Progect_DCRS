@@ -20,12 +20,12 @@ namespace Web.Controllers
             commentsData.ReplyList = new List<ReplyInfo>();
 
             // find the entry and fill it up
-            Topic _Topic = db.Topics.Find(id);
+            Topic _Topic = db.Topic.Find(id);
             commentsData.TopicName = _Topic.Topic_Name;
             commentsData.TopicId = _Topic.Topic_ID;
 
             // all replies related to the Topic
-            List<TopicReply> tr = db.TopicReplies.Where(model => model.Topic_ID == _Topic.Topic_ID).ToList();
+            List<TopicReply> tr = db.TopicReply.Where(model => model.Topic_ID == _Topic.Topic_ID).ToList();
 
             foreach (var Treplyentry in tr)
             {
@@ -33,10 +33,10 @@ namespace Web.Controllers
 
 
                 // we got number of user's topics in previous step
-                User Utemp = db.Users.Where(model => model.User_Login == Treplyentry.Reply.Reply_Author).FirstOrDefault();
+                User Utemp = db.User.Where(model => model.User_Login == Treplyentry.Reply.Reply_Author).FirstOrDefault();
 
                 // calculate number of replies
-                List<UserTopic> uTopic = db.UserTopics.Where(model => model.User_ID == Utemp.User_ID).ToList();
+                List<UserTopic> uTopic = db.UserTopic.Where(model => model.User_ID == Utemp.User_ID).ToList();
 
                 rInfo.RAuthorName = Utemp.User_Login;
                 rInfo.RAuthorPfp = Utemp.User_Picture;
@@ -56,7 +56,7 @@ namespace Web.Controllers
             StorageEntities db = new StorageEntities();
             // get current user
             // find the user in DB by his name
-            var User = db.Users.Where(s => s.User_Login == HttpContext.User.Identity.Name).FirstOrDefault();
+            var User = db.User.Where(s => s.User_Login == HttpContext.User.Identity.Name).FirstOrDefault();
 
             Reply reply = new Reply();
             reply.Reply_Author = User.User_Login;
@@ -70,10 +70,10 @@ namespace Web.Controllers
             TopicReply tReply = new TopicReply();
             tReply.Topic_ID = (int)TopicId;
             tReply.Reply_ID = reply.Reply_ID;
-
-            db.Replies.Add(reply);
-            db.UserReplies.Add(uReply);
-            db.TopicReplies.Add(tReply);
+                
+            db.Reply.Add(reply);
+            db.UserReply.Add(uReply);
+            db.TopicReply.Add(tReply);
             db.SaveChanges();
 
             return RedirectToAction("Comments", new { id = TopicId });
@@ -95,35 +95,35 @@ namespace Web.Controllers
             topic.Topic_Name = newTopic;
             topic.Topic_Date = DateTime.Now;
             topic.Topic_Author = User.Identity.Name;
-            db.Topics.Add(topic);
+            db.Topic.Add(topic);
 
             // find the user's ID knowing name
-            User tempUser = db.Users.Where(model => model.User_Login == topic.Topic_Author).FirstOrDefault();
+            User tempUser = db.User.Where(model => model.User_Login == topic.Topic_Author).FirstOrDefault();
 
             // REPLY
             Reply reply = new Reply();
             reply.Reply_Author = topic.Topic_Author;
             reply.Reply_Date = DateTime.Now;
             reply.Reply_Content = newReply;
-            db.Replies.Add(reply);
+            db.Reply.Add(reply);
 
             // TOPIC+REPLY
             TopicReply tr = new TopicReply();
             tr.Topic_ID = topic.Topic_ID;
             tr.Reply_ID = reply.Reply_ID;
-            db.TopicReplies.Add(tr);
+            db.TopicReply.Add(tr);
 
             // USER+REPLY
             UserReply ur = new UserReply();
             ur.User_ID = tempUser.User_ID;
             ur.UserReply_ID = reply.Reply_ID;
-            db.UserReplies.Add(ur);
+            db.UserReply.Add(ur);
 
             // USER+TOPIC
             UserTopic ut = new UserTopic();
             ut.User_ID = tempUser.User_ID;
             ut.Topic_ID = topic.Topic_ID;
-            db.UserTopics.Add(ut);
+            db.UserTopic.Add(ut);
 
             db.SaveChanges();
 
@@ -137,25 +137,25 @@ namespace Web.Controllers
             ManyTopics manyTopics = new ManyTopics();
             manyTopics.TopicData = new List<TopicData>();
 
-            foreach (var topic in db.UserTopics)
+            foreach (var topic in db.UserTopic)
             {
                 TopicData td = new TopicData();
-                Topic _Topic = db.Topics.Where(model => model.Topic_ID == topic.Topic_ID).FirstOrDefault();
+                Topic _Topic = db.Topic.Where(model => model.Topic_ID == topic.Topic_ID).FirstOrDefault();
                 td.TopicAuthor = _Topic.Topic_Author;
                 td.TopicDate = _Topic.Topic_Date;
                 td.TopicName = _Topic.Topic_Name;
                 td.TopicId = _Topic.Topic_ID;
 
-                List<TopicReply> tr = db.TopicReplies.Where(model => model.Topic_ID == topic.Topic_ID).ToList();
+                List<TopicReply> tr = db.TopicReply.Where(model => model.Topic_ID == topic.Topic_ID).ToList();
 
                 // calculate number of replies
                 int repNumber = tr.Count();
 
                 int rID = tr[tr.Count - 1].Reply_ID;
-                Reply _Reply = db.Replies.Where(model => model.Reply_ID == rID).FirstOrDefault();
+                Reply _Reply = db.Reply.Where(model => model.Reply_ID == rID).FirstOrDefault();
 
                 // find the user's ID knowing name
-                User tempUser = db.Users.Where(model => model.User_Login == _Reply.Reply_Author).FirstOrDefault();
+                User tempUser = db.User.Where(model => model.User_Login == _Reply.Reply_Author).FirstOrDefault();
 
                 td.ProfilePic = tempUser.User_Picture;
                 td.ReplyAuthor = _Reply.Reply_Author;

@@ -17,7 +17,7 @@ namespace BusinessLogic.DB
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public Actor()
         {
-            this.UserActors = new HashSet<UserActor>();
+            this.UserActor = new HashSet<UserActor>();
         }
     
         public int Actor_ID { get; set; }
@@ -25,6 +25,6 @@ namespace BusinessLogic.DB
         public string Actor_Surname { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<UserActor> UserActors { get; set; }
+        public virtual ICollection<UserActor> UserActor { get; set; }
     }
 }

@@ -17,13 +17,13 @@ namespace BusinessLogic.DB
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public Movie()
         {
-            this.UserMovies = new HashSet<UserMovie>();
+            this.UserMovie = new HashSet<UserMovie>();
         }
     
         public int Movie_ID { get; set; }
         public string Movie_Name { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<UserMovie> UserMovies { get; set; }
+        public virtual ICollection<UserMovie> UserMovie { get; set; }
     }
 }
