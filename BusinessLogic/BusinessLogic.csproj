@@ -64,7 +64,13 @@
     <Compile Include="DB\Actor.cs">
       <DependentUpon>StorageEntities.tt</DependentUpon>
     </Compile>
+    <Compile Include="DB\IP.cs">
+      <DependentUpon>StorageEntities.tt</DependentUpon>
+    </Compile>
     <Compile Include="DB\Movie.cs">
+      <DependentUpon>StorageEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DB\Reply.cs">
       <DependentUpon>StorageEntities.tt</DependentUpon>
     </Compile>
     <Compile Include="DB\Role.cs">
@@ -85,6 +91,12 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>StorageEntities.edmx</DependentUpon>
     </Compile>
+    <Compile Include="DB\Topic.cs">
+      <DependentUpon>StorageEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DB\TopicReply.cs">
+      <DependentUpon>StorageEntities.tt</DependentUpon>
+    </Compile>
     <Compile Include="DB\User.cs">
       <DependentUpon>StorageEntities.tt</DependentUpon>
     </Compile>
@@ -94,13 +106,16 @@
     <Compile Include="DB\UserMovie.cs">
       <DependentUpon>StorageEntities.tt</DependentUpon>
     </Compile>
+    <Compile Include="DB\UserReply.cs">
+      <DependentUpon>StorageEntities.tt</DependentUpon>
+    </Compile>
     <Compile Include="DB\UserRole.cs">
       <DependentUpon>StorageEntities.tt</DependentUpon>
     </Compile>
+    <Compile Include="DB\UserTopic.cs">
+      <DependentUpon>StorageEntities.tt</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <None Include="packages.config" />
-  </ItemGroup>
-  <ItemGroup>
     <EntityDeploy Include="DB\StorageEntities.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
       <LastGenOutput>StorageEntities.Designer.cs</LastGenOutput>
@@ -108,6 +123,7 @@
     <None Include="DB\StorageEntities.edmx.diagram">
       <DependentUpon>StorageEntities.edmx</DependentUpon>
     </None>
+    <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />

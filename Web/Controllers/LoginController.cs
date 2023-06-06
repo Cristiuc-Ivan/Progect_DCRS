@@ -1,6 +1,7 @@
 ﻿using BusinessLogic.DB;
 using Domain;
 using System;
+using System.IO;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
@@ -11,7 +12,6 @@ namespace Web.Controllers
     [IPBanFilterAttribute]
     public class LoginController : Controller
     {
-        public static int wrongAttempts = 0;
         [HttpGet]
         public ViewResult Login()
         {
@@ -31,7 +31,7 @@ namespace Web.Controllers
                 // get the users email
                 User user = db.Users.Where(tempik => tempik.User_Login == model.UserLogin).FirstOrDefault();
                 // concatenate the user Data
-                string userData = string.Format("{0}|{1}|{2}", model.UserLogin, model.Password, user.User_Email);
+                string userData = string.Format("{0}|{1}|{2}|{3}", model.UserLogin, model.Password, user.User_Email, user.User_Picture);
                 // create a ticket that expires after N period of time
                 FormsAuthenticationTicket ticket = new FormsAuthenticationTicket(1, model.UserLogin, DateTime.Now, DateTime.Now.AddHours(1), false, userData);
                 // setting authorization 
@@ -47,7 +47,6 @@ namespace Web.Controllers
             }
             else
             {
-                wrongAttempts++;
             }
             //ModelState.AddModelError("", "invalid Username or Password");
             return View();
@@ -71,6 +70,19 @@ namespace Web.Controllers
                 user.User_Login = ulog.Login;
                 user.User_Password = ulog.Password;
                 user.User_Email = ulog.Email;
+
+                if (ulog.ProfilePicture != null && ulog.ProfilePicture.ContentLength > 0)
+                {
+                    string fileName = Path.GetFileName(ulog.ProfilePicture.FileName);
+                    string filePath = Path.Combine(Server.MapPath("~/Content/images/pfp"), fileName);
+                    ulog.ProfilePicture.SaveAs(filePath);
+                    user.User_Picture = "/Content/images/pfp/" + fileName;
+                    // Additional processing or saving logic here
+                }
+                else
+                {
+                    user.User_Picture = "~/Content/images/Your-place.png";
+                }
 
                 // saving user
                 db.Users.Add(user);

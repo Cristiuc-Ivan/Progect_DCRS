@@ -1,4 +1,5 @@
-﻿using System.Web.Optimization;
+﻿using System.Security.Policy;
+using System.Web.Optimization;
 
 namespace Web.App_Start
 {
@@ -31,6 +32,24 @@ namespace Web.App_Start
 
             bundles.Add(new StyleBundle("~/bundles/swiper/css")
                 .Include("~/Vendor/swiper-bundle.min.css", new CssRewriteUrlTransform()));
+
+
+            bundles.Add(new StyleBundle("~/bundles/footer/css")
+                .Include("~/Vendor/footer.css", new CssRewriteUrlTransform()));
+
+            bundles.Add(new StyleBundle("~/bundles/forum_comments/css")
+                .Include("~/Vendor/forum_comments.css", new CssRewriteUrlTransform()));
+
+            bundles.Add(new StyleBundle("~/bundles/forum_input_topicsform/css")
+                .Include("~/Vendor/forum_input_topicsform.css", new CssRewriteUrlTransform()));
+
+            bundles.Add(new StyleBundle("~/bundles/forum_topics/css")
+                .Include("~/Vendor/forum_topics.css", new CssRewriteUrlTransform()));
+
+            bundles.Add(new StyleBundle("~/bundles/header/css")
+                .Include("~/Vendor/header.css", new CssRewriteUrlTransform()));
+
+
 
             bundles.Add(new Bundle("~/bundles/bootstrap/js")
                 .Include("~/Scripts/bootstrap.min.js"));

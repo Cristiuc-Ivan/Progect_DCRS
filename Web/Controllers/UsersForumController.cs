@@ -39,7 +39,7 @@ namespace Web.Controllers
                 // assemble roleModel
                 RoleModel roleModel = new RoleModel();
                 roleModel.Role_ID = entry.Role.Role_ID;
-                roleModel.Role_Name = entry.Role.RoleName;
+                roleModel.Role_Name = entry.Role.Role_Name;
                 // add to the List
                 roles.Add(roleModel);
             }

@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
+using System.Web;
 
 namespace Domain
 {
@@ -13,6 +14,7 @@ namespace Domain
         public string Login { get; set; }
         public string Password { get; set; }
         //public string UserRoles { get; set; }
+        public HttpPostedFileBase ProfilePicture { get; set; }
         public virtual ICollection<RoleModel> Roles { get; }
 
     }

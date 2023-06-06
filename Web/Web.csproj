@@ -142,16 +142,21 @@
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\bootstrap.rtl.css" />
     <Content Include="Content\bootstrap.rtl.min.css" />
+    <Content Include="Content\images\avatar.png" />
+    <Content Include="Content\images\avatar2.png" />
     <Content Include="Content\images\cult-cinema.jpeg" />
+    <Content Include="Content\images\image_8.png" />
     <Content Include="Content\images\logo.png" />
     <Content Include="Content\images\logo2.png" />
     <Content Include="Content\images\logo_source.png" />
+    <Content Include="Content\images\plus.png" />
     <Content Include="Content\images\ui-icons_444444_256x240.png" />
     <Content Include="Content\images\ui-icons_555555_256x240.png" />
     <Content Include="Content\images\ui-icons_777620_256x240.png" />
     <Content Include="Content\images\ui-icons_777777_256x240.png" />
     <Content Include="Content\images\ui-icons_cc0000_256x240.png" />
     <Content Include="Content\images\ui-icons_ffffff_256x240.png" />
+    <Content Include="Content\images\Your-place.png" />
     <Content Include="Content\jquery-ui.css" />
     <Content Include="Content\jquery-ui.structure.css" />
     <Content Include="Content\jquery-ui.theme.css" />
@@ -175,7 +180,12 @@
     <Content Include="Scripts\jquery.validate.min.js" />
     <Content Include="Scripts\jquery.validate.unobtrusive.js" />
     <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
+    <Content Include="Vendor\footer.css" />
+    <Content Include="Vendor\forum_comments.css" />
+    <Content Include="Vendor\forum_input_topicsform.css" />
+    <Content Include="Vendor\forum_topics.css" />
     <Content Include="Vendor\genresStyles.css" />
+    <Content Include="Vendor\header.css" />
     <Content Include="Vendor\mainStyle.css" />
     <Content Include="Vendor\Scripts\addForm.js" />
     <Content Include="Vendor\Scripts\addTopG.js" />
@@ -218,7 +228,10 @@
     <Content Include="Views\Login\Login.cshtml" />
     <Content Include="Views\Users\Index.cshtml" />
     <Content Include="web.config" />
-    <Content Include="Views\Forum\Forum.cshtml" />
+    <Content Include="Views\Forum\NewTopic.cshtml" />
+    <Content Include="Views\Forum\Comments.cshtml" />
+    <Content Include="Views\Forum\Topics.cshtml" />
+    <Content Include="Views\Shared\MainLayout.cshtml" />
     <None Include="web.Debug.config">
       <DependentUpon>web.config</DependentUpon>
     </None>
@@ -246,6 +259,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Content\images\pfp\" />
     <Folder Include="Views\User\" />
   </ItemGroup>
   <ItemGroup>

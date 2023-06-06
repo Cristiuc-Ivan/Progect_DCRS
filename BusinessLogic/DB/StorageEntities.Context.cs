@@ -26,11 +26,17 @@ namespace BusinessLogic.DB
         }
     
         public virtual DbSet<Actor> Actors { get; set; }
+        public virtual DbSet<IP> IPs { get; set; }
         public virtual DbSet<Movie> Movies { get; set; }
+        public virtual DbSet<Reply> Replies { get; set; }
         public virtual DbSet<Role> Roles { get; set; }
+        public virtual DbSet<Topic> Topics { get; set; }
+        public virtual DbSet<TopicReply> TopicReplies { get; set; }
         public virtual DbSet<User> Users { get; set; }
         public virtual DbSet<UserActor> UserActors { get; set; }
         public virtual DbSet<UserMovie> UserMovies { get; set; }
+        public virtual DbSet<UserReply> UserReplies { get; set; }
         public virtual DbSet<UserRole> UserRoles { get; set; }
+        public virtual DbSet<UserTopic> UserTopics { get; set; }
     }
 }

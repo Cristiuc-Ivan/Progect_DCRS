@@ -72,6 +72,5 @@ namespace Web.Controllers
             db.SaveChanges();
             return RedirectToAction("Index");
         }
-
     }
 }

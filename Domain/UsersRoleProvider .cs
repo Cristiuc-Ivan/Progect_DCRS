@@ -47,7 +47,7 @@ namespace Domain
                                  join role in context.Roles
                                  on roleMapping.Role_ID equals role.Role_ID
                                  where user.User_Login == username
-                                 select role.RoleName).ToArray();
+                                 select role.Role_Name).ToArray();
                 return userRoles;
             }
         }

@@ -21,7 +21,7 @@ namespace BusinessLogic.DB
         }
     
         public int Role_ID { get; set; }
-        public string RoleName { get; set; }
+        public string Role_Name { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<UserRole> UserRoles { get; set; }

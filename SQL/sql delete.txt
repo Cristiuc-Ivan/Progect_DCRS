@@ -1,0 +1,10 @@
+DELETE FROM TopicReply;
+GO
+DELETE FROM UserReply;
+GO
+DELETE FROM UserTopic;
+GO
+DELETE FROM Topic;
+GO
+DELETE FROM Reply;
+GO
