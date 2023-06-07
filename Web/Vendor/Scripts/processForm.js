@@ -1,4 +1,5 @@
 let API_url = "https://api.themoviedb.org/3/search/movie?api_key=19fe78adae46ab269edb4ba110fb5389&query=";
+
 async function processButton() {
     var nameValue = document.getElementById("formData").value;
     let vvv = "";
@@ -18,6 +19,31 @@ async function processButton() {
     //    };
     //}
 }
+
+// Assume dataToSend is an object containing the data to send
+var dataToSend = {
+    name: "John",
+    age: 30
+};
+
+// Use the Fetch API or XMLHttpRequest to make the AJAX request
+fetch('/Search/Actors', {
+    method: 'POST',
+    headers: {
+        'Content-Type': 'application/json'
+    },
+    body: JSON.stringify(dataToSend)
+})
+    .then(response => response.json())
+    .then(data => {
+        // Handle the response from the controller
+        console.log(data);
+    })
+    .catch(error => {
+        // Handle the error
+        console.error(error);
+    });
+
 
 
 //document.addEventListener('DOMContentLoaded', function () {

@@ -3,7 +3,8 @@ body {
     height: 100vh;
     resize: none;
     width: 100vw;
-    overflow:auto;
+    overflow: auto;
+    overflow-y: scroll;
     margin: 0;
 }
 
@@ -12,11 +13,14 @@ canvas {
     top: 0;
     left: 0;
     z-index: -1;
-    resize: none;
-    border: 10px solid;
-    overflow: auto;
+    height: 100%;
+    width: 100%;
+    object-fit: fill;
+    /* resize: none; */
+    /*border: 10px solid;*/
+    /* overflow: auto; */
     margin: 0;
-    background-color: rgb(41, 45, 63) !important;
+    /*background-color: rgb(41, 45, 63) !important;*/
 }
 
 .fonto {
@@ -84,4 +88,3 @@ canvas {
 
 /*background-image: url(/Content/images/cult-cinema.jpeg);*/
 /* box-shadow: inset 100px 100px 490px black;*/
-
