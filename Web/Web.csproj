@@ -276,7 +276,8 @@
     <Content Include="Vendor\forum_input_topicsform.css" />
     <Content Include="Vendor\forum_topics.css" />
     <Content Include="Vendor\genresStyles.css" />
-    <Content Include="Vendor\header.css" />
+    <Content Include="Vendor\header_aut.css" />
+    <Content Include="Vendor\header_neaut.css" />
     <Content Include="Vendor\mainStyle.css" />
     <Content Include="Vendor\Scripts\addTopG.js" />
     <Content Include="Vendor\Scripts\addTrending.js" />
@@ -362,6 +363,7 @@
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Content\images\pfp\" />
+    <Folder Include="Vendor\Scripts\fonts\" />
     <Folder Include="Views\User\" />
   </ItemGroup>
   <ItemGroup>

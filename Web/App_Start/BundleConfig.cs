@@ -33,7 +33,6 @@ namespace Web.App_Start
             bundles.Add(new StyleBundle("~/bundles/swiper/css")
                 .Include("~/Vendor/swiper-bundle.min.css", new CssRewriteUrlTransform()));
 
-
             bundles.Add(new StyleBundle("~/bundles/footer/css")
                 .Include("~/Vendor/footer.css", new CssRewriteUrlTransform()));
 
@@ -46,8 +45,11 @@ namespace Web.App_Start
             bundles.Add(new StyleBundle("~/bundles/forum_topics/css")
                 .Include("~/Vendor/forum_topics.css", new CssRewriteUrlTransform()));
 
-            bundles.Add(new StyleBundle("~/bundles/header/css")
-                .Include("~/Vendor/header.css", new CssRewriteUrlTransform()));
+            bundles.Add(new StyleBundle("~/bundles/headerAut/css")
+                .Include("~/Vendor/header_aut.css", new CssRewriteUrlTransform()));
+
+            bundles.Add(new StyleBundle("~/bundles/headerNAut/css")
+                .Include("~/Vendor/header_neaut.css", new CssRewriteUrlTransform()));
 
 
 
