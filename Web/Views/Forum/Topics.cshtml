@@ -113,31 +113,14 @@
 
 
                     <div class="mb-3 clearfix pt-5">
-                        @*<nav aria-label="Navigate post pages" class="float-lg-start">
-                            <ul class="pagination pagination-sm mb-lg-0">
-                                <li class="page-item">
-                                    <a href="#0" class="page-link">
-                                        1 <span class="sr-only">(current)</span>
-                                    </a>
-                                </li>
-                                <li class="page-item"><a href="#0" class="page-link">2</a></li>
-                                <li class="page-item"><a href="#0" class="page-link">3</a></li>
-                                <li class="page-item"><a href="#0" class="page-link">4</a></li>
-                                <li class="page-item"><a href="#0" class="page-link">5</a></li>
-                                <li class="page-item"><a href="#0" class="page-link">&hellip; 31</a></li>
-                                <li class="page-item"><a href="#0" class="page-link">Next</a></li>
-                            </ul>
-                        </nav>*@
-
 
                         <div class="row">
                             <div class="col">
                                 <div class="text-end">
-                                    @Html.ActionLink("Add new topic", "NewTopic", "Forum", null, new { @class = "btn btn-add" })
-                                    @*<button class="btn btn-add ">
-                                            Add new topic <img src="images/plus.png"
-                                                               width="30" />
-                                        </button>*@
+                                    @if (@User.Identity.IsAuthenticated)
+                                    {
+                                        @Html.ActionLink("Add new topic", "NewTopic", "Forum", null, new { @class = "btn btn-add" })
+                                    }
                                 </div>
                             </div>
                         </div>

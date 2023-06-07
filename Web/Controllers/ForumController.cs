@@ -50,6 +50,7 @@ namespace Web.Controllers
             return View(commentsData);
         }
 
+        [Authorize]
         [HttpPost]
         public ActionResult Comments(string textReply, int? TopicId)
         {
@@ -86,6 +87,7 @@ namespace Web.Controllers
         }
 
         [HttpPost]
+        [Authorize]
         public ActionResult NewTopic(string newTopic, string newReply)
         {
             StorageEntities db = new StorageEntities();

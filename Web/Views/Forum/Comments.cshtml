@@ -4,8 +4,6 @@
     Layout = "~/Views/Shared/MainLayout.cshtml";
 }
 
-<h2>forum_comments</h2>
-
 <section>
     <div class="container2">
         <div class="forum-layout">
@@ -46,25 +44,24 @@
                 </div>
             }
 
-
-            @using (Html.BeginForm("Comments", "Forum", FormMethod.Post, new { enctype = "multipart/form-data" }))
+            @if (@User.Identity.IsAuthenticated)
             {
-                <!-- Area of input -->
-                <div class="comment-area">
-                    <textarea class="comment-area-input" name="textReply" id="comment" placeholder="Write your comment here:"
-                              required></textarea>
-                    <button class="btncomment btn-add ">
-                        Comment<img src="images/plus.png"
-                                    width="30" />
-                    </button>
-                </div>
-                @Html.HiddenFor(model => model.TopicId)
-
+                using (Html.BeginForm("Comments", "Forum", FormMethod.Post, new { enctype = "multipart/form-data" }))
+                {
+                    <!-- Area of input -->
+                    <div class="comment-area">
+                        <textarea class="comment-area-input" name="textReply" id="comment" placeholder="Write your comment here:"
+                                  required></textarea>
+                        <button class="btncomment btn-add ">
+                            Comment<img src="images/plus.png"
+                                        width="30" />
+                        </button>
+                    </div>
+                    @Html.HiddenFor(model => model.TopicId)
+                }
             }
         </div>
 
     </div>
-    </div>
-
 
 </section>

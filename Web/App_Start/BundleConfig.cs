@@ -51,8 +51,11 @@ namespace Web.App_Start
 
 
 
+            //bundles.Add(new Bundle("~/bundles/bootstrap/js")
+            //    .Include("~/Scripts/bootstrap.min.js"));
+
             bundles.Add(new Bundle("~/bundles/bootstrap/js")
-                .Include("~/Scripts/bootstrap.min.js"));
+                .Include("~/Scripts/bootstrap.bundle.min.js"));
 
             bundles.Add(new Bundle("~/bundles/jquery/js")
                 .Include("~/Scripts/jquery-3.6.4.min.js"));

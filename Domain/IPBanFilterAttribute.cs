@@ -1,12 +1,8 @@
 ﻿using BusinessLogic.DB;
 using System;
-using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Web;
 using System.Web.Mvc;
-using System.Web.Security;
 
 namespace Domain
 {
@@ -14,18 +10,46 @@ namespace Domain
     {
         public override void OnActionExecuting(ActionExecutingContext filterContext)
         {
-            // Custom logic to be executed before the action method is invoked
-            // 10 is max amount of incorrect login enter
-            // user enters, enters data if its more than 10 times 
-            // then its banned 
             StorageEntities db = new StorageEntities();
-            // Get the IP address
 
             string ipAddress = HttpContext.Current.Request.UserHostAddress;
-            if (db.IPs.Where(model => model.Ip_Address == ipAddress).FirstOrDefault() != null)
+            IP generalIP = db.IPs.Where(model => model.Ip_Address == ipAddress).FirstOrDefault();
+            if (generalIP == null)
             {
-
+                IP iP = new IP
+                {
+                    Ip_Address = ipAddress,
+                    IP_Banned = false,
+                    IP_CreatedAt = DateTime.Now,
+                    IP_wrongAtt = 1
+                };
+                db.IPs.Add(iP);
             }
+            else
+            {
+                if (generalIP.IP_Banned == true)
+                {
+                    DateTime lastLoginAttempt = generalIP.IP_CreatedAt.Value;
+                    TimeSpan difference = DateTime.Now - lastLoginAttempt;
+                    if (difference > TimeSpan.FromMinutes(1))
+                    {
+                        generalIP.IP_wrongAtt = 1;
+                        generalIP.IP_Banned = false;
+                    }
+                }
+                else
+                {
+                    generalIP.IP_wrongAtt++;
+                    generalIP.IP_CreatedAt = DateTime.Now;
+                }
+                if (generalIP.IP_wrongAtt > 10)
+                {
+                    generalIP.IP_Banned = true;
+                    filterContext.Result = new HttpStatusCodeResult(403, "Access Forbidden");
+                    base.OnActionExecuting(filterContext);
+                }
+            }
+            db.SaveChanges();
         }
 
         public override void OnActionExecuted(ActionExecutedContext filterContext)

@@ -1,61 +1,131 @@
-﻿let canvas = document.getElementById("animations");
-let context = canvas.getContext("2d");
+﻿
+// the class
+class Poster {
 
+    // constructor
+    constructor(scaleFactor, URL, offsetX, offsetY) {
+        // basic setup
+        this.scaleFactor = scaleFactor;
+        this.offsetX = offsetX;
+        this.offsetY = offsetY;
+        this.image = new Image();
+        this.opacity = 0;
+
+        this.image.src = URL;
+
+        // canvas setup
+        this.childCanvas = document.createElement("canvas");
+        this.childContext = this.childCanvas.getContext("2d");
+
+        // onload func
+        // this.image.onload = this.draw.bind(this);
+    }
+
+    draw(degree) {
+        this.degree = degree;
+        // get scaled Dimensions of image
+        const scaledWidth = this.image.width * this.scaleFactor;
+        const scaledHeight = this.image.height * this.scaleFactor;
+
+        // set the dimensions of canvas
+        this.childCanvas.width = scaledWidth;
+        this.childCanvas.height = scaledHeight;
+
+        this.childContext.globalAlpha = this.opacity;
+
+        // draw on child and then on parent
+        this.childContext.save();
+        this.childContext.translate(this.childCanvas.width / 2, this.childCanvas.height / 2);
+        this.childContext.rotate(this.degree);
+        this.childContext.drawImage(this.image, -(this.childCanvas.width / 2), -(this.childCanvas.height / 2), scaledWidth, scaledHeight);
+        this.childContext.restore();
+        parentContext.drawImage(this.childCanvas, this.offsetX, this.offsetY);
+    }
+
+}
+
+function trimStringUntilWord(string, word) {
+    var index = string.indexOf(word);
+    if (index !== -1) {
+        return string.substring(index, string.length);
+    }
+    return string;
+}
+
+// GLOBAL PARAMETERS
+// parent canvas and context
+let parentCanvas = document.getElementById("animations");
+let parentContext = parentCanvas.getContext("2d");
+
+// dimensions of canvas
+let maxW = parentCanvas.width = window.innerWidth;
+let maxH = parentCanvas.height = window.innerHeight;
+let min = -200;
+// loading image paths 
 let picSize = document.getElementById("amountPics").textContent;
 let imgPaths = [];
 for (let i = 0; i < picSize; i++) {
-    imgPaths.push(document.getElementById("picture " + i.toString()).textContent);
+    url = document.getElementById("picture " + i.toString()).textContent;
+    relURL=trimStringUntilWord(url,"\\Content\\");
+    imgPaths.push(relURL);
 }
 
 console.log(imgPaths);
 
-let base_image = new Image();
-base_image.src = '../../Content/Animation Data/1 Thing.jpg';
-base_image.onload = function () {
+// initializing array of Posters 
+let posters = [];
+let i = 0;
+imgPaths.forEach(path => {
+    // let poster = new Poster(0.4, path, 0, Math.random() * (maxH - min) + min);
+    let poster = new Poster(0.4, path, Math.random() * (maxW - min) + min, Math.random() * (maxH - min) + min);
+    posters.push(poster);
+})
 
-    // scale the 1000x669 image in half to 500x334 onto a temp canvas
-    let c1 = scaleIt(base_image, 0.50);
+let rot = 0;
+let loadedImages = 0;
 
-    // scale the 500x335 canvas in half to 250x167 onto the main canvas
-    canvas.width = c1.width / 2;
-    canvas.height = c1.height / 2;
-    context.drawImage(c1, 0, 0,100,10);
-
+function preload() {
+    posters.forEach((poster) => {
+        poster.image.onload = function () {
+            loadedImages++;
+            if (loadedImages == posters.length) {
+                setTimeout(startAnimations, 1000);
+            }
+        }
+    })
 }
 
-function scaleIt(source, scaleFactor) {
-    let c = document.createElement('canvas');
-    let ctx = c.getContext('2d');
-    let w = source.width * scaleFactor;
-    let h = source.height * scaleFactor;
-    c.width = w;
-    c.height = h;
-    ctx.drawImage(source, 0, 0, w, h);
-    return (c);
+preload();
+
+let dx = 3;
+let dy = 2;
+let opacityIncrement = 0.01; // Amount to increment opacity per frame
+
+function startAnimations() {
+
+    parentContext.clearRect(0, 0, parentCanvas.width, parentCanvas.height);
+    posters.forEach((poster) => {
+        if (poster.offsetX > parentCanvas.width) {
+            poster.offsetX = 0;
+            poster.opacity = 0;
+            poster.offsetY = Math.random() * parentCanvas.height;
+        }
+        if (poster.offsetY > parentCanvas.height) {
+            poster.offsetY = 0;
+            poster.opacity = 0;
+            poster.offsetX = Math.random() * parentCanvas.width;
+        }
+        // Gradually increase the opacity of the child canvas
+        if (poster.opacity < 1) {
+            poster.opacity += opacityIncrement;
+            poster.opacity = Math.min(poster.opacity, 1);
+        }
+
+        poster.offsetX += dx;
+        poster.offsetY += dy;
+        rot += 0.000;
+        poster.draw(rot);
+    })
+    requestAnimationFrame(startAnimations);
+
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-//function draw() {
-//    requestAnimationFrame(draw);
-//    contex.clearRect(0, 0, innerWidth, innerHeight);
-//    for (let i = 0; i < 100; i++) {
-//        let x = Math.random() * window.innerWidth;
-//        let y = Math.random() * window.innerHeight;
-//        contex.beginPath();
-//        contex.arc(x, y, 10, 0, Math.PI * 2, false);
-//        contex.StrokeStyle = 'blue';
-//        contex.stroke();
-//    }
-//}
-//draw();
