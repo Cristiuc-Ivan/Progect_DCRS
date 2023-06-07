@@ -16,12 +16,6 @@ namespace Web
     {
         void Application_Start(object sender, EventArgs e)
         {
-            Database.SetInitializer(new CreateDatabaseIfNotExists<StorageEntities>());
-            using (var dbContext = new StorageEntities())
-            {
-                dbContext.Database.CreateIfNotExists();
-            }
-
             // Code that runs on application startup
             AreaRegistration.RegisterAllAreas();
             //FilterConfig.RegisterGlobalFilters(GlobalFilters.Filters);

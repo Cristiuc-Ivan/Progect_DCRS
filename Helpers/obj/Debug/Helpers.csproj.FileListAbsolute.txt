@@ -4,3 +4,9 @@ C:\Users\djuls\source\repos\Progect_DCRS\Helpers\obj\Debug\Helpers.csproj.Assemb
 C:\Users\djuls\source\repos\Progect_DCRS\Helpers\obj\Debug\Helpers.csproj.CoreCompileInputs.cache
 C:\Users\djuls\source\repos\Progect_DCRS\Helpers\obj\Debug\Helpers.dll
 C:\Users\djuls\source\repos\Progect_DCRS\Helpers\obj\Debug\Helpers.pdb
+C:\labsprojects\MovieForum (main) Ultimate try3\Project_DCRS\Helpers\bin\Debug\Helpers.dll
+C:\labsprojects\MovieForum (main) Ultimate try3\Project_DCRS\Helpers\bin\Debug\Helpers.pdb
+C:\labsprojects\MovieForum (main) Ultimate try3\Project_DCRS\Helpers\obj\Debug\Helpers.csproj.AssemblyReference.cache
+C:\labsprojects\MovieForum (main) Ultimate try3\Project_DCRS\Helpers\obj\Debug\Helpers.csproj.CoreCompileInputs.cache
+C:\labsprojects\MovieForum (main) Ultimate try3\Project_DCRS\Helpers\obj\Debug\Helpers.dll
+C:\labsprojects\MovieForum (main) Ultimate try3\Project_DCRS\Helpers\obj\Debug\Helpers.pdb
