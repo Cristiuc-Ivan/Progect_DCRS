@@ -7,6 +7,7 @@ body {
 }
 
 .forum-layout {
+    /* background-color:#234E70; */
     background-color: #1E2761;
     /*Indigo*/
     border-radius: 5px 5px 5px 5px;
@@ -22,6 +23,7 @@ body {
     margin-top: 15px;
     display: flex;
     flex-wrap: nowrap;
+
     font-size: 2em;
     margin-top: 0.67em;
     margin-bottom: 0.67em;
@@ -31,14 +33,23 @@ body {
     color: #fff;
 }
 
-    .movieforum-name a {
-        text-decoration: none;
-        color: #fff;
-    }
+.movieforum-name a {
+    text-decoration: none;
+    color: #fff;
+}
 
-        .movieforum-name a:hover {
-            color: #000;
-        }
+.movieforum-name a:hover {
+    color: #000;
+}
+
+.forum-tbl {
+    /* font-size:14px;
+    font-family: 'Titilium Web', sans-serif; */
+
+    /* margin:20px;
+    padding:20px; */
+}
+
 
 /*Header part*/
 .header-cell {
@@ -50,7 +61,11 @@ body {
 }
 
 .header-cell-column1 {
+
     border-radius: 10px 0px 0px 0px;
+    /* background-color: grey; */
+    /* border-right: 2px solid black; */
+
 }
 
 .header-cell-column1-text {
@@ -58,9 +73,21 @@ body {
     color: #ffffff;
 }
 
+.header-cell-column2 {
+    /* border-radius: 0px 0px 0px 0px; */
+    /* background-color: grey; */
+    /* border-right: 2px solid black; */
+}
+
 .header-cell-column2-text {
     margin-left: 20px;
     color: #ffffff;
+}
+
+.header-cell-column3 {
+    /* border-radius: 0px 0px 0px 0px; */
+    /* background-color: grey; */
+    /* border-right: 2px solid black; */
 }
 
 .header-cell-column3-text {
@@ -70,6 +97,7 @@ body {
 
 .header-cell-column4 {
     border-radius: 0px 10px 0px 0px;
+    /* background-color: grey; */
 }
 
 .header-cell-column4-text {
@@ -83,6 +111,7 @@ body {
 .simple-cells-row {
     display: grid;
     grid-template-columns: 55% 12% 13% 20%;
+    /* font-family: 'Titillium Web', sans-serif; */
     font-family: "Times New Roman", Times, serif;
     font-size: 25px;
     background-color: #ffffff;
@@ -95,6 +124,7 @@ body {
 .simple-cells-topics {
     display: grid;
     grid-template-columns: 30% 70%;
+
 }
 
 .simple-cells-topics-imageofusercontainer {
@@ -104,6 +134,7 @@ body {
 
 .simple-cells-topics-imageofuser-imgcontainer {
     padding: 0;
+    /* border-right: 2px solid black; */
 }
 
 .simple-cells-topics-imageofuser-icon {
@@ -113,6 +144,7 @@ body {
 }
 
 .simple-cells-topics-imageofuser-namecontainer {
+    /* border-right: 2px solid black; */
     border-bottom: 2px solid black;
 }
 
@@ -147,6 +179,7 @@ body {
 .simple-cells-topics-type-lastcomment-text {
     font-size: 18px;
     font-family: 'Space Grotesk', sans-serif;
+
 }
 
 .simple-cells-topics-type-lastcommentcontainer-oftext {
@@ -158,6 +191,7 @@ body {
 .simple-cells-topics-type-lastcomment-oftext-text {
     font-size: 14px;
     font-family: 'Lobster', cursive;
+
 }
 
 /*Simple cells replies*/
@@ -222,6 +256,7 @@ body {
 .simple-cells-row-final {
     display: grid;
     grid-template-columns: 55% 12% 13% 20%;
+    /* font-family: 'Titillium Web', sans-serif; */
     font-family: "Times New Roman", Times, serif;
     font-size: 25px;
     background-color: #ffffff;
@@ -230,26 +265,35 @@ body {
     line-height: 100%;
 }
 
+.simple-cells-topics-imageofuser-namecontainerfinal {
+    /* border-right: 2px solid black; */
+    /* border-bottom: 2px solid black; */
+}
+
 .simple-cells-topics-typecontainerfinal {
     display: grid;
     grid-template-rows: 50% 20% 30%;
     border-right: 2px solid black;
+    /* border-bottom: 2px solid black; */
 }
 
 .simple-cells-topics-repliescontainerfinal {
     padding: 57px 55px;
     border-right: 2px solid black;
+    /* border-bottom: 2px solid black; */
 }
 
 .simple-cells-authorcontainerfinal {
     padding: 57px 10px;
     border-right: 2px solid black;
+    /* border-bottom: 2px solid black; */
 }
 
 .simple-cells-timecontainerfinal {
     padding: 40px 20px;
     display: grid;
     grid-template-rows: 50% 50%;
+    /* border-bottom: 2px solid black; */
 }
 
 /*adopting for small screens (smartphones)*/
@@ -258,6 +302,12 @@ body {
         margin: 10px;
         padding: 10px;
     }
+
+    /* .subforum-row
+    {
+        display: grid;
+        
+    } */
 
     .header-cell {
         display: grid;
@@ -286,6 +336,7 @@ body {
         display: grid;
         grid-template-columns: 60% 40%;
         grid-template-rows: 65% 35%;
+
     }
 
     .simple-cells-row-final {
@@ -306,6 +357,7 @@ body {
     }
 
     .simple-cells-topics-final {
+
         border-bottom: 2px solid black;
     }
 
@@ -317,13 +369,16 @@ body {
     .simple-cells-topics-imageofuser-namecontainer-text {
         padding-left: 4px;
     }
+
 }
 
-.btn-add {
+.btn-add
+{
     background-color: #3d02ff;
     color: #fff;
 }
 
-.small {
-    color: #fff;
+.small
+{
+   color:#fff;
 }

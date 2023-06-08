@@ -6,7 +6,7 @@
         <MappingFragment StoreEntitySet="Actor">
           <ScalarProperty Name="Actor_ID" ColumnName="Actor_ID" />
           <ScalarProperty Name="Actor_Name" ColumnName="Actor_Name" />
-          <ScalarProperty Name="Actor_Surname" ColumnName="Actor_Surname" />
+          <ScalarProperty Name="Actor_Picture" ColumnName="Actor_Picture" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
@@ -26,6 +26,7 @@
         <MappingFragment StoreEntitySet="Movie">
           <ScalarProperty Name="Movie_ID" ColumnName="Movie_ID" />
           <ScalarProperty Name="Movie_Name" ColumnName="Movie_Name" />
+          <ScalarProperty Name="Movie_Picture" ColumnName="Movie_Picture" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
@@ -92,9 +93,6 @@
           <ScalarProperty Name="UserMovie_ID" ColumnName="UserMovie_ID" />
           <ScalarProperty Name="User_ID" ColumnName="User_ID" />
           <ScalarProperty Name="Movie_ID" ColumnName="Movie_ID" />
-          <ScalarProperty Name="Review_Date" ColumnName="Review_Date" />
-          <ScalarProperty Name="Review_Text" ColumnName="Review_Text" />
-          <ScalarProperty Name="Review_Grade" ColumnName="Review_Grade" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>

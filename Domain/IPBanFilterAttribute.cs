@@ -21,7 +21,7 @@ namespace Domain
                     Ip_Address = ipAddress,
                     IP_Banned = false,
                     IP_CreatedAt = DateTime.Now,
-                    IP_wrongAtt = 1
+                    IP_wrongAtt = 0
                 };
                 db.IPs.Add(iP);
             }
@@ -33,7 +33,7 @@ namespace Domain
                     TimeSpan difference = DateTime.Now - lastLoginAttempt;
                     if (difference > TimeSpan.FromMinutes(1))
                     {
-                        generalIP.IP_wrongAtt = 1;
+                        generalIP.IP_wrongAtt = 0;
                         generalIP.IP_Banned = false;
                     }
                 }

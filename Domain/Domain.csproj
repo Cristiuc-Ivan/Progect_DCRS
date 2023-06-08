@@ -85,6 +85,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ActorModel.cs" />
     <Compile Include="CommentsData.cs" />
     <Compile Include="CustomIdentity.cs" />
     <Compile Include="ForumContext.cs" />
@@ -95,7 +96,7 @@
     <Compile Include="RoleModel.cs" />
     <Compile Include="TestModel.cs" />
     <Compile Include="TopicData.cs" />
-    <Compile Include="UserCompleteD.cs" />
+    <Compile Include="UserCompleteModel.cs" />
     <Compile Include="UserModel.cs" />
     <Compile Include="UsersRoleProvider .cs" />
   </ItemGroup>

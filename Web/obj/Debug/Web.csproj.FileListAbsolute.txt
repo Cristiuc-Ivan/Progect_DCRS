@@ -1,5 +1,3 @@
-C:\Users\djuls\source\repos\Progect_DCRS\Web\obj\Debug\Web.csproj.AssemblyReference.cache
-C:\Users\djuls\source\repos\Progect_DCRS\Web\obj\Debug\Web.csproj.CoreCompileInputs.cache
 C:\Users\djuls\source\repos\Progect_DCRS\Web\bin\Web.dll.config
 C:\Users\djuls\source\repos\Progect_DCRS\Web\bin\Web.dll
 C:\Users\djuls\source\repos\Progect_DCRS\Web\bin\Web.pdb
@@ -68,6 +66,8 @@ C:\Users\djuls\source\repos\Progect_DCRS\Web\bin\System.Web.Razor.xml
 C:\Users\djuls\source\repos\Progect_DCRS\Web\bin\System.Web.WebPages.xml
 C:\Users\djuls\source\repos\Progect_DCRS\Web\bin\System.Web.WebPages.Deployment.xml
 C:\Users\djuls\source\repos\Progect_DCRS\Web\bin\System.Web.WebPages.Razor.xml
+C:\Users\djuls\source\repos\Progect_DCRS\Web\obj\Debug\Web.csproj.AssemblyReference.cache
+C:\Users\djuls\source\repos\Progect_DCRS\Web\obj\Debug\Web.csproj.CoreCompileInputs.cache
 C:\Users\djuls\source\repos\Progect_DCRS\Web\obj\Debug\Web.csproj.CopyComplete
 C:\Users\djuls\source\repos\Progect_DCRS\Web\obj\Debug\Web.dll
 C:\Users\djuls\source\repos\Progect_DCRS\Web\obj\Debug\Web.pdb

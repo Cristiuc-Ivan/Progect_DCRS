@@ -6,7 +6,7 @@
     </Key>
     <Property Name="Actor_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
     <Property Name="Actor_Name" Type="String" MaxLength="40" FixedLength="false" Unicode="false" Nullable="false" />
-    <Property Name="Actor_Surname" Type="String" MaxLength="40" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Actor_Picture" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
     <NavigationProperty Name="UserActors" Relationship="Self.FK_ActorID" FromRole="Actor" ToRole="UserActor" />
   </EntityType>
   <EntityType Name="IP">
@@ -15,7 +15,7 @@
     </Key>
     <Property Name="IP_Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
     <Property Name="Ip_Address" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
-    <Property Name="IP_wrongAtt" Type="Int32" Nullable="false" />
+    <Property Name="IP_wrongAtt" Type="Int32" />
     <Property Name="IP_CreatedAt" Type="DateTime" Precision="3" />
     <Property Name="IP_Banned" Type="Boolean" />
   </EntityType>
@@ -25,6 +25,7 @@
     </Key>
     <Property Name="Movie_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
     <Property Name="Movie_Name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Movie_Picture" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
     <NavigationProperty Name="UserMovies" Relationship="Self.FK_Movie_ID" FromRole="Movie" ToRole="UserMovie" />
   </EntityType>
   <EntityType Name="Reply">
@@ -75,7 +76,7 @@
     <Property Name="User_Email" Type="String" MaxLength="40" FixedLength="true" Unicode="true" Nullable="false" />
     <Property Name="User_Login" Type="String" MaxLength="40" FixedLength="true" Unicode="true" Nullable="false" />
     <Property Name="User_Password" Type="String" MaxLength="40" FixedLength="true" Unicode="true" Nullable="false" />
-    <Property Name="User_Picture" Type="String" MaxLength="40" FixedLength="true" Unicode="true" Nullable="false" />
+    <Property Name="User_Picture" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
     <NavigationProperty Name="UserRoles" Relationship="Self.FK_User_ID" FromRole="User" ToRole="UserRole" />
     <NavigationProperty Name="UserActors" Relationship="Self.FK_UserID" FromRole="User" ToRole="UserActor" />
     <NavigationProperty Name="UserMovies" Relationship="Self.FK_UserM_ID" FromRole="User" ToRole="UserMovie" />
@@ -99,9 +100,6 @@
     <Property Name="UserMovie_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
     <Property Name="User_ID" Type="Int32" Nullable="false" />
     <Property Name="Movie_ID" Type="Int32" Nullable="false" />
-    <Property Name="Review_Date" Type="DateTime" Nullable="false" Precision="3" />
-    <Property Name="Review_Text" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
-    <Property Name="Review_Grade" Type="Byte" Nullable="false" />
     <NavigationProperty Name="Movie" Relationship="Self.FK_Movie_ID" FromRole="UserMovie" ToRole="Movie" />
     <NavigationProperty Name="User" Relationship="Self.FK_UserM_ID" FromRole="UserMovie" ToRole="User" />
   </EntityType>

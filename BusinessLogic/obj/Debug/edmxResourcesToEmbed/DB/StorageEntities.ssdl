@@ -6,7 +6,7 @@
     </Key>
     <Property Name="Actor_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="Actor_Name" Type="varchar" MaxLength="40" Nullable="false" />
-    <Property Name="Actor_Surname" Type="varchar" MaxLength="40" Nullable="false" />
+    <Property Name="Actor_Picture" Type="text" Nullable="false" />
   </EntityType>
   <EntityType Name="IPs">
     <Key>
@@ -14,7 +14,7 @@
     </Key>
     <Property Name="IP_Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="Ip_Address" Type="varchar" MaxLength="50" Nullable="false" />
-    <Property Name="IP_wrongAtt" Type="int" Nullable="false" />
+    <Property Name="IP_wrongAtt" Type="int" />
     <Property Name="IP_CreatedAt" Type="datetime" />
     <Property Name="IP_Banned" Type="bit" />
   </EntityType>
@@ -24,6 +24,7 @@
     </Key>
     <Property Name="Movie_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="Movie_Name" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Movie_Picture" Type="text" Nullable="false" />
   </EntityType>
   <EntityType Name="Reply">
     <Key>
@@ -66,7 +67,7 @@
     <Property Name="User_Email" Type="nchar" MaxLength="40" Nullable="false" />
     <Property Name="User_Login" Type="nchar" MaxLength="40" Nullable="false" />
     <Property Name="User_Password" Type="nchar" MaxLength="40" Nullable="false" />
-    <Property Name="User_Picture" Type="nchar" MaxLength="40" Nullable="false" />
+    <Property Name="User_Picture" Type="text" Nullable="false" />
   </EntityType>
   <EntityType Name="UserActor">
     <Key>
@@ -83,9 +84,6 @@
     <Property Name="UserMovie_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="User_ID" Type="int" Nullable="false" />
     <Property Name="Movie_ID" Type="int" Nullable="false" />
-    <Property Name="Review_Date" Type="datetime" Nullable="false" />
-    <Property Name="Review_Text" Type="text" Nullable="false" />
-    <Property Name="Review_Grade" Type="tinyint" Nullable="false" />
   </EntityType>
   <EntityType Name="UserReply">
     <Key>
