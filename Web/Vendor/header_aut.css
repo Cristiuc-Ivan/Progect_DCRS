@@ -1,10 +1,10 @@
 /*When authorized user is*/
-/* .header-4column-profile-buttons-butcontainer-aut
+.header-4column-profile-buttonscontainer-aut 
 {
-    box-sizing: border-box;
+    /*display: flex;
+    box-sizing: border-box;*/
     font-family: 'Poppins', sans-serif;
-    display: flex;
-} */
+}
 
 .header-4column-profile-buttons-aut
 {
@@ -23,7 +23,7 @@
     border: 2px solid red;
     margin: 10px;
 
-    width: 140px;
+    width: 160px;
     height: 30px;
 
     text-transform: uppercase;
@@ -36,6 +36,7 @@
     /* -webkit-box-reflect: below 0px linear-gradient(transparent,#0002); */
     transition: 0.5s;
     transition-delay: 0s;
+
 }
 
 .header-4column-profile-buttons-aut a:hover {
@@ -50,6 +51,12 @@
 }
 
 .header-4column-profile-buttons-aut a span {
+    position: relative;
+    z-index: 100;
+}
+
+.header-4column-profile-buttons-aut-textspan 
+{
     position: relative;
     z-index: 100;
 }
@@ -100,4 +107,16 @@
     right: -2px;
     box-shadow: -5px 0 0 red, -5px 0 0 red;
     transition-delay: 0s, 0.5s, 1s, 1s;
+}
+
+.header-4column-profile-iconcontainer-aut {
+    padding-top: 5px;
+    margin: 18px 10px;
+    width: 120px;
+}
+
+.header-4column-profile-iconcontainer-aut img {
+    width: auto;
+    height: auto;
+    object-fit: cover;
 }
