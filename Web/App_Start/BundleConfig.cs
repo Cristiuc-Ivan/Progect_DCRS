@@ -39,11 +39,11 @@ namespace Web.App_Start
             bundles.Add(new StyleBundle("~/bundles/forum_comments/css")
                 .Include("~/Vendor/forum_comments.css", new CssRewriteUrlTransform()));
 
+            bundles.Add(new StyleBundle("~/bundles/forum_Topics/css")
+                .Include("~/Vendor/forum_topics.css", new CssRewriteUrlTransform()));
+
             bundles.Add(new StyleBundle("~/bundles/forum_input_topicsform/css")
                 .Include("~/Vendor/forum_input_topicsform.css", new CssRewriteUrlTransform()));
-
-            bundles.Add(new StyleBundle("~/bundles/forum_topics/css")
-                .Include("~/Vendor/forum_topics.css", new CssRewriteUrlTransform()));
 
             bundles.Add(new StyleBundle("~/bundles/headerAut/css")
                 .Include("~/Vendor/header_aut.css", new CssRewriteUrlTransform()));

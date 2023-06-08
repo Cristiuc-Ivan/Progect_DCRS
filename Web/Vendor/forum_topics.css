@@ -13,32 +13,31 @@ body {
     margin-bottom: 20px;
 }
 
+.movieforum-input-namecontainer {
+    display: block;
+    padding-top: 20px;
+}
 
-.movieforum-name {
+.movieforum-input-nametext {
     background-color: red;
-    padding: 5px;
     border-radius: 10px;
-    margin: 5px;
-    margin-top: 15px;
     display: flex;
-    flex-wrap: nowrap;
+    align-items: flex-start;
+    margin-left: 10px;
     font-size: 2em;
-    margin-top: 0.67em;
-    margin-bottom: 0.67em;
-    margin-left: 0;
-    margin-right: 0;
     font-weight: bold;
+    color: #fff;
+    /*width: 700px; */
+}
+
+.movieforum-input-nametext a {
+    text-decoration: none;
     color: #fff;
 }
 
-    .movieforum-name a {
-        text-decoration: none;
-        color: #fff;
-    }
-
-        .movieforum-name a:hover {
-            color: #000;
-        }
+.movieforum-input-nametext a:hover {
+    color: #000;
+}
 
 /*Header part*/
 .header-cell {
