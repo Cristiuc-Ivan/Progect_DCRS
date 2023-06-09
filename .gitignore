@@ -1,0 +1,9 @@
+.vscode/
+.vs/
+bin/
+debug/
+/Web/Vendor/Scripts/processForm.js
+/Web/Views/Forum/Comments.cshtml
+/Web/web.config
+/Web/Views/Search/Actors.cshtml
+/Web/Views/Shared/_Layout.cshtml
