@@ -73,7 +73,7 @@
                                         {
                                             using (Html.BeginForm("ActorAdd", "Search", FormMethod.Post, new { enctype = "multipart/form-data" }))
                                             {
-                                                <input type="hidden" name="MovieDATA" value="@Model" />
+                                                <input type="hidden" name="ActorDATA" value="@Model" />
                                                 <input type="hidden" name="ActorName" value="@actor.name" />
                                                 <input type="hidden" name="ActorPic" value="@actor.picture" />
                                                 <input type="hidden" name="ActorKnownFor" value="@actor.known_for" />

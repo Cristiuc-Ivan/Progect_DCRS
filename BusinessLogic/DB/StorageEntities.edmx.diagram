@@ -4,7 +4,7 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="230414506b31459c88b56e273bc40295" Name="Diagram1">
+      <Diagram DiagramId="35301ed6568d4a15b3b4d75746c3b466" Name="Diagram1">
         <EntityTypeShape EntityType="StorageModel.Actor" Width="1.5" PointX="0.75" PointY="11" IsExpanded="true" />
         <EntityTypeShape EntityType="StorageModel.IP" Width="1.5" PointX="5.75" PointY="0.75" IsExpanded="true" />
         <EntityTypeShape EntityType="StorageModel.Movie" Width="1.5" PointX="0.75" PointY="3" IsExpanded="true" />

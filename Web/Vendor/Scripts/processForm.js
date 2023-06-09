@@ -4,7 +4,6 @@ let Movie_API_url = "https://api.themoviedb.org/3/search/movie?api_key=19fe78ada
 async function processActor() {
     var nameValue = document.getElementById("ActorSearch").value;
     let vvv = "";
-    console.log(nameValue);
     Actor_API_url += nameValue;
     const response = await fetch(Actor_API_url);
     var data = await response.json();
@@ -63,12 +62,10 @@ async function processActor() {
 async function processMovie() {
     var nameValue = document.getElementById("MovieSearch").value;
     let vvv = "";
-    console.log(nameValue);
     Movie_API_url += nameValue;
     const response = await fetch(Movie_API_url);
     var data = await response.json();
     vvv = data["results"];
-    console.log(vvv);
     let Movies = [];
     for (let index = 0; index < vvv.length; index++) {
         let result = vvv[index]["genre_ids"];
@@ -97,7 +94,6 @@ async function processMovie() {
         for (let key in Genres) {
             actualGenres.push(Genres[key]);
         }
-        console.log(actualGenres);
         //console.log('||||Name:', vvv[index]["title"], "  Genre name:", actualGenres);
         let actualPath = "https://image.tmdb.org/t/p/original" + vvv[index]["poster_path"];
         let movieDetails = {

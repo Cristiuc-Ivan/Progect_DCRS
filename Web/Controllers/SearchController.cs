@@ -29,7 +29,7 @@ namespace Web.Controllers
 
         [HttpPost]
         [Authorize]
-        public ActionResult ActorAdd(string ActorName, string ActorKnownFor, string ActorPic, MoviesModel data)
+        public ActionResult ActorAdd(string ActorName, string ActorKnownFor, string ActorPic, ActorsModel ActorDATA)
         {
             StorageEntities db = new StorageEntities();
             Actor actor = new Actor
@@ -48,7 +48,7 @@ namespace Web.Controllers
             db.UserActors.Add(userActor);
             db.SaveChanges();
 
-            return RedirectToAction("Actors", data);
+            return RedirectToAction("Actors", ActorDATA);
         }
 
         [HttpPost]
