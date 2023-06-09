@@ -69,7 +69,7 @@ namespace Web.App_Start
                 .Include("~/Scripts/bootstrap.bundle.min.js"));
 
             bundles.Add(new Bundle("~/bundles/jquery/js")
-                .Include("~/Scripts/jquery-3.6.4.min.js"));
+                .Include("~/Scripts/jquery-3.7.0.min.js"));
 
             bundles.Add(new Bundle("~/bundles/addTopG/js")
                 .Include("~/Vendor/Scripts/addtopG.js"));
