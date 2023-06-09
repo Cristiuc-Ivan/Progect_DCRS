@@ -55,11 +55,12 @@ namespace Web.App_Start
             bundles.Add(new StyleBundle("~/bundles/forum_searchform/css")
                 .Include("~/Vendor/forum_searchform.css", new CssRewriteUrlTransform()));
 
+            bundles.Add(new StyleBundle("~/bundles/header_neaut/css")
+                .Include("~/Vendor/header_neaut.css", new CssRewriteUrlTransform()));
+
             bundles.Add(new StyleBundle("~/bundles/header_aut/css")
                             .Include("~/Vendor/header_aut.css", new CssRewriteUrlTransform()));
 
-            bundles.Add(new StyleBundle("~/bundles/header_neaut/css")
-                           .Include("~/Vendor/header_neaut.css", new CssRewriteUrlTransform()));
 
             //bundles.Add(new Bundle("~/bundles/bootstrap/js")
             //    .Include("~/Scripts/bootstrap.min.js"));

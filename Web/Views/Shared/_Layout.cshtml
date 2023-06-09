@@ -4,30 +4,6 @@
 <head>
     <title>Кинофорум</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
-
-    <!-- Font-styles -->
-    <!-- <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Titillium+Web:ital,wght@1,200&display=swap" rel="stylesheet"> -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@1,100&display=swap" rel="stylesheet">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500&display=swap" rel="stylesheet">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Lobster&display=swap" rel="stylesheet">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@500&display=swap" rel="stylesheet">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@500&display=swap" rel="stylesheet">
-
     @Styles.Render("~/bundles/bootstrap/css")
     @Styles.Render("~/bundles/jquery/css")
     @Styles.Render("~/bundles/genresStyles/css")
@@ -37,20 +13,10 @@
 
     @Styles.Render("~/bundles/footer/css")
     @Styles.Render("~/bundles/forum_comments/css")
-    @Styles.Render("~/bundles/forum_input_topicsform/css")
     @Styles.Render("~/bundles/forum_topics/css")
-    @if (User.Identity.IsAuthenticated)
-    {
-        @Styles.Render("~/bundles/header_aut/css")
-    }
-    else
-    {
-        @Styles.Render("~/bundles/header_neaut/css")
-    }
-    @Styles.Render("~/bundles/forum_personalprofile/css")
-    @Styles.Render("~/bundles/forum_searchform/css")
+    @Styles.Render("~/bundles/forum_input_topicsform/css")
+    @Styles.Render("~/bundles/header_aut/css")
     @Styles.Render("~/bundles/header_neaut/css")
-
 </head>
 <body>
     @Html.Partial("_Header")
@@ -62,7 +28,7 @@
     @Scripts.Render("~/bundles/bootstrap/js")
     @Scripts.Render("~/bundles/jquery-ui/js")
     @Scripts.Render("~/bundles/swiper-bundle/js")
-
+        
     @Scripts.Render("~/bundles/addTopG/js")
     @Scripts.Render("~/bundles/getTrending/js")
     @Scripts.Render("~/bundles/addTrending/js")
@@ -71,7 +37,5 @@
     @Scripts.Render("~/bundles/swiper/js")
     @Scripts.Render("~/bundles/getGenresTop/js")
     @Scripts.Render("~/bundles/processForm/js")
-    @Scripts.Render("~/bundles/vanilla-tilt/js")
-    @Scripts.Render("~/bundles/forum_addactors/js")
 </body>
 </html>

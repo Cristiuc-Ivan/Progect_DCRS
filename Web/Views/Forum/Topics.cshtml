@@ -1,7 +1,9 @@
-﻿@model Domain.ManyTopics
+﻿@using Domain
+@model Domain.ManyTopics
+
 @{
     ViewBag.Title = "forum_topics";
-    Layout = "~/Views/Shared/_Layout.cshtml";
+    Layout = "~/Views/Shared/MainLayout.cshtml";
 }
 
 @*<h2>forum_topics</h2>*@
@@ -57,14 +59,15 @@
                         <div class="simple-cells-row">
                             <div class="simple-cells-topics simple-cells-topics-final">
                                 <div class="simple-cells-topics-imageofusercontainer">
-                                    <div class="simple-cells-topics-imageofuser-imgcontainer">
-                                        <div class="simple-cells-topics-imageofuser-icon">
-                                            <a href="#">
-                                                <img src="@topic.ProfilePic" alt="" class="img-fluid">
-                                            </a>
-                                        </div>
-                                    </div>
-                                    <div class="simple-cells-topics-imageofuser-namecontainerfinal">
+                                    
+	                                <div class="simple-cells-topics-imageofuser-icon">
+
+		                                <a href="#">
+			                                <img src="@topic.ProfilePic" alt="" class="img-fluid">
+		                                </a>
+	                                </div>
+                                   
+                                    <div class="simple-cells-topics-imageofuser-namecontainer">
                                         <div class="simple-cells-topics-imageofuser-namecontainer-text">
                                             @topic.ReplyAuthor
                                         </div>
@@ -103,7 +106,7 @@
 
                             <div class="simple-cells-timecontainerfinal">
                                 <div class="simple-cells-timecontainer-namecontainer">
-                                    <div class="simple-cells-timecontainer-namecontainer-text">By&nbsp</div>
+                                    <div class="simple-cells-timecontainer-namecontainer-text"></div>
                                     @*<div class="simple-cells-timecontainer-namecontainer-text-name">Asian guy</div>*@
                                 </div>
 

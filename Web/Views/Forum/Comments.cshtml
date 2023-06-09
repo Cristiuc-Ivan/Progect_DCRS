@@ -1,7 +1,7 @@
 ﻿@model Domain.CommentsData
 @{
     ViewBag.Title = "forum_comments";
-    Layout = "~/Views/Shared/_Layout.cshtml";
+    Layout = "~/Views/Shared/MainLayout.cshtml";
 }
 
 <section>
@@ -50,8 +50,12 @@
                 {
                     <!-- Area of input -->
                     <div class="comment-area">
-                        <textarea class="comment-area-input" name="textReply" id="comment" placeholder="Write your comment here:"required></textarea>
-                        <button class="btncomment btn-add ">Comment<img src="images/plus.png" width="30" /></button>
+                        <textarea class="comment-area-input" name="textReply" id="comment" placeholder="Write your comment here:"
+                                  required></textarea>
+                        <button class="btncomment btn-add ">
+                            Comment<img src="images/plus.png"
+                                        width="30" />
+                        </button>
                     </div>
                     @Html.HiddenFor(model => model.TopicId)
                 }
