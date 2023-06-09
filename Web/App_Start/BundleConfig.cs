@@ -33,33 +33,25 @@ namespace Web.App_Start
             bundles.Add(new StyleBundle("~/bundles/swiper/css")
                 .Include("~/Vendor/swiper-bundle.min.css", new CssRewriteUrlTransform()));
 
-
             bundles.Add(new StyleBundle("~/bundles/footer/css")
                 .Include("~/Vendor/footer.css", new CssRewriteUrlTransform()));
 
             bundles.Add(new StyleBundle("~/bundles/forum_comments/css")
                 .Include("~/Vendor/forum_comments.css", new CssRewriteUrlTransform()));
 
+            bundles.Add(new StyleBundle("~/bundles/forum_Topics/css")
+                .Include("~/Vendor/forum_topics.css", new CssRewriteUrlTransform()));
+
             bundles.Add(new StyleBundle("~/bundles/forum_input_topicsform/css")
                 .Include("~/Vendor/forum_input_topicsform.css", new CssRewriteUrlTransform()));
 
-            bundles.Add(new StyleBundle("~/bundles/forum_topics/css")
-                .Include("~/Vendor/forum_topics.css", new CssRewriteUrlTransform()));
+            bundles.Add(new StyleBundle("~/bundles/headerAut/css")
+                .Include("~/Vendor/header_aut.css", new CssRewriteUrlTransform()));
 
-            //bundles.Add(new StyleBundle("~/bundles/header/css")
-            //    .Include("~/Vendor/header.css", new CssRewriteUrlTransform()));
+            bundles.Add(new StyleBundle("~/bundles/headerNAut/css")
+                .Include("~/Vendor/header_neaut.css", new CssRewriteUrlTransform()));
 
-            bundles.Add(new StyleBundle("~/bundles/forum_personalprofile/css")
-                .Include("~/Vendor/forum_personalprofile.css", new CssRewriteUrlTransform()));
 
-            bundles.Add(new StyleBundle("~/bundles/forum_searchform/css")
-                .Include("~/Vendor/forum_searchform.css", new CssRewriteUrlTransform()));
-
-            bundles.Add(new StyleBundle("~/bundles/header_aut/css")
-                            .Include("~/Vendor/header_aut.css", new CssRewriteUrlTransform()));
-
-            bundles.Add(new StyleBundle("~/bundles/header_neaut/css")
-                           .Include("~/Vendor/header_neaut.css", new CssRewriteUrlTransform()));
 
             //bundles.Add(new Bundle("~/bundles/bootstrap/js")
             //    .Include("~/Scripts/bootstrap.min.js"));
@@ -93,12 +85,6 @@ namespace Web.App_Start
 
             bundles.Add(new Bundle("~/bundles/PostersAnimation/js")
                 .Include("~/Vendor/Scripts/PostersAnimation.js"));
-
-            bundles.Add(new Bundle("~/bundles/forum_addactors/js")
-               .Include("~/Vendor/Scripts/forum_addactors.js"));
-
-            bundles.Add(new Bundle("~/bundles/vanilla-tilt/js")
-               .Include("~/Vendor/Scripts/vanilla-tilt.js"));
 
             bundles.Add(new Bundle("~/bundles/swiper/js")
                 .Include("~/Vendor/Scripts/swiper.js"));

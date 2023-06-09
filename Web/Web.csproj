@@ -274,25 +274,20 @@
     <Content Include="Vendor\footer.css" />
     <Content Include="Vendor\forum_comments.css" />
     <Content Include="Vendor\forum_input_topicsform.css" />
-    <Content Include="Vendor\forum_personalprofile.css" />
-    <Content Include="Vendor\forum_searchform.css" />
     <Content Include="Vendor\forum_topics.css" />
     <Content Include="Vendor\genresStyles.css" />
-    <Content Include="Vendor\header.css" />
     <Content Include="Vendor\header_aut.css" />
     <Content Include="Vendor\header_neaut.css" />
     <Content Include="Vendor\mainStyle.css" />
     <Content Include="Vendor\Scripts\addTopG.js" />
     <Content Include="Vendor\Scripts\addTrending.js" />
     <Content Include="Vendor\Scripts\addUpcoming.js" />
-    <Content Include="Vendor\Scripts\forum_addactors.js" />
     <Content Include="Vendor\Scripts\processForm.js" />
     <Content Include="Vendor\Scripts\getGenresTop.js" />
     <Content Include="Vendor\Scripts\getTrending.js" />
     <Content Include="Vendor\Scripts\getUpcoming.js" />
     <Content Include="Vendor\Scripts\PostersAnimation.js" />
     <Content Include="Vendor\Scripts\swiper.js" />
-    <Content Include="Vendor\Scripts\vanilla-tilt.js" />
     <Content Include="Vendor\stylinn.css" />
     <Content Include="Vendor\stylinn_login.css" />
     <Content Include="Vendor\stylinn_registration.css" />
@@ -338,12 +333,6 @@
     <Content Include="Scripts\popper.js.map" />
     <Content Include="Scripts\popper-utils.min.js.map" />
     <Content Include="Scripts\popper-utils.js.map" />
-    <Content Include="Views\Search\Movies.cshtml" />
-    <Content Include="Views\Profile\Index.cshtml" />
-    <Content Include="Vendor\fonts\earthrealm.ttf" />
-    <Content Include="Vendor\fonts\MKXTitle.ttf" />
-    <Content Include="Vendor\fonts\Sesame.otf" />
-    <Content Include="Views\Shared\NewLayout.cshtml" />
     <Content Include="Views\Search\Actors.cshtml" />
     <None Include="web.Debug.config">
       <DependentUpon>web.config</DependentUpon>
@@ -360,7 +349,6 @@
     <Compile Include="Controllers\GenresController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\LoginController.cs" />
-    <Compile Include="Controllers\ProfileController.cs" />
     <Compile Include="Controllers\SearchController.cs" />
     <Compile Include="Controllers\UsersForumController.cs" />
     <Compile Include="Global.asax.cs">
@@ -375,6 +363,7 @@
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Content\images\pfp\" />
+    <Folder Include="Vendor\Scripts\fonts\" />
     <Folder Include="Views\User\" />
   </ItemGroup>
   <ItemGroup>

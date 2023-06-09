@@ -1,0 +1,20 @@
+{
+  "SerializedFilePath": "c:\\Users\\djuls\\source\\repos\\Progect_DCRS\\Domain\\obj\\Debug\\project.razor.json",
+  "FilePath": "c:\\Users\\djuls\\source\\repos\\Progect_DCRS\\Domain\\Domain.csproj",
+  "Configuration": {
+    "ConfigurationName": "UnsupportedRazor",
+    "LanguageVersion": "1.0",
+    "Extensions": [
+      {
+        "ExtensionName": "UnsupportedRazorExtension"
+      }
+    ]
+  },
+  "ProjectWorkspaceState": {
+    "TagHelpers": [],
+    "CSharpLanguageVersion": 703
+  },
+  "RootNamespace": null,
+  "Documents": [],
+  "SerializationFormat": "0.3"
+}

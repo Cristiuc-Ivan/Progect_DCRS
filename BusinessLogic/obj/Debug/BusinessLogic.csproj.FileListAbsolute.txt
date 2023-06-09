@@ -1,0 +1,36 @@
+C:\Users\djuls\source\repos\Progect_DCRS\BusinessLogic\bin\Debug\BusinessLogic.dll.config
+C:\Users\djuls\source\repos\Progect_DCRS\BusinessLogic\bin\Debug\BusinessLogic.dll
+C:\Users\djuls\source\repos\Progect_DCRS\BusinessLogic\bin\Debug\BusinessLogic.pdb
+C:\Users\djuls\source\repos\Progect_DCRS\BusinessLogic\bin\Debug\EntityFramework.dll
+C:\Users\djuls\source\repos\Progect_DCRS\BusinessLogic\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\djuls\source\repos\Progect_DCRS\BusinessLogic\bin\Debug\EntityFramework.xml
+C:\Users\djuls\source\repos\Progect_DCRS\BusinessLogic\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\djuls\source\repos\Progect_DCRS\BusinessLogic\obj\Debug\BusinessLogic.csproj.AssemblyReference.cache
+C:\Users\djuls\source\repos\Progect_DCRS\BusinessLogic\obj\Debug\BusinessLogic.csproj.CoreCompileInputs.cache
+C:\Users\djuls\source\repos\Progect_DCRS\BusinessLogic\obj\Debug\BusinessLogic.csproj.CopyComplete
+C:\Users\djuls\source\repos\Progect_DCRS\BusinessLogic\obj\Debug\BusinessLogic.dll
+C:\Users\djuls\source\repos\Progect_DCRS\BusinessLogic\obj\Debug\BusinessLogic.pdb
+C:\labsprojects\MovieForum (main) Ultimate try3\Project_DCRS\BusinessLogic\bin\Debug\BusinessLogic.dll.config
+C:\labsprojects\MovieForum (main) Ultimate try3\Project_DCRS\BusinessLogic\bin\Debug\BusinessLogic.dll
+C:\labsprojects\MovieForum (main) Ultimate try3\Project_DCRS\BusinessLogic\bin\Debug\BusinessLogic.pdb
+C:\labsprojects\MovieForum (main) Ultimate try3\Project_DCRS\BusinessLogic\bin\Debug\EntityFramework.dll
+C:\labsprojects\MovieForum (main) Ultimate try3\Project_DCRS\BusinessLogic\bin\Debug\EntityFramework.SqlServer.dll
+C:\labsprojects\MovieForum (main) Ultimate try3\Project_DCRS\BusinessLogic\bin\Debug\EntityFramework.xml
+C:\labsprojects\MovieForum (main) Ultimate try3\Project_DCRS\BusinessLogic\bin\Debug\EntityFramework.SqlServer.xml
+C:\labsprojects\MovieForum (main) Ultimate try3\Project_DCRS\BusinessLogic\obj\Debug\BusinessLogic.csproj.AssemblyReference.cache
+C:\labsprojects\MovieForum (main) Ultimate try3\Project_DCRS\BusinessLogic\obj\Debug\BusinessLogic.csproj.CoreCompileInputs.cache
+C:\labsprojects\MovieForum (main) Ultimate try3\Project_DCRS\BusinessLogic\obj\Debug\BusinessLogic.csproj.CopyComplete
+C:\labsprojects\MovieForum (main) Ultimate try3\Project_DCRS\BusinessLogic\obj\Debug\BusinessLogic.dll
+C:\labsprojects\MovieForum (main) Ultimate try3\Project_DCRS\BusinessLogic\obj\Debug\BusinessLogic.pdb
+C:\labsprojects\MovieForum 2 Ultimate (works)\Project_DCRS\BusinessLogic\bin\Debug\BusinessLogic.dll.config
+C:\labsprojects\MovieForum 2 Ultimate (works)\Project_DCRS\BusinessLogic\bin\Debug\BusinessLogic.dll
+C:\labsprojects\MovieForum 2 Ultimate (works)\Project_DCRS\BusinessLogic\bin\Debug\BusinessLogic.pdb
+C:\labsprojects\MovieForum 2 Ultimate (works)\Project_DCRS\BusinessLogic\bin\Debug\EntityFramework.dll
+C:\labsprojects\MovieForum 2 Ultimate (works)\Project_DCRS\BusinessLogic\bin\Debug\EntityFramework.SqlServer.dll
+C:\labsprojects\MovieForum 2 Ultimate (works)\Project_DCRS\BusinessLogic\bin\Debug\EntityFramework.xml
+C:\labsprojects\MovieForum 2 Ultimate (works)\Project_DCRS\BusinessLogic\bin\Debug\EntityFramework.SqlServer.xml
+C:\labsprojects\MovieForum 2 Ultimate (works)\Project_DCRS\BusinessLogic\obj\Debug\BusinessLogic.csproj.AssemblyReference.cache
+C:\labsprojects\MovieForum 2 Ultimate (works)\Project_DCRS\BusinessLogic\obj\Debug\BusinessLogic.csproj.CoreCompileInputs.cache
+C:\labsprojects\MovieForum 2 Ultimate (works)\Project_DCRS\BusinessLogic\obj\Debug\BusinessLogic.csproj.CopyComplete
+C:\labsprojects\MovieForum 2 Ultimate (works)\Project_DCRS\BusinessLogic\obj\Debug\BusinessLogic.dll
+C:\labsprojects\MovieForum 2 Ultimate (works)\Project_DCRS\BusinessLogic\obj\Debug\BusinessLogic.pdb

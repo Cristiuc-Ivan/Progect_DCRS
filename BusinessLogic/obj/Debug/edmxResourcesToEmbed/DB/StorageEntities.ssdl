@@ -1,0 +1,321 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="StorageModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="Actor">
+    <Key>
+      <PropertyRef Name="Actor_ID" />
+    </Key>
+    <Property Name="Actor_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Actor_Name" Type="varchar" MaxLength="40" Nullable="false" />
+    <Property Name="Actor_Surname" Type="varchar" MaxLength="40" Nullable="false" />
+  </EntityType>
+  <EntityType Name="IPs">
+    <Key>
+      <PropertyRef Name="IP_Id" />
+    </Key>
+    <Property Name="IP_Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Ip_Address" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="IP_wrongAtt" Type="int" Nullable="false" />
+    <Property Name="IP_CreatedAt" Type="datetime" />
+    <Property Name="IP_Banned" Type="bit" />
+  </EntityType>
+  <EntityType Name="Movie">
+    <Key>
+      <PropertyRef Name="Movie_ID" />
+    </Key>
+    <Property Name="Movie_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Movie_Name" Type="varchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Reply">
+    <Key>
+      <PropertyRef Name="Reply_ID" />
+    </Key>
+    <Property Name="Reply_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Reply_Author" Type="nchar" MaxLength="40" Nullable="false" />
+    <Property Name="Reply_Content" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Reply_Date" Type="datetime" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Role">
+    <Key>
+      <PropertyRef Name="Role_ID" />
+    </Key>
+    <Property Name="Role_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Role_Name" Type="varchar" MaxLength="20" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Topic">
+    <Key>
+      <PropertyRef Name="Topic_ID" />
+    </Key>
+    <Property Name="Topic_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Topic_Name" Type="nchar" MaxLength="100" Nullable="false" />
+    <Property Name="Topic_Author" Type="nchar" MaxLength="40" Nullable="false" />
+    <Property Name="Topic_Date" Type="datetime" Nullable="false" />
+  </EntityType>
+  <EntityType Name="TopicReply">
+    <Key>
+      <PropertyRef Name="TopicReply_ID" />
+    </Key>
+    <Property Name="TopicReply_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Topic_ID" Type="int" Nullable="false" />
+    <Property Name="Reply_ID" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="User">
+    <Key>
+      <PropertyRef Name="User_ID" />
+    </Key>
+    <Property Name="User_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="User_Email" Type="nchar" MaxLength="40" Nullable="false" />
+    <Property Name="User_Login" Type="nchar" MaxLength="40" Nullable="false" />
+    <Property Name="User_Password" Type="nchar" MaxLength="40" Nullable="false" />
+    <Property Name="User_Picture" Type="nchar" MaxLength="40" Nullable="false" />
+  </EntityType>
+  <EntityType Name="UserActor">
+    <Key>
+      <PropertyRef Name="UserActor_ID" />
+    </Key>
+    <Property Name="UserActor_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="User_ID" Type="int" Nullable="false" />
+    <Property Name="Actor_ID" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="UserMovie">
+    <Key>
+      <PropertyRef Name="UserMovie_ID" />
+    </Key>
+    <Property Name="UserMovie_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="User_ID" Type="int" Nullable="false" />
+    <Property Name="Movie_ID" Type="int" Nullable="false" />
+    <Property Name="Review_Date" Type="datetime" Nullable="false" />
+    <Property Name="Review_Text" Type="text" Nullable="false" />
+    <Property Name="Review_Grade" Type="tinyint" Nullable="false" />
+  </EntityType>
+  <EntityType Name="UserReply">
+    <Key>
+      <PropertyRef Name="UserReply_ID" />
+    </Key>
+    <Property Name="UserReply_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="User_ID" Type="int" Nullable="false" />
+    <Property Name="Reply_ID" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="UserRole">
+    <Key>
+      <PropertyRef Name="UserRole_ID" />
+    </Key>
+    <Property Name="UserRole_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="User_ID" Type="int" Nullable="false" />
+    <Property Name="Role_ID" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="UserTopic">
+    <Key>
+      <PropertyRef Name="UserTopic_ID" />
+    </Key>
+    <Property Name="UserTopic_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="User_ID" Type="int" Nullable="false" />
+    <Property Name="Topic_ID" Type="int" Nullable="false" />
+  </EntityType>
+  <Association Name="FK_ActorID">
+    <End Role="Actor" Type="Self.Actor" Multiplicity="1" />
+    <End Role="UserActor" Type="Self.UserActor" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Actor">
+        <PropertyRef Name="Actor_ID" />
+      </Principal>
+      <Dependent Role="UserActor">
+        <PropertyRef Name="Actor_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Movie_ID">
+    <End Role="Movie" Type="Self.Movie" Multiplicity="1" />
+    <End Role="UserMovie" Type="Self.UserMovie" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Movie">
+        <PropertyRef Name="Movie_ID" />
+      </Principal>
+      <Dependent Role="UserMovie">
+        <PropertyRef Name="Movie_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Reply_ID">
+    <End Role="Reply" Type="Self.Reply" Multiplicity="1" />
+    <End Role="TopicReply" Type="Self.TopicReply" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Reply">
+        <PropertyRef Name="Reply_ID" />
+      </Principal>
+      <Dependent Role="TopicReply">
+        <PropertyRef Name="Reply_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Role_ID">
+    <End Role="Role" Type="Self.Role" Multiplicity="1" />
+    <End Role="UserRole" Type="Self.UserRole" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Role">
+        <PropertyRef Name="Role_ID" />
+      </Principal>
+      <Dependent Role="UserRole">
+        <PropertyRef Name="Role_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Topic_ID">
+    <End Role="Topic" Type="Self.Topic" Multiplicity="1" />
+    <End Role="TopicReply" Type="Self.TopicReply" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Topic">
+        <PropertyRef Name="Topic_ID" />
+      </Principal>
+      <Dependent Role="TopicReply">
+        <PropertyRef Name="Topic_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_UReply_ID">
+    <End Role="Reply" Type="Self.Reply" Multiplicity="1" />
+    <End Role="UserReply" Type="Self.UserReply" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Reply">
+        <PropertyRef Name="Reply_ID" />
+      </Principal>
+      <Dependent Role="UserReply">
+        <PropertyRef Name="Reply_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_User_ID">
+    <End Role="User" Type="Self.User" Multiplicity="1" />
+    <End Role="UserRole" Type="Self.UserRole" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="User">
+        <PropertyRef Name="User_ID" />
+      </Principal>
+      <Dependent Role="UserRole">
+        <PropertyRef Name="User_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_UserID">
+    <End Role="User" Type="Self.User" Multiplicity="1" />
+    <End Role="UserActor" Type="Self.UserActor" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="User">
+        <PropertyRef Name="User_ID" />
+      </Principal>
+      <Dependent Role="UserActor">
+        <PropertyRef Name="User_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_UserM_ID">
+    <End Role="User" Type="Self.User" Multiplicity="1" />
+    <End Role="UserMovie" Type="Self.UserMovie" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="User">
+        <PropertyRef Name="User_ID" />
+      </Principal>
+      <Dependent Role="UserMovie">
+        <PropertyRef Name="User_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_UserR_ID">
+    <End Role="User" Type="Self.User" Multiplicity="1" />
+    <End Role="UserReply" Type="Self.UserReply" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="User">
+        <PropertyRef Name="User_ID" />
+      </Principal>
+      <Dependent Role="UserReply">
+        <PropertyRef Name="User_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_UserT_ID">
+    <End Role="User" Type="Self.User" Multiplicity="1" />
+    <End Role="UserTopic" Type="Self.UserTopic" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="User">
+        <PropertyRef Name="User_ID" />
+      </Principal>
+      <Dependent Role="UserTopic">
+        <PropertyRef Name="User_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_UTopic_ID">
+    <End Role="Topic" Type="Self.Topic" Multiplicity="1" />
+    <End Role="UserTopic" Type="Self.UserTopic" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Topic">
+        <PropertyRef Name="Topic_ID" />
+      </Principal>
+      <Dependent Role="UserTopic">
+        <PropertyRef Name="Topic_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="StorageModelStoreContainer">
+    <EntitySet Name="Actor" EntityType="Self.Actor" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="IPs" EntityType="Self.IPs" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Movie" EntityType="Self.Movie" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Reply" EntityType="Self.Reply" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Role" EntityType="Self.Role" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Topic" EntityType="Self.Topic" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="TopicReply" EntityType="Self.TopicReply" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="User" EntityType="Self.User" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="UserActor" EntityType="Self.UserActor" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="UserMovie" EntityType="Self.UserMovie" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="UserReply" EntityType="Self.UserReply" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="UserRole" EntityType="Self.UserRole" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="UserTopic" EntityType="Self.UserTopic" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK_ActorID" Association="Self.FK_ActorID">
+      <End Role="Actor" EntitySet="Actor" />
+      <End Role="UserActor" EntitySet="UserActor" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Movie_ID" Association="Self.FK_Movie_ID">
+      <End Role="Movie" EntitySet="Movie" />
+      <End Role="UserMovie" EntitySet="UserMovie" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Reply_ID" Association="Self.FK_Reply_ID">
+      <End Role="Reply" EntitySet="Reply" />
+      <End Role="TopicReply" EntitySet="TopicReply" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Role_ID" Association="Self.FK_Role_ID">
+      <End Role="Role" EntitySet="Role" />
+      <End Role="UserRole" EntitySet="UserRole" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Topic_ID" Association="Self.FK_Topic_ID">
+      <End Role="Topic" EntitySet="Topic" />
+      <End Role="TopicReply" EntitySet="TopicReply" />
+    </AssociationSet>
+    <AssociationSet Name="FK_UReply_ID" Association="Self.FK_UReply_ID">
+      <End Role="Reply" EntitySet="Reply" />
+      <End Role="UserReply" EntitySet="UserReply" />
+    </AssociationSet>
+    <AssociationSet Name="FK_User_ID" Association="Self.FK_User_ID">
+      <End Role="User" EntitySet="User" />
+      <End Role="UserRole" EntitySet="UserRole" />
+    </AssociationSet>
+    <AssociationSet Name="FK_UserID" Association="Self.FK_UserID">
+      <End Role="User" EntitySet="User" />
+      <End Role="UserActor" EntitySet="UserActor" />
+    </AssociationSet>
+    <AssociationSet Name="FK_UserM_ID" Association="Self.FK_UserM_ID">
+      <End Role="User" EntitySet="User" />
+      <End Role="UserMovie" EntitySet="UserMovie" />
+    </AssociationSet>
+    <AssociationSet Name="FK_UserR_ID" Association="Self.FK_UserR_ID">
+      <End Role="User" EntitySet="User" />
+      <End Role="UserReply" EntitySet="UserReply" />
+    </AssociationSet>
+    <AssociationSet Name="FK_UserT_ID" Association="Self.FK_UserT_ID">
+      <End Role="User" EntitySet="User" />
+      <End Role="UserTopic" EntitySet="UserTopic" />
+    </AssociationSet>
+    <AssociationSet Name="FK_UTopic_ID" Association="Self.FK_UTopic_ID">
+      <End Role="Topic" EntitySet="Topic" />
+      <End Role="UserTopic" EntitySet="UserTopic" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

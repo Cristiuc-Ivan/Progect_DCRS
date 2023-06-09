@@ -11,7 +11,7 @@
           </Key>
           <Property Name="Actor_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="Actor_Name" Type="varchar" MaxLength="40" Nullable="false" />
-          <Property Name="Actor_Picture" Type="text" Nullable="false" />
+          <Property Name="Actor_Surname" Type="varchar" MaxLength="40" Nullable="false" />
         </EntityType>
         <EntityType Name="IPs">
           <Key>
@@ -19,7 +19,7 @@
           </Key>
           <Property Name="IP_Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="Ip_Address" Type="varchar" MaxLength="50" Nullable="false" />
-          <Property Name="IP_wrongAtt" Type="int" />
+          <Property Name="IP_wrongAtt" Type="int" Nullable="false" />
           <Property Name="IP_CreatedAt" Type="datetime" />
           <Property Name="IP_Banned" Type="bit" />
         </EntityType>
@@ -29,7 +29,6 @@
           </Key>
           <Property Name="Movie_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="Movie_Name" Type="varchar" MaxLength="50" Nullable="false" />
-          <Property Name="Movie_Picture" Type="text" Nullable="false" />
         </EntityType>
         <EntityType Name="Reply">
           <Key>
@@ -72,7 +71,7 @@
           <Property Name="User_Email" Type="nchar" MaxLength="40" Nullable="false" />
           <Property Name="User_Login" Type="nchar" MaxLength="40" Nullable="false" />
           <Property Name="User_Password" Type="nchar" MaxLength="40" Nullable="false" />
-          <Property Name="User_Picture" Type="text" Nullable="false" />
+          <Property Name="User_Picture" Type="nchar" MaxLength="40" Nullable="false" />
         </EntityType>
         <EntityType Name="UserActor">
           <Key>
@@ -89,6 +88,9 @@
           <Property Name="UserMovie_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="User_ID" Type="int" Nullable="false" />
           <Property Name="Movie_ID" Type="int" Nullable="false" />
+          <Property Name="Review_Date" Type="datetime" Nullable="false" />
+          <Property Name="Review_Text" Type="text" Nullable="false" />
+          <Property Name="Review_Grade" Type="tinyint" Nullable="false" />
         </EntityType>
         <EntityType Name="UserReply">
           <Key>
@@ -332,7 +334,7 @@
           </Key>
           <Property Name="Actor_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="Actor_Name" Type="String" MaxLength="40" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="Actor_Picture" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Actor_Surname" Type="String" MaxLength="40" FixedLength="false" Unicode="false" Nullable="false" />
           <NavigationProperty Name="UserActors" Relationship="Self.FK_ActorID" FromRole="Actor" ToRole="UserActor" />
         </EntityType>
         <EntityType Name="IP">
@@ -341,7 +343,7 @@
           </Key>
           <Property Name="IP_Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="Ip_Address" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="IP_wrongAtt" Type="Int32" />
+          <Property Name="IP_wrongAtt" Type="Int32" Nullable="false" />
           <Property Name="IP_CreatedAt" Type="DateTime" Precision="3" />
           <Property Name="IP_Banned" Type="Boolean" />
         </EntityType>
@@ -351,7 +353,6 @@
           </Key>
           <Property Name="Movie_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="Movie_Name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="Movie_Picture" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
           <NavigationProperty Name="UserMovies" Relationship="Self.FK_Movie_ID" FromRole="Movie" ToRole="UserMovie" />
         </EntityType>
         <EntityType Name="Reply">
@@ -402,7 +403,7 @@
           <Property Name="User_Email" Type="String" MaxLength="40" FixedLength="true" Unicode="true" Nullable="false" />
           <Property Name="User_Login" Type="String" MaxLength="40" FixedLength="true" Unicode="true" Nullable="false" />
           <Property Name="User_Password" Type="String" MaxLength="40" FixedLength="true" Unicode="true" Nullable="false" />
-          <Property Name="User_Picture" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="User_Picture" Type="String" MaxLength="40" FixedLength="true" Unicode="true" Nullable="false" />
           <NavigationProperty Name="UserRoles" Relationship="Self.FK_User_ID" FromRole="User" ToRole="UserRole" />
           <NavigationProperty Name="UserActors" Relationship="Self.FK_UserID" FromRole="User" ToRole="UserActor" />
           <NavigationProperty Name="UserMovies" Relationship="Self.FK_UserM_ID" FromRole="User" ToRole="UserMovie" />
@@ -426,6 +427,9 @@
           <Property Name="UserMovie_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="User_ID" Type="Int32" Nullable="false" />
           <Property Name="Movie_ID" Type="Int32" Nullable="false" />
+          <Property Name="Review_Date" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="Review_Text" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Review_Grade" Type="Byte" Nullable="false" />
           <NavigationProperty Name="Movie" Relationship="Self.FK_Movie_ID" FromRole="UserMovie" ToRole="Movie" />
           <NavigationProperty Name="User" Relationship="Self.FK_UserM_ID" FromRole="UserMovie" ToRole="User" />
         </EntityType>
@@ -677,7 +681,7 @@
               <MappingFragment StoreEntitySet="Actor">
                 <ScalarProperty Name="Actor_ID" ColumnName="Actor_ID" />
                 <ScalarProperty Name="Actor_Name" ColumnName="Actor_Name" />
-                <ScalarProperty Name="Actor_Picture" ColumnName="Actor_Picture" />
+                <ScalarProperty Name="Actor_Surname" ColumnName="Actor_Surname" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
@@ -697,7 +701,6 @@
               <MappingFragment StoreEntitySet="Movie">
                 <ScalarProperty Name="Movie_ID" ColumnName="Movie_ID" />
                 <ScalarProperty Name="Movie_Name" ColumnName="Movie_Name" />
-                <ScalarProperty Name="Movie_Picture" ColumnName="Movie_Picture" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
@@ -764,6 +767,9 @@
                 <ScalarProperty Name="UserMovie_ID" ColumnName="UserMovie_ID" />
                 <ScalarProperty Name="User_ID" ColumnName="User_ID" />
                 <ScalarProperty Name="Movie_ID" ColumnName="Movie_ID" />
+                <ScalarProperty Name="Review_Date" ColumnName="Review_Date" />
+                <ScalarProperty Name="Review_Text" ColumnName="Review_Text" />
+                <ScalarProperty Name="Review_Grade" ColumnName="Review_Grade" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

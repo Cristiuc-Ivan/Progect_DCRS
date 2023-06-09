@@ -16,7 +16,7 @@ namespace BusinessLogic.DB
     {
         public int IP_Id { get; set; }
         public string Ip_Address { get; set; }
-        public Nullable<int> IP_wrongAtt { get; set; }
+        public int IP_wrongAtt { get; set; }
         public Nullable<System.DateTime> IP_CreatedAt { get; set; }
         public Nullable<bool> IP_Banned { get; set; }
     }
