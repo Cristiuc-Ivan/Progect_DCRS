@@ -1,7 +1,7 @@
 /*Body form*/
 body {
     background-color: rgb(41, 45, 63) !important;
-    padding: 10;
+   /* padding: 10;*/
     display: flex;
     flex-direction: column;
     position: relative;
@@ -10,15 +10,16 @@ body {
 .forum-layout {
     /* background-color:#234E70; */
     background-color: #1E2761;
-    flex: 1;
     /*Indigo*/
     border-radius: 5px 5px 5px 5px;
     margin: 30px 100px;
+    padding: 15px;
 }
 
 .movieforum-namecontainer {
     display: block;
     padding-top: 20px;
+    padding-left: 40px;
 }
 
 .movieforum-name {
@@ -27,6 +28,7 @@ body {
     display: flex;
     align-items: flex-start;
     margin-left: 10px;
+    padding-left: 20px;
     font-size: 2em;
     font-weight: bold;
     color: #fff;
@@ -90,36 +92,45 @@ body {
     display: block;
     margin-left: auto;
     margin-right: auto;
-    width: 30%;
+    width: 70%;
 }
 
 .comments-layout-coments {
     flex: 80%;
 }
 
-.comments-layout-body .authors img {
+.comments-layout-body .authors img 
+{
     max-width: 30px;
     max-height: 80px;
 }
 
-.comments-layout-username
-{
-    /* margin-left: 4px; */
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-    width: 90%;
+.comments-layout-username {
+    display: flex;
+    justify-content: center;
+    /* margin-left: auto;
+    margin-right: auto;*/
+    max-width: 266px;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
     font-size: 25px;
     font-family: 'Bebas Neue', sans-serif;
 }
 
-.posts
-{
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
+.comments-imgcontainer {
+    display: flex;
+    justify-content: center;
+}
+
+.posts {
+    display: flex;
+    justify-content: center;
+    max-width: 266px;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
     font-size: 20px;
-    width: 90%;
 }
 
 .comments-layout-coments
@@ -128,26 +139,32 @@ body {
     margin: 20px;
 }
 
-.comments-layout-coments-text
-{
+.comments-layout-coments-text {
     padding-left: 10px;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+    max-width: 1050px;
     font-family: 'Lobster', cursive;
     background-color: #fbe242;
     border-radius: 5px;
 }
 
-.comments-layout-coments-regard
-{
+.comments-layout-coments-regard {
     padding-left: 15px;
+    max-width: 1051px;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
     font-family: 'IBM Plex Mono', monospace;
     color: #e41e1e;
-
 }
 
 .comment-area
 {
     margin-top: 50px;
     margin-bottom: 20px;
+
 }
 
 .comment-area textarea
@@ -174,4 +191,12 @@ body {
     background-color: #3d02ff;
     color: #fff;
     float: right;
+}
+
+.btncomment {
+    width: 100px;
+}
+
+.btncomment img{
+    padding-left: 5px;
 }

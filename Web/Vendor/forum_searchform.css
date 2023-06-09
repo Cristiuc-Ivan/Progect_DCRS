@@ -29,6 +29,7 @@ body {
     display: flex;
     align-items: flex-start;
     margin-left: 10px;
+    padding-left: 15px;
     font-size: 2em;
     font-weight: bold;
     color: #fff;
@@ -73,7 +74,7 @@ body {
     max-height: 500px;
 
     min-width: 100px;
-    max-width: 600px;
+    max-width: 700px;
 
     margin-top: 30px;
 
@@ -106,11 +107,15 @@ body {
     justify-content: center;
     font-family: 'Bebas Neue', sans-serif;
     font-size: 17px;
+    max-width: 100%;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
 }
 
 .searchactor-card-column2 {
     display: grid;
-    grid-template-columns: 50% 50%;
+    grid-template-columns: 40% 60%;
     justify-content: start;
     margin: 10px 10px;
     max-width: 300px;
@@ -120,15 +125,21 @@ body {
 .searchactor-card-column2-2 {
     display: flex;
     flex-direction: column;
-    align-items: center;
-    width: 50%;
-    height: 40%;
+    align-items: start;
+    max-width: 150px;
+}
+
+.searchactor-realnameactorAPI {
+    max-width: 150px;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
 }
 
 .searchactor-card-column3 {
     background-color: #e94560;
     border-top-left-radius: 120px;
-    border-left:3px solid rgb(0, 0, 0);
+    border-left: 3px solid rgb(0, 0, 0);
     display: grid;
     grid-template-rows: 80% 20%;
 }
@@ -148,9 +159,13 @@ body {
     padding: 5px;
 }
 
-.searchactor-nameoffilmsAPI
-{
+.searchactor-nameoffilmsAPI {
     padding: 0px 10px;
+    margin-right: 10px;
+    max-width: 150px;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
 }
 
 .searchactor-card-column3-2
@@ -197,7 +212,7 @@ body {
     max-height: 800px;
 
     min-width: 100px;
-    max-width: 600px;
+    max-width: 1000px;
 
     margin-top: 30px;
 
@@ -227,10 +242,18 @@ body {
     object-fit: cover;
 }
 
-.searchfilm-namefilm
-{
+.searchfilm-namefilm-container {
+    margin: 5px;
     display: flex;
     justify-content: center;
+}
+
+.searchfilm-namefilm {
+   
+    max-width: 115px;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
     font-family: 'Bebas Neue', sans-serif;
     padding: 5px;
     font-size: 17px;
@@ -240,20 +263,28 @@ body {
 .searchfilm-card-column2
 {
     display: grid;
-    grid-template-columns: 50% 50%;
+    grid-template-columns: 30% 70%;
     justify-content: start;
     margin: 10px 10px;
-    max-width: 300px;
+    max-width: 400px;
     font-family: 'IBM Plex Mono', monospace;
 }
 
-.searchfilm-card-column2-2
-{
+.searchfilm-card-column2-2 {
     display: flex;
     flex-direction: column;
-    align-items: center;
-    width: 50%;
-    height: 40%;
+    align-items: start;
+    max-width: 260px;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+}
+
+.searchfilm-genreAPI {
+    max-width: 260px;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
 }
 
 .searchfilm-card-column3
@@ -275,10 +306,15 @@ body {
     font-family: 'Merriweather', serif;
 }
 
-.searchfilm-card-column3-2
-{
+.searchfilm-description {
+    padding-right: 10px;
+    font-size: 20px;
+    font-family: 'Merriweather', serif;
+}
+
+.searchfilm-card-column3-2 {
     margin: 10px 10px;
-    padding-left:13px;
+    padding-left: 13px;
     display: flex;
     justify-content: end;
 }
@@ -289,4 +325,13 @@ body {
     margin-right: 10px;
     display: flex;
     justify-content: end;
+}
+
+.searchfilm-descriptionAPI {
+    max-height: 100px;
+    display: -webkit-box;
+    -webkit-line-clamp: 4;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }

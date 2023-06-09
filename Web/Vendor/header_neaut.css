@@ -254,6 +254,7 @@
     flex-wrap: wrap;
     text-align: center;
     padding-top: 10px;
+
 }
 
 .header-4column-profile-buttons a {
@@ -293,6 +294,7 @@
     position: relative;
     z-index: 100;
 }
+
 
 .header-4column-profile-buttons a:nth-child(2) {
     filter: hue-rotate(80deg);

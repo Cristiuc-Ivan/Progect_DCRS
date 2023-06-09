@@ -3,7 +3,7 @@
 
 @{
     ViewBag.Title = "forum_topics";
-    Layout = "~/Views/Shared/MainLayout.cshtml";
+    Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
 @*<h2>forum_topics</h2>*@
@@ -19,10 +19,8 @@
                         <a href="~/Home/Index">
                             Movie-Forum
                         </a>
-                        &nbsp/&nbsp
-                        <a href="~/Forum/Topics">
-                            Forum
-                        </a>
+                        &nbsp/&nbspForum
+                      
                     </div>
                 </div>
 
@@ -127,7 +125,7 @@
                                 <div class="text-end">
                                     @if (@User.Identity.IsAuthenticated)
                                     {
-                                        @Html.ActionLink("Add new topic", "NewTopic", "Forum", null, new { @class = "btn btn-add" })
+                                        @Html.ActionLink("Add new topic", "NewTopic", "Forum", null, new { @class = "btn-add btn" })
                                     }
                                 </div>
                             </div>

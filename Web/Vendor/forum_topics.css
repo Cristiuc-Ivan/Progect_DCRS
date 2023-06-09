@@ -205,6 +205,10 @@ body {
     background-color: #ffeb0e;
     border-radius: 10px;
     text-align: center;
+    width: 100%;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
     color: #e41e1e;
     font-size: 17px;
     font-family: 'IBM Plex Mono', monospace;
@@ -337,9 +341,16 @@ body {
     }
 }
 
-.btn-add {
+.btn-add
+{
     background-color: #3d02ff;
     color: #fff;
+}
+
+a.btn-add:hover
+{
+    background-color: #fbe242;
+    color: #e41e1e;
 }
 
 .small {

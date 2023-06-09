@@ -10,13 +10,11 @@
 
             <div class="containerofsearch-headernamecontainer">
                 <div class="containerofsearch-headernametext">
-                    <a href="#">
+                    <a href="~/Home/Index">
                         Movie-Forum
                     </a>
-                    &nbsp/&nbsp
-                    <a href="#">
-                        Search
-                    </a>
+                    &nbsp/&nbspSearch
+                   
                 </div>
             </div>
 
@@ -31,11 +29,13 @@
                     {
                         <div class="searchfilm-card">
                             <div class="searchactfilm-card-column1">
-                                <div class="searchfilm-cardphoto">
-                                    <img src=@movie.picture
-                                         class="img-fluid">
-                                </div>
-                                <div class="searchfilm-namefilm">@movie.name</div>
+	                            <div class="searchfilm-cardphoto">
+		                            <img src=@movie.picture
+		                                 class="img-fluid">
+	                            </div>
+	                            <div class="searchfilm-namefilm-container">
+		                            <div class="searchfilm-namefilm">@movie.name</div>
+	                            </div>
                             </div>
 
                             <div class="searchfilm-card-column2">
@@ -81,7 +81,7 @@
                                                 <input type="hidden" name="MoviePic" value="@movie.picture" />
                                                 <input type="hidden" name="MovieGenres" value="@movie.genres" />
                                                 <button type="submit" class="buttonfavorites">
-                                                    <span class="button_text"></span>
+                                                    <span class="button_text">Your favorites</span>
                                                     <span class="button_icon">
                                                         <ion-icon name="thumbs-up-sharp"></ion-icon>
                                                     </span>
