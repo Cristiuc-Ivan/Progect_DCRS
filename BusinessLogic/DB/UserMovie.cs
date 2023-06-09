@@ -17,9 +17,6 @@ namespace BusinessLogic.DB
         public int UserMovie_ID { get; set; }
         public int User_ID { get; set; }
         public int Movie_ID { get; set; }
-        public System.DateTime Review_Date { get; set; }
-        public string Review_Text { get; set; }
-        public byte Review_Grade { get; set; }
     
         public virtual Movie Movie { get; set; }
         public virtual User User { get; set; }

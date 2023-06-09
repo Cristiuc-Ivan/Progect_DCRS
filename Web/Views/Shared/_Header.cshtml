@@ -1,5 +1,4 @@
-﻿@using System.Drawing
-@using Domain;
+﻿@using Domain;
 
 <header class="header">
     <div class="header-container">
@@ -12,12 +11,12 @@
                 <div class="header-2column">
                     <div class="header-2column-1rowhome">
                         <div class="header-2column-1rowhome-imgcontainer">
-                            <a href="~/Home/Index">
-                                <img src="~/Content/images/image_8.png" alt="" class="img-fluid">
+                            <a href="#">
+                                <img src="~/Content/images/image 8.png" alt="" class="img-fluid">
                             </a>
                         </div>
                         <div class="header-2column-1rowhome-textcontainer header-2column-1rowhome-textcontainerneon">
-                            <a href="~/Home/Index">
+                            <a href="/Home/">
                                 <span></span>
                                 <span></span>
                                 <span></span>
@@ -28,6 +27,10 @@
                     </div>
 
                     <div class="header-2column-2rowbuttonscontainers">
+                        <!-- <div class="header-2column-buttonfilmscontainer">
+                            <a href="#"><button type="button"
+                                    class="btn btn-primary btn-lg btn-block customButton">Films</button> </a>
+                        </div> -->
 
                         <div class="header-2column-buttongenrescontainer">
                             <button class="btn btn-primary btn-lg dropdown-toggle customButton" type="button"
@@ -48,97 +51,71 @@
                             </ul>
                         </div>
 
-                        <div class="header-2column-buttonforumcontaixner">
-                            @Html.ActionLink("Forum", "Topics", "Forum", null, new { @class = "btn btn-primary btn-lg btn-block customButton" })
+                        <div class="header-2column-buttonforumcontainer">
+                            <a href="/Forum/Topics">
+                                <button type="button"
+                                        class="btn btn-primary btn-lg btn-block customButton">
+                                    Forum
+                                </button>
+                            </a>
                         </div>
                     </div>
                 </div>
 
-	            <div class="header-3column">
-                        
-		            <div class="header-3column-findcontainer1">
-			            <div class="header-3column-findtext">
-				            Найдите актёра, который вас интересует:
-			            </div>
-			            <div class="header-3column-findform">
-				            <form>
-					            <input type="text" name="" placeholder="Поиск..">
-					            <input type="submit" name="" value="Поиск">
-				            </form>
-			            </div>
-		            </div>
+                <div class="header-3column">
+                    <div class="header-3column-findcontainer1">
+                        <div class="header-3column-findtext">
+                            Найдите актёра, который вас интересует:
+                        </div>
+                        <div class="header-3column-findform">
+                            <form>
+                                <input type="text" name="" placeholder="Поиск.." id="ActorSearch">
+                                <input type="button" name="" value="Поиск" onclick="processActor()">
+                            </form>
+                        </div>
+                    </div>
 
-		            <div class="header-3column-findcontainer2">
-			            <div class="header-3column-findtext">
-				            Найдите фильм, который вас интересует:
-			            </div>
-			            <div class="header-3column-findform">
-				            <form>
-					            <input type="text" name="" placeholder="Поиск..">
-					            <input type="submit" name="" value="Поиск">
-				            </form>
-			            </div>
-		            </div>
-
-	            </div>
-                
-
+                    <div class="header-3column-findcontainer2">
+                        <div class="header-3column-findtext">
+                            Найдите фильм, который вас интересует:
+                        </div>
+                        <div class="header-3column-findform">
+                            <form>
+                                <input type="text" name="" placeholder="Поиск.." id="MovieSearch">
+                                <input type="button" name="" value="Поиск" onclick="processMovie()">
+                            </form>
+                        </div>
+                    </div>
+                </div>
             </div>
 
-
-	        <div class="header-4column">
-		        <div class="header-4column-profilecontainer">
-
-			        @if (User.Identity.IsAuthenticated && User.Identity is CustomIdentity customIdentity)
-			        {
-				        <!-- When user isn't autorized -->
-				        <div class="header-4column-profile-buttonscontainer-aut">
-					        <div class="header-4column-profile-buttons-aut">
-						         @Html.ActionLink("Logout", "Logout", "Login")
-						         @Html.ActionLink("Change password", "Logout", "Login")
-					        </div>
-				        </div> 
-
-				        <div class="header-4column-profile-iconcontainer-aut">
-                           
-                                @if (customIdentity.ProfilePic != "")
-                                {
-	                                <a href="#">
-                                      <img src="~/Content/images/logo2.png" alt="" class="img-fluid">
-	                                </a>
-                                }
-                                else
-                                {
-	                                <a href="#">
-                                <img src="@customIdentity.ProfilePic" alt="" class="img-fluid">
-	                                </a>
-                                }
-                           
-				        </div>
-			        }
-			        else
-			        {
-				        <div class="header-4column-profile-buttonscontainer">
-					        <div class="header-4column-profile-buttons">
-						        @Html.ActionLink("Login", "Login", "Login")
-						        @Html.ActionLink("Sign up", "Registration", "Login")
-					        </div>
-				        </div>
-
-				        <div class="header-4column-profile-iconcontainer">
-					        <a href="#">
-						        <img src="~/Content/images/logo2.png" alt="" class="img-fluid">
-					        </a>
-				        </div>
-			        }
-
-		        </div>
-	        </div>
-        
-	     
-
+            <div class="header-4column">
+                <div class="header-4column-profilecontainer">
+                    <div class="header-4column-profile-buttonscontainer">
+                        @if (User.Identity.IsAuthenticated && User.Identity is CustomIdentity customIdentity)
+                        {
+                            <div class="header-4column-profile-buttons">
+                                @Html.ActionLink("Logout", "Logout", "Login")
+                            </div>
+                            <div class="header-4column-profile-iconcontainer">
+                                <a href="/Profile/Index">
+                                    <img src="@customIdentity.ProfilePic" alt="" class="img-fluid">
+                                </a>
+                            </div>
+                        }
+                        else
+                        {
+                            <div class="header-4column-profile-buttons">
+                                @Html.ActionLink("Login", "Login", "Login")
+                                @Html.ActionLink("Sign up", "Registration", "Login")
+                            </div>
+                            <div class="header-4column-profile-iconcontainer">
+                                <img src="~/Content/images/logo2.png" alt="" class="img-fluid">
+                            </div>
+                        }
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
-
 </header>
-

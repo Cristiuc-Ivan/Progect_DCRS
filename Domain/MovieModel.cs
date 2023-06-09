@@ -8,7 +8,19 @@ namespace Domain
 {
     public class MovieModel
     {
-        public int MovieId { get; set; }
-        public string MovieName { get; set; }
+        public string picture { get; set; }
+        public string overview { get; set; }
+        public string popularity { get; set; }
+        public string name { get; set; }
+        public string releaseDate { get; set; }
+        public int ID { get; set; }
+        public List<string> genres { get; set; }
+    }
+    public class MoviesModel
+    {
+        public List<MovieModel> movies
+        {
+            get; set;
+        }
     }
 }

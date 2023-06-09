@@ -5,7 +5,7 @@ GO
 CREATE TABLE [dbo].[IPs] (
     [IP_Id]			[int]			IDENTITY(1,1) PRIMARY KEY,
     [Ip_Address]	[varchar](50)	NOT NULL,
-	[IP_wrongAtt]	[int]			NOT NULL,
+	[IP_wrongAtt]	[int]			DEFAULT 0,
     [IP_CreatedAt]	[datetime]		DEFAULT GETDATE(),
 	[IP_Banned]		[bit]			DEFAULT 0,
 );	
@@ -13,12 +13,13 @@ GO
 CREATE TABLE [dbo].[Actor](
 	[Actor_ID]		[int]			IDENTITY(1,1) PRIMARY KEY,
 	[Actor_Name]	[varchar](40)	NOT NULL,
-	[Actor_Surname] [varchar](40)	NOT NULL,
+	[Actor_Picture] [text]			NOT NULL,
 );
 GO
 CREATE TABLE [dbo].[Movie](
 	[Movie_ID]		[int]			IDENTITY(1,1) PRIMARY KEY,
 	[Movie_Name]	[varchar](50)	NOT NULL,	
+	[Movie_Picture]	[text]			NOT NULL,	
 );
 GO
 CREATE TABLE [dbo].[Role](
@@ -31,7 +32,7 @@ CREATE TABLE [dbo].[User](
 	[User_Email]	[nchar](40)		NOT NULL,
 	[User_Login]	[nchar](40)		NOT NULL,
 	[User_Password] [nchar](40)		NOT NULL,
-	[User_Picture]	[nchar](40)		NOT NULL,
+	[User_Picture]	[text]		NOT NULL,
 );
 GO
 CREATE TABLE [dbo].[UserActor](
@@ -44,9 +45,6 @@ CREATE TABLE [dbo].[UserMovie](
 	[UserMovie_ID]	[int]			IDENTITY(1,1) PRIMARY KEY,
 	[User_ID]		[int]			NOT NULL,
 	[Movie_ID]		[int]			NOT NULL,
-	[Review_Date]	[datetime]		NOT NULL,
-	[Review_Text]	[text]			NOT NULL,
-	[Review_Grade]	[tinyint]		NOT NULL,
 );
 GO
 CREATE TABLE [dbo].[UserRole](

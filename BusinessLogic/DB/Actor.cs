@@ -22,7 +22,7 @@ namespace BusinessLogic.DB
     
         public int Actor_ID { get; set; }
         public string Actor_Name { get; set; }
-        public string Actor_Surname { get; set; }
+        public string Actor_Picture { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<UserActor> UserActors { get; set; }

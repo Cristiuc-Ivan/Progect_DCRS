@@ -22,6 +22,7 @@ namespace BusinessLogic.DB
     
         public int Movie_ID { get; set; }
         public string Movie_Name { get; set; }
+        public string Movie_Picture { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<UserMovie> UserMovies { get; set; }
