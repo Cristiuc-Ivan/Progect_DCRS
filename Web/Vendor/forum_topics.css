@@ -53,7 +53,7 @@ body {
 }
 
 .header-cell-column1-text {
-    margin-left: 290px;
+    margin-left: 210px;
     color: #ffffff;
 }
 
@@ -72,7 +72,7 @@ body {
 }
 
 .header-cell-column4-text {
-    margin-left: 0px;
+    margin-left: 5px;
     color: #ffffff;
 }
 
@@ -88,36 +88,51 @@ body {
     border-radius: 10px 10px 10px 10px;
     line-height: 100%;
     margin-top: 15px;
+    height: 150px;
 }
 
 /*Simple cells topics+img*/
 .simple-cells-topics {
     display: grid;
-    grid-template-columns: 30% 70%;
+    grid-template-columns: 25% 75%;
 }
 
 .simple-cells-topics-imageofusercontainer {
     display: grid;
     grid-template-rows: 70% 30%;
-}
+    max-width: 200px;
 
-.simple-cells-topics-imageofuser-imgcontainer {
-    padding: 0;
 }
 
 .simple-cells-topics-imageofuser-icon {
-    display: table-cell;
-    vertical-align: top;
-    padding: 20px 90px;
+    max-width: 150px;
+    max-height: 100px;
+}
+
+.simple-cells-topics-imageofuser-icon img {
+    position: absolute;
+    margin: 10px;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    max-width: 150px;
+    max-height: 90px;
 }
 
 .simple-cells-topics-imageofuser-namecontainer {
-    border-bottom: 2px solid black;
+   
+    margin-left: 15px;
+    font-size: 25px;
+    width: 150px;
+    
 }
 
 .simple-cells-topics-imageofuser-namecontainer-text {
+    /*max-width: 100px;*/
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
     font-family: 'Bebas Neue', sans-serif;
-    padding: 0px 90px;
 }
 
 /*simple cells topics type*/
@@ -150,13 +165,18 @@ body {
 
 .simple-cells-topics-type-lastcommentcontainer-oftext {
     padding: 0px;
-    background-color: #fbe242;
-    border-radius: 5px;
+    max-width: 550px;
 }
 
 .simple-cells-topics-type-lastcomment-oftext-text {
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+    
     font-size: 14px;
     font-family: 'Lobster', cursive;
+    background-color: #fbe242;
+    border-radius: 5px;
 }
 
 /*Simple cells replies*/
@@ -246,9 +266,8 @@ body {
 }
 
 .simple-cells-timecontainerfinal {
-    padding: 40px 20px;
-    display: grid;
-    grid-template-rows: 50% 50%;
+    padding: 57px 20px;
+   
 }
 
 /*adopting for small screens (smartphones)*/
