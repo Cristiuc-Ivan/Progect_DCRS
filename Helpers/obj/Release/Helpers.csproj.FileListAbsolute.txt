@@ -1,0 +1,6 @@
+C:\Users\djuls\source\repos\Progect_DCRS\Helpers\bin\Release\Helpers.dll
+C:\Users\djuls\source\repos\Progect_DCRS\Helpers\bin\Release\Helpers.pdb
+C:\Users\djuls\source\repos\Progect_DCRS\Helpers\obj\Release\Helpers.csproj.AssemblyReference.cache
+C:\Users\djuls\source\repos\Progect_DCRS\Helpers\obj\Release\Helpers.csproj.CoreCompileInputs.cache
+C:\Users\djuls\source\repos\Progect_DCRS\Helpers\obj\Release\Helpers.dll
+C:\Users\djuls\source\repos\Progect_DCRS\Helpers\obj\Release\Helpers.pdb
