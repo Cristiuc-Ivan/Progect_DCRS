@@ -1,9 +1,6 @@
 ﻿using BusinessLogic.DB;
-using System;
 using System.Collections.Generic;
-using System.Data.Entity;
 using System.Linq;
-using System.Web;
 using System.Web.Mvc;
 
 namespace Web.Controllers
@@ -11,9 +8,10 @@ namespace Web.Controllers
     [Authorize(Roles = "Admin")]
     public class AdminController : Controller
     {
+        StorageEntities db = new StorageEntities();
         public ViewResult Index()
         {
-            StorageEntities db = new StorageEntities();
+
             return View(db.Users);
         }
 
@@ -27,7 +25,6 @@ namespace Web.Controllers
         {
             if (ModelState.IsValid)
             {
-                StorageEntities db = new StorageEntities();
                 us.User_Picture = "aaaa";
                 db.Users.Add(us);
                 db.SaveChanges();
@@ -42,7 +39,6 @@ namespace Web.Controllers
 
         public ActionResult Delete(int id)
         {
-            StorageEntities db = new StorageEntities();
             User model = db.Users.Find(id);
             if (model != null)
             {
@@ -59,7 +55,6 @@ namespace Web.Controllers
 
         public ActionResult Edit(int id)
         {
-            StorageEntities db = new StorageEntities();
             User us = db.Users.Find(id);
             ViewBag.isEdit = true;
             return View("Create", us);
@@ -68,7 +63,6 @@ namespace Web.Controllers
         [HttpPost]
         public ActionResult Edit(User us)
         {
-            StorageEntities db = new StorageEntities();
             db.Entry<User>(us).State = System.Data.Entity.EntityState.Modified;
             db.SaveChanges();
             return RedirectToAction("Index");

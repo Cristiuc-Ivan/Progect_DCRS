@@ -10,11 +10,10 @@ namespace Web.Controllers
 {
     public class ForumController : Controller
     {
+        StorageEntities db = new StorageEntities();
         [HttpGet]
         public ActionResult Comments(int id)
         {
-            StorageEntities db = new StorageEntities();
-
             // create instances
             CommentsData commentsData = new CommentsData();
             commentsData.ReplyList = new List<ReplyInfo>();
@@ -30,7 +29,6 @@ namespace Web.Controllers
             foreach (var Treplyentry in tr)
             {
                 ReplyInfo rInfo = new ReplyInfo();
-
 
                 // we got number of user's topics in previous step
                 User Utemp = db.Users.Where(model => model.User_Login == Treplyentry.Reply.Reply_Author).FirstOrDefault();
@@ -54,7 +52,6 @@ namespace Web.Controllers
         [HttpPost]
         public ActionResult Comments(string textReply, int? TopicId)
         {
-            StorageEntities db = new StorageEntities();
             // get current user
             // find the user in DB by his name
             var User = db.Users.Where(s => s.User_Login == HttpContext.User.Identity.Name).FirstOrDefault();
@@ -90,9 +87,6 @@ namespace Web.Controllers
         [Authorize]
         public ActionResult NewTopic(string newTopic, string newReply)
         {
-            StorageEntities db = new StorageEntities();
-
-            // TOPIC
             Topic topic = new Topic();
             topic.Topic_Name = newTopic;
             topic.Topic_Date = DateTime.Now;
@@ -135,7 +129,6 @@ namespace Web.Controllers
         [HttpGet]
         public ActionResult Topics()
         {
-            StorageEntities db = new StorageEntities();
             ManyTopics manyTopics = new ManyTopics();
             manyTopics.TopicData = new List<TopicData>();
 

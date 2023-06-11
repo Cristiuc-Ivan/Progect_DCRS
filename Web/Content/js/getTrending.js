@@ -19,3 +19,5 @@ async function getapi(url) {
     SwiperAdd(Finarray);
 }
 getapi(api_url);
+
+
