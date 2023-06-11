@@ -1,0 +1,27 @@
+# # Stage 1: Build the application
+# FROM mcr.microsoft.com/dotnet/framework/sdk:4.7.2 AS build
+# WORKDIR /src
+
+# # Copy the solution file
+# COPY Blank.sln .
+
+# # Copy the project files and restore dependencies
+# COPY BusinessLogic/*.csproj ./BusinessLogic/
+# COPY Domain/*.csproj ./Domain/
+# COPY Web/*.csproj ./Web/
+# RUN nuget restore Blank.sln
+
+# # Copy the remaining source code and build the application
+# COPY . .
+# RUN msbuild /p:Configuration=Release /p:OutputPath=/app/build /nodeReuse:false
+
+# # Stage 2: Publish the application
+# FROM mcr.microsoft.com/dotnet/framework/aspnet:4.7.2 AS publish
+# WORKDIR /app
+# COPY --from=build /app/build .
+
+# # Stage 3: Final image
+# FROM mcr.microsoft.com/dotnet/framework/aspnet:4.7.2 AS final
+# WORKDIR /inetpub/wwwroot
+# COPY --from=publish /app .
+# EXPOSE 44389

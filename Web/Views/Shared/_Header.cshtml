@@ -1,0 +1,142 @@
+﻿@using System.Drawing
+@using Domain;
+
+<header class="header">
+    <div class="header-container">
+        <div class="header-row">
+            <div class="header-navigationcontainer">
+                <div class="header-1column-logocontainer">
+                    <img src="~/Content/images/logo.png" class="img-fluid">
+                </div>
+
+                <div class="header-2column">
+                    <div class="header-2column-1rowhome">
+                        <div class="header-2column-1rowhome-imgcontainer">
+                            <a href="~/Home/Index">
+                                <img src="~/Content/images/image_8.png" alt="" class="img-fluid">
+                            </a>
+                        </div>
+                        <div class="header-2column-1rowhome-textcontainer header-2column-1rowhome-textcontainerneon">
+                            <a href="~/Home/Index">
+                                <span></span>
+                                <span></span>
+                                <span></span>
+                                <span></span>
+                                Go home
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="header-2column-2rowbuttonscontainers">
+
+                        <div class="header-2column-buttongenrescontainer">
+                            <button class="btn btn-primary btn-lg dropdown-toggle customButton" type="button"
+                                    id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+                                Genres
+                            </button>
+                            <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+                                <li><a class="dropdown-item" href="/Genres/Action">Action</a></li>
+                                <li><a class="dropdown-item" href="/Genres/Crime">Crime</a></li>
+                                <li><a class="dropdown-item" href="/Genres/Family">Family</a></li>
+                                <li><a class="dropdown-item" href="/Genres/Thriller">Thriller</a></li>
+                                <li><a class="dropdown-item" href="/Genres/Adventure">Adventure</a></li>
+                                <li><a class="dropdown-item" href="/Genres/Documentary">Documentary</a></li>
+                                <li><a class="dropdown-item" href="/Genres/Action">Action</a></li>
+                                <li><a class="dropdown-item" href="/Genres/Horror">Horror</a></li>
+                                <li><a class="dropdown-item" href="/Genres/Animation">Animation</a></li>
+                                <li><a class="dropdown-item" href="/Genres/Comedy">Comedy</a></li>
+                            </ul>
+                        </div>
+
+                        <div class="header-2column-buttonforumcontaixner">
+                            @Html.ActionLink("Forum", "Topics", "Forum", null, new { @class = "btn btn-primary btn-lg btn-block customButton" })
+                        </div>
+                    </div>
+                </div>
+
+                <div class="header-3column">
+
+                    <div class="header-3column-findcontainer1">
+                        <div class="header-3column-findtext">
+                            Найдите актёра, который вас интересует:
+                        </div>
+                        <div class="header-3column-findform">
+                            <form>
+                                <input type="text" name="" placeholder="Поиск.." id="ActorSearch">
+                                <input type="button" name="" value="Поиск" onclick="processActor()">
+                            </form>
+                        </div>
+                    </div>
+
+                    <div class="header-3column-findcontainer2">
+                        <div class="header-3column-findtext">
+                            Найдите фильм, который вас интересует:
+                        </div>
+                        <div class="header-3column-findform">
+                            <form>
+                                <input type="text" name="" placeholder="Поиск.." id="MovieSearch">
+                                <input type="button" name="" value="Поиск" onclick="processMovie()">
+                            </form>
+                        </div>
+                    </div>
+
+                </div>
+
+
+            </div>
+
+
+            <div class="header-4column">
+                <div class="header-4column-profilecontainer">
+
+                    @if (User.Identity.IsAuthenticated && User.Identity is CustomIdentity customIdentity)
+                    {
+                        <!-- When user isn't autorized -->
+                        <div class="header-4column-profile-buttonscontainer-aut">
+                            <div class="header-4column-profile-buttons-aut">
+                                @Html.ActionLink("Logout", "Logout", "Login")
+                                @Html.ActionLink("Change password", "ChangePassword", "Login")
+                            </div>
+                        </div>
+
+                        <div class="header-4column-profile-iconcontainer-aut">
+
+                            @if (customIdentity.ProfilePic == "")
+                            {
+                                <img src="~/Content/images/logo2.png" alt="" class="img-fluid">
+                            }
+                            else
+                            {
+                                <a href="/Profile/">
+                                    <img src="@customIdentity.ProfilePic" alt="" class="img-fluid">
+                                </a>
+                            }
+
+                        </div>
+                    }
+                    else
+                    {
+                        <div class="header-4column-profile-buttonscontainer">
+                            <div class="header-4column-profile-buttons">
+                                @Html.ActionLink("Login", "Login", "Login")
+                                @Html.ActionLink("Sign up", "Registration", "Login")
+                            </div>
+                        </div>
+
+                        <div class="header-4column-profile-iconcontainer">
+                            <a href="#">
+                                <img src="~/Content/images/logo2.png" alt="" class="img-fluid">
+                            </a>
+                        </div>
+                    }
+
+                </div>
+            </div>
+
+
+
+        </div>
+    </div>
+
+</header>
+

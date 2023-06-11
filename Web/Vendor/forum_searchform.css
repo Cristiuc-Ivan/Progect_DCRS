@@ -1,0 +1,315 @@
+@font-face {
+    font-family: 'earthrealm';
+    src: url(fonts/earthrealm.ttf);
+}
+
+/*Body form*/
+body {
+    background-color: rgb(41, 45, 63) !important;
+    padding: 10;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+}
+
+.containerofsearch-layout {
+    background-color: #1E2761;
+    border-radius: 5px 5px 5px 5px;
+    margin: 30px 100px;
+}
+
+.containerofsearch-headernamecontainer {
+    display: block;
+    padding-top: 20px;
+}
+
+.containerofsearch-headernametext {
+    background-color: red;
+    border-radius: 10px;
+    display: flex;
+    align-items: flex-start;
+    margin-left: 10px;
+    padding-left: 15px;
+    font-size: 2em;
+    font-weight: bold;
+    color: #fff;
+    /* width: 700px; */
+}
+
+    .containerofsearch-headernametext a {
+        text-decoration: none;
+        color: #fff;
+    }
+
+        .containerofsearch-headernametext a:hover {
+            color: #000;
+        }
+
+/*Card search actor*/
+.containerofsearch-titlecontainer {
+    display: flex;
+    justify-content: center;
+    margin: 10px 20px;
+    min-width: 100px;
+    max-width: 200px;
+    background-color: #fff;
+    border-radius: 20px;
+}
+
+.containerofsearch-titletext {
+    font-family: "Earthrealm";
+    text-shadow: 0px 1px 1px rgb(0, 0, 0);
+}
+
+.search-cardscontainer {
+    margin: 20px 30px;
+    padding-bottom: 20px;
+}
+
+.searchactor-card {
+    display: grid;
+    grid-template-columns: 20% 40% 40%;
+    min-height: 200px;
+    max-height: 500px;
+    min-width: 100px;
+    max-width: 700px;
+    margin-top: 30px;
+    background-color: rgba(255, 255, 255, 0.737);
+    border-radius: 20px;
+}
+
+.searchactor-card-column1 {
+    display: grid;
+    grid-template-rows: 75% 25%;
+    border-right: 3px solid black;
+}
+
+.searchactor-cardphoto {
+    margin: 10px;
+    position: relative;
+}
+
+    .searchactor-cardphoto img {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+
+.searchactor-actnameactor {
+    display: flex;
+    justify-content: center;
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 17px;
+    max-width: 100%;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+}
+
+.searchactor-card-column2 {
+    display: grid;
+    grid-template-columns: 40% 60%;
+    justify-content: start;
+    margin: 10px 10px;
+    max-width: 300px;
+    font-family: 'IBM Plex Mono', monospace;
+}
+
+.searchactor-card-column2-2 {
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    max-width: 150px;
+}
+
+.searchactor-realnameactorAPI {
+    max-width: 150px;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+}
+
+.searchactor-card-column3 {
+    background-color: #e94560;
+    border-top-left-radius: 120px;
+    border-left: 3px solid rgb(0, 0, 0);
+    display: grid;
+    grid-template-rows: 80% 20%;
+}
+
+.searchactor-card-column3-1 {
+    display: flex;
+    flex-direction: column;
+    align-items: end;
+    margin-top: 10px;
+    padding-top: 10px;
+    font-family: 'Merriweather', serif;
+}
+
+.searchactor-nameoffilms {
+    padding: 5px;
+}
+
+.searchactor-nameoffilmsAPI {
+    padding: 0px 10px;
+    margin-right: 10px;
+    max-width: 150px;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+}
+
+.searchactor-card-column3-2 {
+    margin-bottom: 10px;
+    margin-right: 10px;
+    display: flex;
+    justify-content: end;
+}
+
+.buttonfavorites {
+    display: inline-flex;
+    height: 30px;
+    width: 140px;
+    padding: 0;
+    background: green;
+    border: none;
+    outline: none;
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+.button_text, .button_icon {
+    display: inline-flex;
+    align-items: center;
+    padding: 0 5px;
+    height: 100%;
+}
+
+.button_text {
+    color: gold;
+}
+
+/*SearchFilm cards*/
+.searchfilm-card {
+    display: grid;
+    grid-template-columns: 20% 40% 40%;
+    min-height: 200px;
+    max-height: 800px;
+    min-width: 100px;
+    max-width: 1000px;
+    margin-top: 30px;
+    background-color: rgba(255, 255, 255, 0.737);
+    border-radius: 20px;
+}
+
+.searchactfilm-card-column1 {
+    display: grid;
+    grid-template-rows: 75% 25%;
+    border-right: 3px solid black;
+}
+
+.searchfilm-cardphoto {
+    margin: 10px;
+    position: relative;
+}
+
+    .searchfilm-cardphoto img {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+
+.searchfilm-namefilm-container {
+    margin: 5px;
+    display: flex;
+    justify-content: center;
+}
+
+.searchfilm-namefilm {
+    max-width: 115px;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+    font-family: 'Bebas Neue', sans-serif;
+    padding: 5px;
+    font-size: 17px;
+    word-wrap: break-word
+}
+
+.searchfilm-card-column2 {
+    display: grid;
+    grid-template-columns: 30% 70%;
+    justify-content: start;
+    margin: 10px 10px;
+    max-width: 400px;
+    font-family: 'IBM Plex Mono', monospace;
+}
+
+.searchfilm-card-column2-2 {
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    max-width: 260px;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+}
+
+.searchfilm-genreAPI {
+    max-width: 260px;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+}
+
+.searchfilm-card-column3 {
+    background-color: #ffec61;
+    border-top-left-radius: 120px;
+    border-left: 3px solid rgb(0, 0, 0);
+    display: grid;
+    grid-template-rows: 20% 60% 20%;
+}
+
+.searchfilm-card-column3-1 {
+    display: flex;
+    flex-direction: column;
+    align-items: end;
+    margin-top: 10px;
+    padding-top: 10px;
+    font-family: 'Merriweather', serif;
+}
+
+.searchfilm-description {
+    padding-right: 10px;
+    font-size: 20px;
+    font-family: 'Merriweather', serif;
+}
+
+.searchfilm-card-column3-2 {
+    margin: 10px 10px;
+    padding-left: 13px;
+    display: flex;
+    justify-content: end;
+}
+
+.searchfilm-card-column3-3 {
+    margin-bottom: 10px;
+    margin-right: 10px;
+    display: flex;
+    justify-content: end;
+}
+
+.searchfilm-descriptionAPI {
+    max-height: 100px;
+    display: -webkit-box;
+    -webkit-line-clamp: 4;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}

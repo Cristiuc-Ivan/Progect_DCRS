@@ -1,0 +1,188 @@
+﻿@model Domain.UserCompleteModel
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<section>
+    <div class="container2">
+        <div class="addactors-layout">
+
+            <div class="addactors-namecontainer">
+                <div class="addactors-name">
+                    <a href="#">
+                        Movie-Forum
+                    </a>
+                    &nbsp/&nbsp
+                    <a href="#">
+                        Favorites
+                    </a>
+                </div>
+            </div>
+
+            <div class="cards-section">
+
+                <div class="addactors-nameactorscontainer">
+                    <div class="addactors-nameactors">
+                        Your favorite actors
+                    </div>
+                </div>
+
+
+                <div class="cards-container">
+                    <div class="row align-items-center justify-content-center">
+                        @foreach (var actor in Model.Actors)
+                        {
+                            <div class="col-sm-4 d-flex justify-content-center">
+                                <div class="card">
+                                    <div class="card-content">
+                                        <div class="imgbx"><img src="@actor.Actor_Picture"></div>
+                                        <div class="contentbx">
+                                            <div class="contentbx-name">@actor.Actor_Name</div>
+                                            <div class="contentbx-profession"><span>Actor</span> </div>
+                                            <div class="contentbx-profession"><span>@Html.ActionLink("Delete", "ActorDelete", new { id = @actor.Actor_ID }, new { @class = "btn btn-light" })</span> </div>
+
+                                            <div class="contentbx-info">
+                                                <div class="contentbx-info-text"></div>
+
+                                                <div class="contentbx-favoritecontainer">
+                                                    <div class="contentbx-favoritebutton">
+                                                        <svg clip-rule="evenodd" fill-rule="evenodd" stroke-linejoin="round"
+                                                             stroke-miterlimit="2" viewBox="0 0 24 24"
+                                                             xmlns="http://www.w3.org/2000/svg">
+                                                            <path d="m11.322 2.923c.126-.259.39-.423.678-.423.289 0 .552.164.678.423.974 1.998 2.65 5.44 2.65 5.44s3.811.524 6.022.829c.403.055.65.396.65.747 0 .19-.072.383-.231.536-1.61 1.538-4.382 4.191-4.382 4.191s.677 3.767 1.069 5.952c.083.462-.275.882-.742.882-.122 0-.244-.029-.355-.089-1.968-1.048-5.359-2.851-5.359-2.851s-3.391 1.803-5.359 2.851c-.111.06-.234.089-.356.089-.465 0-.825-.421-.741-.882.393-2.185 1.07-5.952 1.07-5.952s-2.773-2.653-4.382-4.191c-.16-.153-.232-.346-.232-.535 0-.352.249-.694.651-.748 2.211-.305 6.021-.829 6.021-.829s1.677-3.442 2.65-5.44z"
+                                                                  fill-rule="nonzero" class="star" />
+                                                            <circle cx="2.9" cy="2" fill-rule="nonzero" r=".2" fill="#14141a" />
+                                                            <circle cx="2" cy="2" fill-rule="nonzero" r=".2" fill="#14141a" />
+                                                            <path d="m30 26h-12c.31 1.465 2.827 4 6.001 4 3.134 0 5.666-2.521 5.999-4z"
+                                                                  class="mouth" fill="#14141a"></path>
+                                                        </svg>
+                                                        <h3> Favorite</h3>
+                                                        <div class="pit"></div>
+                                                    </div>
+                                                </div>
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        }
+                    </div>
+                </div>
+
+                <div class="addactors-namefilmscontainer">
+                    <div class="addactors-namefilms">
+                        Your favorite movies
+                    </div>
+                </div>
+
+                <div class="cards-moviecontainer">
+                    <div class="row align-items-center justify-content-center">
+                        @foreach (var movie in Model.Movies)
+                        {
+                            <div class="col-sm-4 d-flex justify-content-center">
+                                <div class="cards-movie card">
+
+                                    <div class="cards-moviecontent-img position-absolute">
+                                        <img src="@movie.Movie_Picture" alt=""
+                                             class="img-fluid">
+                                    </div>
+                                    <div class="cards-moviecontent-name">@movie.Movie_Name</div>
+                                    <div class="cards-moviecontent">
+                                        <div class="cards-moviecontent-genre"></div>
+
+
+                                        <div class="cards-moviecontent-buttonfavorite">
+                                            <div class="contentbx-profession"><span>@Html.ActionLink("Delete", "MovieDelete", new { id = movie.Movie_ID }, new { @class = "btn btn-light" })</span> </div>
+                                            <div class="contentbx-favoritecontainer">
+                                                <div class="contentbx-favoritebutton">
+                                                    <svg clip-rule="evenodd" fill-rule="evenodd" stroke-linejoin="round"
+                                                         stroke-miterlimit="2" viewBox="0 0 24 24"
+                                                         xmlns="http://www.w3.org/2000/svg">
+                                                        <path d="m11.322 2.923c.126-.259.39-.423.678-.423.289 0 .552.164.678.423.974 1.998 2.65 5.44 2.65 5.44s3.811.524 6.022.829c.403.055.65.396.65.747 0 .19-.072.383-.231.536-1.61 1.538-4.382 4.191-4.382 4.191s.677 3.767 1.069 5.952c.083.462-.275.882-.742.882-.122 0-.244-.029-.355-.089-1.968-1.048-5.359-2.851-5.359-2.851s-3.391 1.803-5.359 2.851c-.111.06-.234.089-.356.089-.465 0-.825-.421-.741-.882.393-2.185 1.07-5.952 1.07-5.952s-2.773-2.653-4.382-4.191c-.16-.153-.232-.346-.232-.535 0-.352.249-.694.651-.748 2.211-.305 6.021-.829 6.021-.829s1.677-3.442 2.65-5.44z"
+                                                              fill-rule="nonzero" class="star" />
+                                                        <circle cx="2.9" cy="2" fill-rule="nonzero" r=".2" fill="#14141a" />
+                                                        <circle cx="2" cy="2" fill-rule="nonzero" r=".2" fill="#14141a" />
+                                                        <path d="m30 26h-12c.31 1.465 2.827 4 6.001 4 3.134 0 5.666-2.521 5.999-4z"
+                                                              class="mouth" fill="#14141a"></path>
+                                                    </svg>
+
+                                                    @*<h3> Favorite</h3>*@
+                                                    <div class="pit"></div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        }
+                    </div>
+
+
+                </div>
+
+            </div>
+
+            <div class="addactors-yourtopicssection">
+
+                <div class="addactors-nametopicscontainer">
+                    <div class="addactors-nametopics">
+                        Topics you created
+                    </div>
+                </div>
+                @foreach (var topic in Model.Topics)
+                {
+                    <div class="addactors-yourtopicscontainer">
+                        <div class="addactors-yourtopics card">
+                            <div class="addactors-yourtopics-number">"@topic.Topic_ID"</div>
+                            <div class="addactors-yourtopics-name">
+                                <a href="#">
+                                    "@topic.Topic_Name"
+                                </a>
+                            </div>
+                            <div class="addactors-yourtopics-date" style="width:500px">"@topic.Topic_Date"</div>
+                        </div>
+                    </div>
+                }
+
+            </div>
+
+            <div class="addactors-yourtopicsparticipated-section">
+
+                <div class="addactors-nametopicscontainer">
+                    <div class="addactors-nametopics">
+                        Topics you participated in
+                    </div>
+                </div>
+                @foreach (var reply in Model.Replies)
+                {
+                    <div class="addactors-yourtopicscontainer-participated">
+                        <div class="addactors-yourtopics-participated card" style="width:800px">
+                            <div class="addactors-yourtopics-numberparticipated">"@reply.reply.Reply_ID"</div>
+
+                            <div class="addactors-yourtopics-participated-namecontainer" style="width:500px">
+                                <div class="addactors-yourtopics-nameparticipated">
+                                    "@reply.topic.Topic_Name"
+                                </div>
+
+                                <div class="addactors-yourtopics-namecommentarycontainer-participated">
+                                    <div class="addactors-yourtopics-yourcommentary-participated">
+                                        Your commentary:
+                                    </div>
+                                    <div class="addactors-yourtopics-commentuser-participated">
+                                        "@reply.reply.Reply_Content"
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="addactors-yourtopics-date-participated">"@reply.reply.Reply_Date"</div>
+                        </div>
+                    </div>
+                }
+
+            </div>
+
+        </div>
+    </div>
+</section>

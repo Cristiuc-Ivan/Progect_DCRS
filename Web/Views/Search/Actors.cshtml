@@ -1,0 +1,99 @@
+﻿@model Domain.ActorsModel
+@{
+    ViewBag.Title = "Actors";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<section>
+    <div class="containerofsearch">
+        <div class="containerofsearch-layout">
+
+            <div class="containerofsearch-headernamecontainer">
+                <div class="containerofsearch-headernametext">
+                    <a href="#">
+                        Movie-Forum
+                    </a>
+                    &nbsp/&nbsp
+                    <a href="#">
+                        Search
+                    </a>
+                </div>
+            </div>
+
+            <div class="containerofsearch-titlecontainer">
+                <div class="containerofsearch-titletext">This is what we find:</div>
+            </div>
+
+            <div class="search-cardscontainer">
+                @if (Model != null && Model.actors != null)
+                {
+                    foreach (var actor in Model.actors)
+                    {
+                        <div class="searchactor-card">
+
+                            <div class="searchactor-card-column1">
+                                <div class="searchactor-cardphoto">
+                                    <img src=@actor.picture class="img-fluid">
+                                </div>
+                                <div class="searchactor-actnameactor">@actor.name</div>
+                            </div>
+
+                            <div class="searchactor-card-column2">
+                                <div class="searchactor-card-column2-1">
+                                    <div class="searchactor-gender">Gender:</div>
+                                    <div class="searchactor-realnameactor">Real name:</div>
+                                    <div class="searchactor-rating">Rating:</div>
+                                </div>
+
+                                <div class="searchactor-card-column2-2">
+                                    <div class="searchactor-genderAPI">@actor.gender</div>
+                                    <div class="searchactor-realnameactorAPI">@actor.realName</div>
+                                    <div class="searchactor-ratingAPI">@actor.popularity</div>
+                                </div>
+                            </div>
+
+
+                            <div class="searchactor-card-column3">
+                                <div class="searchactor-card-column3-1">
+                                    <div class="searchactor-nameoffilms">You may know for:</div>
+                                    <div class="searchactor-nameoffilmsAPI">
+                                        @if (actor.known_for != null)
+                                        {
+                                            foreach (var movie in actor.known_for)
+                                            {
+                                                <span>"</span>@movie<span>"</span><br />
+                                            }
+                                        }
+                                    </div>
+                                </div>
+
+                                <div class="searchactor-card-column3-2">
+                                    <div class="searchactor-yourfavoritebtn">
+
+                                        @if (User.Identity.IsAuthenticated)
+                                        {
+                                            using (Html.BeginForm("ActorAdd", "Search", FormMethod.Post, new { enctype = "multipart/form-data" }))
+                                            {
+                                                <input type="hidden" name="ActorDATA" value="@Model" />
+                                                <input type="hidden" name="ActorName" value="@actor.name" />
+                                                <input type="hidden" name="ActorPic" value="@actor.picture" />
+                                                <input type="hidden" name="ActorKnownFor" value="@actor.known_for" />
+                                                <button type="submit" class="buttonfavorites">
+                                                    <span class="button_text">Your favorites</span>
+                                                    <span class="button_icon"><ion-icon name="thumbs-up-sharp"></ion-icon></span>
+                                                </button>
+                                            }
+                                        }
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                    }
+                }
+
+
+            </div>
+        </div>
+    </div>
+
+</section>

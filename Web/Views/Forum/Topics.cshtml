@@ -1,0 +1,142 @@
+﻿@using Domain
+@model Domain.ManyTopics
+
+@{
+    ViewBag.Title = "forum_topics";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@*<h2>forum_topics</h2>*@
+
+
+<section>
+    <div class="container2">
+        <div class="row subforum-row">
+            <div class="forum-layout col-12 col-xl-10 ">
+
+                <div class="movieforum-input-namecontainer">
+                    <div class="movieforum-input-nametext">
+                        <a href="~/Home/Index">
+                            Movie-Forum
+                        </a>
+                        &nbsp/&nbsp
+                        <a href="~/Forum/Topics">
+                            Forum
+                        </a>
+                    </div>
+                </div>
+
+
+                <div class="forum-tbl">
+                    <div class="header-cell header-cell-text">
+                        <div class="header-topics header-cell-column1">
+                            <div class="header-cell-column1-text">
+                                Topics
+                            </div>
+                        </div>
+
+                        <div class="header-replies header-cell-column2">
+                            <div class="header-cell-column2-text">
+                                Replies
+                            </div>
+                        </div>
+
+                        <div class="header-author header-cell-column3">
+                            <div class="header-cell-column3-text">
+                                Author
+                            </div>
+                        </div>
+
+                        <div class="header-author header-cell-column4">
+                            <div class="header-cell-column4-text">
+                                Time
+                            </div>
+                        </div>
+                    </div>
+
+                    @foreach (var topic in Model.TopicData)
+                    {
+                        <div class="simple-cells-row">
+                            <div class="simple-cells-topics simple-cells-topics-final">
+                                <div class="simple-cells-topics-imageofusercontainer">
+                                    
+	                                <div class="simple-cells-topics-imageofuser-icon">
+
+		                                <a href="#">
+			                                <img src="@topic.ProfilePic" alt="" class="img-fluid">
+		                                </a>
+	                                </div>
+                                   
+                                    <div class="simple-cells-topics-imageofuser-namecontainer">
+                                        <div class="simple-cells-topics-imageofuser-namecontainer-text">
+                                            @topic.ReplyAuthor
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="simple-cells-topics-typecontainerfinal">
+                                    <div class="simple-cells-topics-type-namecontainer simple-cells-topics-type-name">
+                                        @Html.ActionLink(@topic.TopicName, "Comments", new { id = topic.TopicId })
+                                        @*<a href="#">@topic.TopicName</a>*@
+                                    </div>
+
+                                    <div class="simple-cells-topics-type-lastcommentcontainer">
+                                        <div class="simple-cells-topics-type-lastcomment-text"> Last comment:</div>
+
+                                        <div class="simple-cells-topics-type-lastcommentcontainer-oftext">
+                                            <div class="simple-cells-topics-type-lastcomment-oftext-text">
+                                                @topic.LastReply
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="simple-cells-topics-repliescontainerfinal">
+                                <div class="simple-cells-topics-repliescontainer-text">
+                                    @topic.RepliesNumber
+                                </div>
+                            </div>
+
+                            <div class="simple-cells-authorcontainerfinal">
+                                <div class="simple-cells-authorcontainer-text">
+                                    @topic.TopicAuthor
+                                </div>
+                            </div>
+
+                            <div class="simple-cells-timecontainerfinal">
+                                <div class="simple-cells-timecontainer-namecontainer">
+                                    <div class="simple-cells-timecontainer-namecontainer-text"></div>
+                                    @*<div class="simple-cells-timecontainer-namecontainer-text-name">Asian guy</div>*@
+                                </div>
+
+                                <div class="simple-cells-timecontainer-namecontainer-datecontainer">
+                                    <div class="simple-cells-timecontainer-namecontainer-datecontainer-text">
+                                        @topic.TopicDate
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    }
+
+
+                    <div class="mb-3 clearfix pt-5">
+
+                        <div class="row">
+                            <div class="col">
+                                <div class="text-end">
+                                    @if (@User.Identity.IsAuthenticated)
+                                    {
+                                        @Html.ActionLink("Add new topic", "NewTopic", "Forum", null, new { @class = "btn btn-add" })
+                                    }
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+

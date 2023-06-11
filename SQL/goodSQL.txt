@@ -1,0 +1,156 @@
+CREATE DATABASE Storage;
+GO
+USE Storage;
+GO
+CREATE TABLE [dbo].[IPs] (
+    [IP_Id]			[int]			IDENTITY(1,1) PRIMARY KEY,
+    [Ip_Address]	[varchar](50)	NOT NULL,
+	[IP_wrongAtt]	[int]			DEFAULT 0,
+    [IP_CreatedAt]	[datetime]		DEFAULT GETDATE(),
+	[IP_Banned]		[bit]			DEFAULT 0,
+);	
+GO
+CREATE TABLE [dbo].[Actor](
+	[Actor_ID]		[int]			IDENTITY(1,1) PRIMARY KEY,
+	[Actor_Name]	[varchar](40)	NOT NULL,
+	[Actor_Picture] [text]			NOT NULL,
+);
+GO
+CREATE TABLE [dbo].[Movie](
+	[Movie_ID]		[int]			IDENTITY(1,1) PRIMARY KEY,
+	[Movie_Name]	[varchar](50)	NOT NULL,	
+	[Movie_Picture]	[text]			NOT NULL,	
+);
+GO
+CREATE TABLE [dbo].[Role](
+	[Role_ID]		[int]			IDENTITY(1,1) PRIMARY KEY,
+	[Role_Name]		[varchar](20)	NOT NULL,
+);
+GO
+CREATE TABLE [dbo].[User](
+	[User_ID]		[int]			IDENTITY(1,1) PRIMARY KEY,
+	[User_Email]	[nchar](40)		NOT NULL,
+	[User_Login]	[nchar](40)		NOT NULL,
+	[User_Password] [nchar](40)		NOT NULL,
+	[User_Picture]	[text]		NOT NULL,
+);
+GO
+CREATE TABLE [dbo].[UserActor](
+	[UserActor_ID]	[int]			IDENTITY(1,1) PRIMARY KEY,
+	[User_ID]		[int]			NOT NULL,
+	[Actor_ID]		[int]			NOT NULL
+); 
+GO
+CREATE TABLE [dbo].[UserMovie](
+	[UserMovie_ID]	[int]			IDENTITY(1,1) PRIMARY KEY,
+	[User_ID]		[int]			NOT NULL,
+	[Movie_ID]		[int]			NOT NULL,
+);
+GO
+CREATE TABLE [dbo].[UserRole](
+	[UserRole_ID]	[int]			IDENTITY(1,1) PRIMARY KEY,
+	[User_ID]		[int]			NOT NULL,
+	[Role_ID]		[int]			NOT NULL,
+);
+GO
+CREATE TABLE [dbo].[Topic](
+	[Topic_ID]		[int]			IDENTITY(1,1) PRIMARY KEY,
+	[Topic_Name]	[nchar](100)	NOT NULL,
+	[Topic_Author]	[nchar](40)		NOT NULL,	
+	[Topic_Date]	[DATETIME]		NOT NULL,
+);
+GO
+CREATE TABLE [dbo].[Reply](
+	[Reply_ID]		[int]			IDENTITY(1,1) PRIMARY KEY,
+	[Reply_Author]	[nchar](40)		NOT NULL,
+	[Reply_Content] [nvarchar](MAX)	NOT NULL,
+	[Reply_Date]	[DATETIME]		NOT NULL,
+);
+GO
+CREATE TABLE [dbo].[TopicReply](
+	[TopicReply_ID]	[int]			IDENTITY(1,1) PRIMARY KEY,
+	[Topic_ID]		[int]			NOT NULL,
+	[Reply_ID]		[int]			NOT NULL
+); 
+GO
+CREATE TABLE [dbo].[UserReply](
+	[UserReply_ID]	[int]			IDENTITY(1,1) PRIMARY KEY,
+	[User_ID]		[int]			NOT NULL,
+	[Reply_ID]		[int]			NOT NULL
+); 
+GO
+CREATE TABLE [dbo].[UserTopic](
+	[UserTopic_ID]	[int]			IDENTITY(1,1) PRIMARY KEY,
+	[User_ID]		[int]			NOT NULL,
+	[Topic_ID]		[int]			NOT NULL
+); 
+GO
+-- USER ACTOR
+ALTER TABLE [dbo].[UserActor]  WITH CHECK ADD  CONSTRAINT [FK_ActorID] FOREIGN KEY([Actor_ID])
+REFERENCES [dbo].[Actor] ([Actor_ID]);
+GO
+ALTER TABLE [dbo].[UserActor] CHECK CONSTRAINT [FK_ActorID];
+GO
+ALTER TABLE [dbo].[UserActor]  WITH CHECK ADD  CONSTRAINT [FK_UserID] FOREIGN KEY([User_ID])
+REFERENCES [dbo].[User] ([User_ID]);
+GO
+ALTER TABLE [dbo].[UserActor] CHECK CONSTRAINT [FK_UserID];
+GO
+-- USER MOVIE
+ALTER TABLE [dbo].[UserMovie]  WITH CHECK ADD  CONSTRAINT [FK_Movie_ID] FOREIGN KEY([Movie_ID])
+REFERENCES [dbo].[Movie] ([Movie_ID]);
+GO
+ALTER TABLE [dbo].[UserMovie] CHECK CONSTRAINT [FK_Movie_ID];
+GO
+ALTER TABLE [dbo].[UserMovie]  WITH CHECK ADD  CONSTRAINT [FK_UserM_ID] FOREIGN KEY([User_ID])
+REFERENCES [dbo].[User] ([User_ID]);
+GO
+ALTER TABLE [dbo].[UserMovie] CHECK CONSTRAINT [FK_UserM_ID];
+GO
+-- USER ROLE
+ALTER TABLE [dbo].[UserRole]  WITH CHECK ADD  CONSTRAINT [FK_Role_ID] FOREIGN KEY([Role_ID])
+REFERENCES [dbo].[Role] ([Role_ID]);
+GO
+ALTER TABLE [dbo].[UserRole] CHECK CONSTRAINT [FK_Role_ID];
+GO
+ALTER TABLE [dbo].[UserRole]  WITH CHECK ADD  CONSTRAINT [FK_User_ID] FOREIGN KEY([User_ID])
+REFERENCES [dbo].[User] ([User_ID]);
+GO
+ALTER TABLE [dbo].[UserRole] CHECK CONSTRAINT [FK_User_ID];
+GO
+-- TOPIC REPLY
+ALTER TABLE [dbo].[TopicReply]  WITH CHECK ADD  CONSTRAINT [FK_Topic_ID] FOREIGN KEY([Topic_ID])
+REFERENCES [dbo].[Topic] ([Topic_ID]);
+GO
+ALTER TABLE [dbo].[TopicReply] CHECK CONSTRAINT [FK_Topic_ID];
+GO
+ALTER TABLE [dbo].[TopicReply]  WITH CHECK ADD  CONSTRAINT [FK_Reply_ID] FOREIGN KEY([Reply_ID])
+REFERENCES [dbo].[Reply] ([Reply_ID]);
+GO
+ALTER TABLE [dbo].[TopicReply] CHECK CONSTRAINT [FK_Reply_ID];
+GO
+-- USER REPLY
+ALTER TABLE [dbo].[UserReply]  WITH CHECK ADD  CONSTRAINT [FK_UserR_ID] FOREIGN KEY([User_ID])
+REFERENCES [dbo].[User] ([User_ID]);
+GO
+ALTER TABLE [dbo].[UserReply] CHECK CONSTRAINT [FK_UserR_ID];
+GO
+ALTER TABLE [dbo].[UserReply]  WITH CHECK ADD  CONSTRAINT [FK_UReply_ID] FOREIGN KEY([Reply_ID])
+REFERENCES [dbo].[Reply] ([Reply_ID]);
+GO
+ALTER TABLE [dbo].[UserReply] CHECK CONSTRAINT [FK_UReply_ID];
+GO
+-- USER TOPIC
+ALTER TABLE [dbo].[UserTopic]  WITH CHECK ADD  CONSTRAINT [FK_UserT_ID] FOREIGN KEY([User_ID])
+REFERENCES [dbo].[User] ([User_ID]);
+GO
+ALTER TABLE [dbo].[UserTopic] CHECK CONSTRAINT [FK_UserT_ID];
+GO
+ALTER TABLE [dbo].[UserTopic]  WITH CHECK ADD  CONSTRAINT [FK_UTopic_ID] FOREIGN KEY([Topic_ID])
+REFERENCES [dbo].[Topic] ([Topic_ID]);
+GO
+ALTER TABLE [dbo].[UserTopic] CHECK CONSTRAINT [FK_UTopic_ID];
+-- FILL IT UP
+GO
+INSERT INTO [dbo].[Role] ([Role_Name]) 
+VALUES ('Admin'), ('User');

@@ -1,0 +1,62 @@
+﻿@using System.Web.Optimization
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>@ViewBag.Title</title>
+    @Styles.Render("~/bundles/bootstrap/css")
+    @Styles.Render("~/bundles/genresStyles/css")
+    @Styles.Render("~/bundles/footer/css")
+</head>
+<body class="d-flex flex-column min-vh-100">
+
+    <header class="header">
+        <div class="header_content">
+            @Html.ActionLink("Movie Forum", "Index", "Home", null, new { @class = "header_logo" });
+          
+        </div>
+    </header>
+
+    @RenderBody()
+
+    <div class="container comments">
+    </div>
+
+<footer>
+	<div class="row footer align-items-center">
+
+		<div class="col-4 pb-3">
+			<div class="text-center">
+				<img src="~/Content/images/logo.png" width="300" class="img-fluid">
+			</div>
+		</div>
+
+		<div class="col-4 rights ">
+			<div class="small">
+				<ul class="list-inline">
+					<li class="list-inline-item">&copy; 2023 UTM group</li>
+					<li class="list-inline-item">All rights reserved.</li>
+					<li class="list-inline-item"><a href="#0">Terms of use and privacy policy</a>.</li>
+				</ul>
+			</div>
+		</div>
+
+		<div class="col-4 members">
+			<div class="small">
+				<ul class="list-inline">
+					<p class="text-center">Membrers:</p>
+					<p class="text-center">Dima <br> Alex <br> Ivan <br> Leomir</p>
+
+				</ul>
+			</div>
+		</div>
+	</div>
+</footer>
+
+
+    @Scripts.Render("~/bundles/getGenresTop/js")
+    @Scripts.Render("~/bundles/addTopG/js")
+
+</body>
+</html>
