@@ -13,16 +13,5 @@ namespace Web.Controllers
         {
             return View();
         }
-
-        //public ActionResult Login()
-        //{
-        //    return View();
-        //}
-
-        //public ActionResult Registration()
-        //{
-        //    return View();
-        //}
-
     }
 }

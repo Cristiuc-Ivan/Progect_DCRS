@@ -10,6 +10,7 @@ namespace Web.Controllers
 {
     public class SearchController : Controller
     {
+        StorageEntities db = new StorageEntities();
         [HttpPost]
         public ActionResult Actors(ActorsModel data)
         {
@@ -31,28 +32,37 @@ namespace Web.Controllers
         [Authorize]
         public ActionResult ActorAdd(string ActorName, string ActorKnownFor, string ActorPic, ActorsModel ActorDATA)
         {
-            StorageEntities db = new StorageEntities();
             Actor actor = new Actor
             {
                 Actor_Name = ActorName,
                 Actor_Picture = ActorPic,
             };
 
-            var User = db.Users.Where(s => s.User_Login == HttpContext.User.Identity.Name).FirstOrDefault();
+            var User = db.Users
+                .Where(s => s.User_Login == HttpContext.User.Identity.Name)
+                .FirstOrDefault();
 
-            if (actor.Actor_ID == 0 && db.Actors.Where(m => m.Actor_Name == ActorName).FirstOrDefault() == null)
+            if (actor.Actor_ID == 0 && db.Actors
+                .Where(m => m.Actor_Name == ActorName)
+                .FirstOrDefault() == null)
             {
                 db.Actors.Add(actor);
                 db.SaveChanges();
             }
 
-            var aaa = db.Actors.Where(m => m.Actor_Name == ActorName).FirstOrDefault();
+            var aaa = db.Actors
+                .Where(m => m.Actor_Name == ActorName)
+                .FirstOrDefault();
 
-            var asdasda = db.UserActors.Where(m => m.Actor_ID == aaa.Actor_ID && m.User_ID == User.User_ID).FirstOrDefault();
+            var asdasda = db.UserActors
+                .Where(m => m.Actor_ID == aaa.Actor_ID && m.User_ID == User.User_ID)
+                .FirstOrDefault();
 
             if (asdasda == null)
             {
-                Actor actualActor = db.Actors.Where(d => d.Actor_Name == ActorName).FirstOrDefault();
+                Actor actualActor = db.Actors
+                    .Where(d => d.Actor_Name == ActorName)
+                    .FirstOrDefault();
 
                 UserActor userActor = new UserActor
                 {
@@ -89,28 +99,37 @@ namespace Web.Controllers
         [Authorize]
         public ActionResult MovieAdd(string MovieName, string MovieGenres, string MoviePic, MoviesModel data)
         {
-            StorageEntities db = new StorageEntities();
             Movie movie = new Movie
             {
                 Movie_Name = MovieName,
                 Movie_Picture = MoviePic,
             };
 
-            var User = db.Users.Where(s => s.User_Login == HttpContext.User.Identity.Name).FirstOrDefault();
+            var User = db.Users
+                .Where(s => s.User_Login == HttpContext.User.Identity.Name)
+                .FirstOrDefault();
 
-            if (movie.Movie_ID == 0 && db.Movies.Where(m => m.Movie_Name == MovieName).FirstOrDefault() == null)
+            if (movie.Movie_ID == 0 && db.Movies
+                .Where(m => m.Movie_Name == MovieName)
+                .FirstOrDefault() == null)
             {
                 db.Movies.Add(movie);
                 db.SaveChanges();
             }
 
-            var aaa = db.Movies.Where(m => m.Movie_Name == MovieName).FirstOrDefault();
+            var aaa = db.Movies
+                .Where(m => m.Movie_Name == MovieName)
+                .FirstOrDefault();
 
-            var asdasda = db.UserMovies.Where(m => m.Movie_ID == aaa.Movie_ID && m.User_ID == User.User_ID).FirstOrDefault();
+            var asdasda = db.UserMovies
+                .Where(m => m.Movie_ID == aaa.Movie_ID && m.User_ID == User.User_ID)
+                .FirstOrDefault();
 
             if (asdasda == null)
             {
-                Movie actualMovie = db.Movies.Where(d => d.Movie_Name == movie.Movie_Name).FirstOrDefault();
+                Movie actualMovie = db.Movies
+                    .Where(d => d.Movie_Name == movie.Movie_Name)
+                    .FirstOrDefault();
 
                 UserMovie userMovie = new UserMovie
                 {

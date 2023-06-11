@@ -29,16 +29,14 @@
     <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@500&display=swap" rel="stylesheet">
 
     @Styles.Render("~/bundles/bootstrap/css")
-    @Styles.Render("~/bundles/jquery/css")
     @Styles.Render("~/bundles/genresStyles/css")
     @Styles.Render("~/bundles/mainStyle/css")
     @Styles.Render("~/bundles/stylinn/css")
     @Styles.Render("~/bundles/swiper/css")
 
     @Styles.Render("~/bundles/footer/css")
-    @Styles.Render("~/bundles/forum_comments/css")
-    @Styles.Render("~/bundles/forum_input_topicsform/css")
-    @Styles.Render("~/bundles/forum_topics/css")
+
+    @Styles.Render("~/bundles/forum/css")
     @if (User.Identity.IsAuthenticated)
     {
         @Styles.Render("~/bundles/header_aut/css")
@@ -47,8 +45,6 @@
     {
         @Styles.Render("~/bundles/header_neaut/css")
     }
-    @Styles.Render("~/bundles/forum_personalprofile/css")
-    @Styles.Render("~/bundles/forum_searchform/css")
     @Styles.Render("~/bundles/header_neaut/css")
 
 </head>
@@ -56,20 +52,19 @@
     @Html.Partial("_Header")
     @RenderBody()
     @Html.Partial("_Footer")
-    @*<a href="#top" class="anchor rounded-circle fixed-bottom">⇯</a>*@
 
-    @Scripts.Render("~/bundles/jquery/js")
     @Scripts.Render("~/bundles/bootstrap/js")
-    @Scripts.Render("~/bundles/jquery-ui/js")
     @Scripts.Render("~/bundles/swiper-bundle/js")
 
-    @Scripts.Render("~/bundles/addTopG/js")
-    @Scripts.Render("~/bundles/getTrending/js")
-    @Scripts.Render("~/bundles/addTrending/js")
-    @Scripts.Render("~/bundles/getUpcoming/js")
-    @Scripts.Render("~/bundles/addUpcoming/js")
+    @Scripts.Render("~/bundles/addGenresTop/js")
+
+    @if (ViewBag.Title == "Home")
+    {
+        @Scripts.Render("~/bundles/addUpcoming/js")
+        @Scripts.Render("~/bundles/addTrending/js")
+    }
+
     @Scripts.Render("~/bundles/swiper/js")
-    @Scripts.Render("~/bundles/getGenresTop/js")
     @Scripts.Render("~/bundles/processForm/js")
     @Scripts.Render("~/bundles/vanilla-tilt/js")
     @Scripts.Render("~/bundles/forum_addactors/js")

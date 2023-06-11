@@ -9,22 +9,24 @@ using System.Web.Security;
 
 namespace Web.Controllers
 {
-    [IPBanFilterAttribute]
     public class LoginController : Controller
     {
+        StorageEntities db = new StorageEntities();
+
         [HttpGet]
+        [IPBanFilter]
         public ViewResult Login()
         {
             return View();
         }
+        [IPBanFilter]
         [HttpPost]
         public ActionResult Login(LoginModel model)
         {
-
             if (ModelState.IsValid)
             {
-                StorageEntities db = new StorageEntities();
-                bool IsValidUser = db.Users.Any(user => user.User_Login.ToLower() ==
+                bool IsValidUser;
+                IsValidUser = db.Users.Any(user => user.User_Login.ToLower() ==
                  model.UserLogin && user.User_Password == model.Password);
                 if (IsValidUser)
                 {
@@ -46,7 +48,6 @@ namespace Web.Controllers
                     return RedirectToAction("Index", "Home");
                 }
             }
-            //ModelState.AddModelError("", "invalid Username or Password");
             return View();
         }
 
@@ -61,7 +62,6 @@ namespace Web.Controllers
         {
             if (ModelState.IsValid)
             {
-                StorageEntities db = new StorageEntities();
                 User tempUser = db.Users.Where(model => model.User_Login == ulog.Login || model.User_Login == ulog.Email).FirstOrDefault();
                 if (tempUser == null)
                 {
