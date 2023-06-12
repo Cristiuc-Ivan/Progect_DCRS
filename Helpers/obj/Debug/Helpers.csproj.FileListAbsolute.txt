@@ -22,3 +22,9 @@ C:\labsprojects\MovieForum 3 merge\Project_DCRS\Helpers\obj\Debug\Helpers.csproj
 C:\labsprojects\MovieForum 3 merge\Project_DCRS\Helpers\obj\Debug\Helpers.csproj.CoreCompileInputs.cache
 C:\labsprojects\MovieForum 3 merge\Project_DCRS\Helpers\obj\Debug\Helpers.dll
 C:\labsprojects\MovieForum 3 merge\Project_DCRS\Helpers\obj\Debug\Helpers.pdb
+C:\labsprojects\MovieForum work\MovieForum work\Project_DCRS\Helpers\bin\Debug\Helpers.dll
+C:\labsprojects\MovieForum work\MovieForum work\Project_DCRS\Helpers\bin\Debug\Helpers.pdb
+C:\labsprojects\MovieForum work\MovieForum work\Project_DCRS\Helpers\obj\Debug\Helpers.csproj.AssemblyReference.cache
+C:\labsprojects\MovieForum work\MovieForum work\Project_DCRS\Helpers\obj\Debug\Helpers.csproj.CoreCompileInputs.cache
+C:\labsprojects\MovieForum work\MovieForum work\Project_DCRS\Helpers\obj\Debug\Helpers.dll
+C:\labsprojects\MovieForum work\MovieForum work\Project_DCRS\Helpers\obj\Debug\Helpers.pdb
